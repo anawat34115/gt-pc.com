@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Friends - Always there for great friends</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=2162&auto=format&fit=crop'), url('https://images.unsplash.com/photo-1574158622682-e40e69841006?q=80&w=2333&auto=format&fit=crop');
+            background-position: 20% 50%, 80% 50%;
+            background-size: 50% auto, 50% auto;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .wavy-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231f2937' fill-opacity='1' d='M0,128L48,138.7C96,149,192,171,288,170.7C384,171,480,149,576,128C672,107,768,85,864,101.3C960,117,1056,171,1152,186.7C1248,203,1344,181,1392,170.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top;
+        }
+        .brand-card img {
+            transition: transform 0.3s ease;
+        }
+        .brand-card:hover img {
+            transform: scale(1.05);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-blue-600">PetFood</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition">เกี่ยวกับเรา</a>
+                    <a href="#products" class="text-gray-600 hover:text-blue-600 transition">ผลิตภัณฑ์</a>
+                    <a href="#features" class="text-gray-600 hover:text-blue-600 transition">จุดเด่นของเรา</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">ติดต่อเรา</a>
+                </nav>
+                <div class="hidden md:flex items-center space-x-2">
+                    <button class="px-3 py-1 text-sm font-medium rounded-md bg-blue-600 text-white">TH</button>
+                    <button class="px-3 py-1 text-sm font-medium rounded-md bg-gray-200 text-gray-700">EN</button>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">เกี่ยวกับเรา</a>
+            <a href="#products" class="block py-2 text-gray-600 hover:text-blue-600">ผลิตภัณฑ์</a>
+            <a href="#features" class="block py-2 text-gray-600 hover:text-blue-600">จุดเด่นของเรา</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600">ติดต่อเรา</a>
+             <div class="flex items-center space-x-2 mt-4">
+                <button class="px-3 py-1 text-sm font-medium rounded-md bg-blue-600 text-white">TH</button>
+                <button class="px-3 py-1 text-sm font-medium rounded-md bg-gray-200 text-gray-700">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gray-900 flex items-center justify-center text-white pt-20 wavy-bg">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto bg-black/50 p-8 rounded-xl backdrop-blur-sm">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Always there for great friends</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                    เรามุ่งมั่นที่จะผลิตอาหารที่ดีที่สุดสำหรับเพื่อนที่ดีที่สุดของคุณ เพราะเราเชื่อว่าสุขภาพที่ดีเริ่มต้นจากโภชนาการที่ยอดเยี่ยม
+                </p>
+                <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+                    ดูผลิตภัณฑ์ของเรา
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Brands Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">แบรนด์ของเรา</h2>
+                <p class="text-gray-600 mt-2">ผลิตภัณฑ์คุณภาพที่เราภูมิใจนำเสนอ</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brand Card 1 -->
+                <div class="brand-card bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://placehold.co/600x400/3498db/ffffff?text=Dogker" alt="Dogker Brand" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Dogker</h3>
+                        <p class="text-gray-600">อาหารสุนัขคุณภาพเยี่ยม ครบถ้วนทุกสารอาหารที่จำเป็นสำหรับสุนัขทุกสายพันธุ์</p>
+                    </div>
+                </div>
+                <!-- Brand Card 2 -->
+                <div class="brand-card bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Winstar" alt="Winstar Brand" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Winstar</h3>
+                        <p class="text-gray-600">อาหารแมวสูตรพิเศษ คัดสรรวัตถุดิบชั้นดีเพื่อสุขภาพที่ดีของน้องแมวที่คุณรัก</p>
+                    </div>
+                </div>
+                <!-- Brand Card 3 -->
+                <div class="brand-card bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Cherman" alt="Cherman Brand" class="w-full h-64 object-cover">
+                     <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Cherman</h3>
+                        <p class="text-gray-600">ขนมและอาหารเปียกเกรดพรีเมียม เพิ่มความสุขในทุกๆ มื้อของเพื่อนซี้สี่ขา</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Types Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">ประเภทผลิตภัณฑ์</h2>
+                <p class="text-gray-600 mt-2">หลากหลายผลิตภัณฑ์ที่ตอบโจทย์ทุกความต้องการ</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Type Card: DRY -->
+                <div class="text-center p-8 bg-white rounded-xl shadow-md">
+                    <img src="https://placehold.co/400x300/f39c12/ffffff?text=อาหารเม็ด+(DRY)" alt="Dry Pet Food" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">อาหารเม็ด (DRY)</h3>
+                    <p class="text-gray-600">สะดวกในการจัดเก็บ ให้คุณค่าทางโภชนาการที่ครบถ้วนและสมดุล</p>
+                </div>
+                <!-- Type Card: WET -->
+                <div class="text-center p-8 bg-white rounded-xl shadow-md">
+                    <img src="https://placehold.co/400x300/3498db/ffffff?text=อาหารเปียก+(WET)" alt="Wet Pet Food" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">อาหารเปียก (WET)</h3>
+                    <p class="text-gray-600">เพิ่มความน่ากินด้วยรสชาติและกลิ่นหอมที่สัตว์เลี้ยงชื่นชอบ พร้อมช่วยเพิ่มน้ำในร่างกาย</p>
+                </div>
+                <!-- Type Card: SNACK -->
+                <div class="text-center p-8 bg-white rounded-xl shadow-md">
+                    <img src="https://placehold.co/400x300/9b59b6/ffffff?text=ขนม+(SNACK)" alt="Pet Snacks" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">ขนม (SNACK)</h3>
+                    <p class="text-gray-600">สำหรับให้เป็นรางวัลหรือของว่าง ช่วยสร้างความสัมพันธ์ที่ดีกับสัตว์เลี้ยง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+             <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">มาตรฐานและคุณภาพของเรา</h2>
+                <p class="text-gray-600 mt-2">เพราะเราใส่ใจในทุกขั้นตอนการผลิต</p>
+            </div>
+            <div class="space-y-16">
+                <!-- Feature 1: Warehouse -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb15c2866?q=80&w=2340&auto=format&fit=crop" class="rounded-lg shadow-xl w-full" alt="คลังสินค้า">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-3">คลังสินค้า (Warehouse)</h3>
+                        <p class="text-gray-600">เรามีคลังสินค้าที่ทันสมัย ควบคุมอุณหภูมิและความชื้นเพื่อให้วัตถุดิบและสินค้าคงคุณภาพดีที่สุดก่อนส่งถึงมือคุณ</p>
+                    </div>
+                </div>
+                <!-- Feature 2: Production -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2148&auto=format&fit=crop" class="rounded-lg shadow-xl w-full" alt="ความสามารถในการผลิต">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-3">ความสามารถในการผลิต (Production Capabilities)</h3>
+                        <p class="text-gray-600">โรงงานของเราใช้เครื่องจักรที่ทันสมัยและมีกำลังการผลิตสูง ผ่านการรับรองมาตรฐานสากล ISO 9001, GMP และ HACCP</p>
+                    </div>
+                </div>
+                 <!-- Feature 3: Safety & Quality -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1579154799863-5d5158a1563d?q=80&w=2340&auto=format&fit=crop" class="rounded-lg shadow-xl w-full" alt="ความปลอดภัยและคุณภาพ">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-3">ความปลอดภัยและคุณภาพ (Safety & Quality)</h3>
+                        <p class="text-gray-600">เรามีทีมควบคุมคุณภาพที่ตรวจสอบทุกขั้นตอน ตั้งแต่การคัดเลือกวัตถุดิบจนถึงผลิตภัณฑ์สำเร็จรูป เพื่อให้คุณมั่นใจในทุกคำ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">PetFood</h3>
+                    <p class="text-gray-400">Always there for great friends.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">เมนู</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white">เกี่ยวกับเรา</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">ผลิตภัณฑ์</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white">จุดเด่นของเรา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">ติดต่อเรา</h4>
+                    <p class="text-gray-400">123 ถนนสุขุมวิท, กรุงเทพฯ 10110</p>
+                    <p class="text-gray-400">อีเมล: contact@petfood.com</p>
+                    <p class="text-gray-400">โทร: 02-123-4567</p>
+                </div>
+                <div>
+                     <h4 class="font-semibold text-lg mb-4">ติดตามเรา</h4>
+                     <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm-1.161 4.573a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008zm2.418 2.035a5.47 5.47 0 01-5.47-5.47 5.47 5.47 0 015.47-5.47 5.47 5.47 0 015.47 5.47 5.47 5.47 0 01-5.47 5.47zm0-1.5a3.97 3.97 0 00-3.97 3.97 3.97 3.97 0 003.97 3.97 3.97 3.97 0 003.97-3.97 3.97 3.97 0 00-3.97-3.97z" clip-rule="evenodd" /></svg></a>
+                     </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                &copy; 2024 PetFood Inc. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Change header background on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white/95', 'shadow-lg');
+                header.classList.remove('bg-white/80', 'shadow-sm');
+            } else {
+                header.classList.remove('bg-white/95', 'shadow-lg');
+                header.classList.add('bg-white/80', 'shadow-sm');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับเรา - Greatest Pet Care (ดีไซน์ใหม่)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* เพิ่มเงาและ transition ให้กับ header เมื่อ scroll */
+        .scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        /* Animation สำหรับการปรากฏขึ้นเมื่อ scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <img src="https://placehold.co/40x40/0284C7/FFFFFF?text=GPC" alt="Greatest Pet Care Logo" class="h-10 w-10 rounded-full">
+                    <span class="text-xl font-bold text-slate-700">Greatest Pet Care</span>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-slate-600 hover:text-cyan-600 transition-colors">About Us</a>
+                    <a href="#" class="text-slate-600 hover:text-cyan-600 transition-colors">Capabilities</a>
+                    <a href="#" class="text-slate-600 hover:text-cyan-600 transition-colors">Our Product</a>
+                    <a href="#" class="text-slate-600 hover:text-cyan-600 transition-colors">Our Brand</a>
+                    <a href="#" class="text-slate-600 hover:text-cyan-600 transition-colors">Contact Us</a>
+                </nav>
+                 <button class="md:hidden p-2 rounded-md hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] md:h-[80vh] min-h-[400px] bg-cover bg-center flex items-center justify-center text-white pt-20" style="background-image: url('https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?q=80&w=1954&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="relative z-10 text-center px-4 fade-in-section is-visible">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+                    เบื้องหลังทุกความสุข<br class="hidden md:block">คือความใส่ใจที่เรามอบให้
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto">
+                    โภชนาการที่ดีที่สุด เพื่อนคู่ใจที่ดีที่สุดของคุณ
+                </p>
+            </div>
+        </section>
+
+        <!-- Our History Section -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 md:mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold text-cyan-700 mb-2">เส้นทางของเรา</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">จากจุดเริ่มต้นเล็กๆ สู่การเป็นผู้นำด้านอาหารสัตว์เลี้ยงที่ได้รับความไว้วางใจ</p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative max-w-3xl mx-auto">
+                    <!-- เส้นกลาง Timeline -->
+                    <div class="absolute left-1/2 h-full w-0.5 bg-cyan-200 transform -translate-x-1/2"></div>
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="relative mb-8 flex justify-between items-center w-full fade-in-section">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-10 flex items-center order-1 bg-cyan-500 shadow-xl w-10 h-10 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+                        </div>
+                        <div class="order-1 bg-cyan-50 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <p class="text-sm font-medium text-cyan-600">2009</p>
+                            <h3 class="mb-2 font-bold text-gray-800 text-lg">ก่อตั้งบริษัท</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-600">เริ่มต้นจากความมุ่งมั่นที่จะผลิตอาหารสัตว์เลี้ยงคุณภาพสูงเพื่อสัตว์เลี้ยงแสนรักในประเทศไทย</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="relative mb-8 flex justify-between items-center w-full flex-row-reverse fade-in-section">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-10 flex items-center order-1 bg-cyan-500 shadow-xl w-10 h-10 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">2</h1>
+                        </div>
+                        <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
+                             <p class="text-sm font-medium text-cyan-600">2015</p>
+                            <h3 class="mb-2 font-bold text-gray-800 text-lg">ขยายกำลังการผลิต</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-600">ลงทุนในเทคโนโลยีและเครื่องจักรที่ทันสมัย เพื่อรองรับความต้องการของตลาดที่เพิ่มขึ้น</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                     <div class="relative mb-8 flex justify-between items-center w-full fade-in-section">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-10 flex items-center order-1 bg-cyan-500 shadow-xl w-10 h-10 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+                        </div>
+                        <div class="order-1 bg-cyan-50 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <p class="text-sm font-medium text-cyan-600">2020</p>
+                            <h3 class="mb-2 font-bold text-gray-800 text-lg">ได้รับการรับรองมาตรฐานสากล</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-600">ผ่านการรับรองมาตรฐาน ISO, GMP, และ HACCP ตอกย้ำคุณภาพและความปลอดภัย</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission Section -->
+        <section class="py-16 md:py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <!-- Vision -->
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-16 fade-in-section">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1924&auto=format&fit=crop" alt="Vision Image" class="rounded-2xl shadow-lg w-full h-auto object-cover aspect-video">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-3xl font-bold text-cyan-700 mb-4">วิสัยทัศน์ (Vision)</h3>
+                        <p class="text-slate-600 text-lg">เรามุ่งมั่นที่จะเป็นผู้นำด้านนวัตกรรมอาหารสัตว์เลี้ยง ที่สร้างสรรค์ผลิตภัณฑ์คุณภาพสูงสุด เพื่อยกระดับคุณภาพชีวิตและส่งเสริมความสุขที่ยั่งยืนให้กับสัตว์เลี้ยงทั่วโลก</p>
+                    </div>
+                </div>
+                <!-- Mission -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12 fade-in-section">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a118?q=80&w=2070&auto=format&fit=crop" alt="Mission Image" class="rounded-2xl shadow-lg w-full h-auto object-cover aspect-video">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-3xl font-bold text-cyan-700 mb-4">พันธกิจ (Mission)</h3>
+                        <p class="text-slate-600 text-lg">ผลิตอาหารสัตว์เลี้ยงด้วยวัตถุดิบที่ดีที่สุด ผ่านกระบวนการผลิตที่ปลอดภัยและได้มาตรฐานสากล พร้อมทั้งพัฒนาสูตรอาหารที่เหมาะสมกับความต้องการของสัตว์เลี้ยงในแต่ละช่วงวัย</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 md:mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold text-cyan-700 mb-2">หัวใจหลักของเรา</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">สิ่งที่เรายึดมั่นในการทำงาน เพื่อส่งมอบสิ่งที่ดีที่สุด</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Value 1 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl text-center shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300 fade-in-section">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-100 text-cyan-600 mx-auto mb-6">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5s9.5-4.25 9.5-9.5Z"/><path d="M12 2.5v19"/><path d="M2.5 12h19"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Global Standard</h3>
+                        <p class="text-slate-600">มาตรฐานระดับโลก ที่มั่นใจได้ในทุกขั้นตอนการผลิต</p>
+                    </div>
+                    <!-- Value 2 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl text-center shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300 fade-in-section" style="transition-delay: 100ms;">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-100 text-cyan-600 mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Trustful Quality</h3>
+                        <p class="text-slate-600">คุณภาพที่ไว้วางใจได้ คัดสรรวัตถุดิบที่ดีที่สุดเพื่อเพื่อนที่ดีที่สุดของคุณ</p>
+                    </div>
+                    <!-- Value 3 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl text-center shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300 fade-in-section" style="transition-delay: 200ms;">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-100 text-cyan-600 mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m10 10.5 2 2 2-2"/><path d="m10 15.5 2 2 2-2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Palatability</h3>
+                        <p class="text-slate-600">ความอร่อยที่ถูกใจ ตอบโจทย์ทุกความต้องการของสัตว์เลี้ยง</p>
+                    </div>
+                    <!-- Value 4 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl text-center shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300 fade-in-section" style="transition-delay: 300ms;">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-100 text-cyan-600 mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Customer Oriented</h3>
+                        <p class="text-slate-600">ใส่ใจลูกค้า พร้อมรับฟังและพัฒนาเพื่อตอบสนองความต้องการ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-400">&copy; 2025 Greatest Pet Care. All right reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script สำหรับ Header
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Script สำหรับ Fade-in Animation
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: unobserve after it's visible so it doesn't re-animate
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // 10% of the item must be visible
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
