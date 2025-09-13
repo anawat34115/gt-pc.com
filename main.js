@@ -1,5 +1,5 @@
     // โหลด navbar
-    fetch('components/navbar.html')
+fetch('/components/navbar.html')   // absolute path จาก root
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar-placeholder').innerHTML = data;
