@@ -26,7 +26,7 @@ body {
 
 /* -------------------- Wavy Background -------------------- */
 .wavy-bg {
-    background-image: url("/gt-pc.com/img/mainsection.png");
+background-image: url("../img/mainsection.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
