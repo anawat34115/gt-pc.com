@@ -1,0 +1,81 @@
+/* Header base */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 60px;
+  transition: all 0.4s ease;
+  background: rgb(255, 255, 255); /* โปร่งใสตอน top */
+  backdrop-filter: blur(0px);
+  box-shadow: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+/* Container */
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo & Brand */
+#logo {
+  height: 80px;
+  transition: all 0.4s ease;
+}
+
+#brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-left: 10px;
+  transition: all 0.4s ease;
+  color: #16a34a;
+}
+
+/* Nav */
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #374151;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #16a34a;
+  transition: all 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Scroll state */
+.scrolled {
+  background: rgba(49, 9, 9, 0.95); /* BG ติด navbar */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 10px 60px;
+}
+
+.scrolled #logo {
+  height: 48px;
+}
+
+.scrolled #brand-name {
+  font-size: 1.4rem;
+}

@@ -1,0 +1,59 @@
+/* -------------------- Fonts -------------------- */
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+/* -------------------- Hero Background -------------------- */
+.hero-bg {
+    background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=2162&auto=format&fit=crop'),
+                      url('https://images.unsplash.com/photo-1574158622682-e40e69841006?q=80&w=2333&auto=format&fit=crop');
+    background-position: 20% 50%, 80% 50%;
+    background-size: 50% auto, 50% auto;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* -------------------- Wavy Background -------------------- */
+.wavy-bg {
+    background-image: url("/gt-pc.com/img/mainsection.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* -------------------- Cards -------------------- */
+.brand-card img {
+    transition: transform 0.3s ease;
+}
+.brand-card:hover img {
+    transform: scale(1.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* -------------------- Marquee Animation -------------------- */
+@keyframes marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+}
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
