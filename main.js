@@ -1,9 +1,6 @@
-// ===== main.js =====
-
-// ตรวจสอบ path ของไฟล์ HTML เพื่อกำหนด prefix สำหรับ components
+// ตรวจสอบ path ของ HTML เพื่อ fetch navbar ถูกต้องทั้ง root + pages/*
 const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
 
-// โหลด navbar
 fetch(pathPrefix + 'components/navbar.html')
     .then(response => {
         if (!response.ok) throw new Error('Navbar not found: ' + response.status);
@@ -12,7 +9,7 @@ fetch(pathPrefix + 'components/navbar.html')
     .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
 
-        // Script สำหรับ Header (scrolled effect)
+        // Header scrolled effect
         const header = document.getElementById('main-header');
         if (header) {
             window.addEventListener('scroll', () => {
@@ -26,9 +23,8 @@ fetch(pathPrefix + 'components/navbar.html')
     })
     .catch(err => console.error(err));
 
-// ===== Fade-in Animation =====
+// Fade-in Animation
 const sections = document.querySelectorAll('.fade-in-section');
-
 if (sections.length > 0) {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -40,6 +36,3 @@ if (sections.length > 0) {
 
     sections.forEach(section => observer.observe(section));
 }
-
-// ===== Export หรือใช้งานไฟล์นี้กับหลายหน้า HTML =====
-// ไม่ต้องแก้ fetch อีกต่อไป ไม่ว่าไฟล์จะอยู่ root หรือ pages/
