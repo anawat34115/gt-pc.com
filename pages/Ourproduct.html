@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Pets Care - Our Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Color Palette */
+        :root {
+            --light-blue: #a8d8ea;
+            --pastel-green: #a8e6cf;
+            --soft-yellow: #ffd3b6;
+            --dark-text: #2c3e50;
+            --light-gray-bg: #f8f9fa;
+        }
+        .bg-light-blue { background-color: var(--light-blue); }
+        .bg-pastel-green { background-color: var(--pastel-green); }
+        .bg-soft-yellow { background-color: var(--soft-yellow); }
+        .text-dark { color: var(--dark-text); }
+        .border-pastel-green { border-color: var(--pastel-green); }
+        
+        /* Filter Button Styling */
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background-color: var(--dark-text);
+            color: white;
+        }
+        
+        /* Product Card Animation */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .product-card.hidden {
+            display: none;
+            opacity: 0;
+        }
+    </style>
+    <script src="../js/main.js"></script>
+  <base href="../">
+</head>
+<body class="bg-white text-gray-700">
+
+    <!-- Header -->
+    <header id="navbar-placeholder"></header>
+
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-[var(--light-gray-bg)] pt-24 md:pt-48 pb-16">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl lg:text-6xl font-extrabold text-dark leading-tight">Crafted for Health. Loved for Taste.</h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                    From crunchy kibble to savory snacks, every product is made with the highest quality ingredients to nourish your pet from the inside out.
+                </p>
+            </div>
+        </section>
+
+        <!-- Interactive Product Gallery Section -->
+        <section id="products" class="py-20">
+            <div class="container mx-auto px-6">
+                <!-- Filter Controls -->
+                <div id="filters" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+                    <button class="filter-btn active font-semibold py-2 px-6 rounded-full bg-gray-200 text-gray-700" data-filter="all">All Products</button>
+                    <button class="filter-btn font-semibold py-2 px-6 rounded-full bg-gray-200 text-gray-700" data-filter="dry">Dry Food</button>
+                    <button class="filter-btn font-semibold py-2 px-6 rounded-full bg-gray-200 text-gray-700" data-filter="wet">Wet Food</button>
+                    <button class="filter-btn font-semibold py-2 px-6 rounded-full bg-gray-200 text-gray-700" data-filter="snack">Snacks & Treats</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Dry Food Cards -->
+                    <div class="product-card" data-category="dry">
+                        <img src="https://placehold.co/400x300/ffd3b6/2c3e50?text=Puppy+Food" alt="Puppy Food" class="w-full h-56 object-cover rounded-t-xl">
+                        <div class="p-6 bg-white rounded-b-xl shadow-md">
+                            <span class="text-sm font-semibold text-gray-500">For Dogs</span>
+                            <h3 class="text-xl font-bold text-dark mt-1">Puppy Food</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Supports healthy growth and development for your new best friend.</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="dry">
+                        <img src="https://placehold.co/400x300/ffd3b6/2c3e50?text=Premium+Dog+Food" alt="Premium Dog Food" class="w-full h-56 object-cover rounded-t-xl">
+                        <div class="p-6 bg-white rounded-b-xl shadow-md">
+                            <span class="text-sm font-semibold text-gray-500">For Dogs</span>
+                            <h3 class="text-xl font-bold text-dark mt-1">Dog Food - Premium</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Single color, single shape kibble with premium, targeted ingredients.</p>
+                        </div>
+                    </div>
+                     <div class="product-card" data-category="dry">
+                        <img src="https://placehold.co/400x300/ffd3b6/2c3e50?text=Kitten+Food" alt="Kitten Food" class="w-full h-56 object-cover rounded-t-xl">
+                        <div class="p-6 bg-white rounded-b-xl shadow-md">
+                            <span class="text-sm font-semibold text-gray-500">For Cats</span>
+                            <h3 class="text-xl font-bold text-dark mt-1">Kitten Food</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Tiny, easy-to-eat kibble packed with nutrients for a great start in life.</p>
+                        </div>
+                    </div>
+                     <div class="product-card" data-category="dry">
+                        <img src="https://placehold.co/400x300/ffd3b6/2c3e50?text=Cat+Food+Shapes" alt="Cat Food Shapes" class="w-full h-56 object-cover rounded-t-xl">
+                        <div class="p-6 bg-white rounded-b-xl shadow-md">
+                            <span class="text-sm font-semibold text-gray-500">For Cats</span>
+                            <h3 class="text-xl font-bold text-dark mt-1">Cat Food - 3 Shapes</h3>
+                            <p class="mt-2 text-gray-600 text-sm">A variety of fun shapes and colors to keep your cat engaged and happy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Wet Food Cards -->
+                    <div class="product-card" data-category="wet">
+                        <img src="https://placehold.co/400x300/a8e6cf/2c3e50?text=Dog+Food+Stew" alt="Dog Food Stew" class="w-full h-56 object-cover rounded-t-xl">
+                        <div class="p-6 bg-white rounded-b-xl shadow-md">
+                            <span class="text-sm font-semibold text-gray-500">For Dogs</span>
+                            <h3 class="text-xl font-bold text-dark mt-1">Beef Stew</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Hearty and delicious chunks of real beef in a savory gravy.</p>
+                        </div>
+                    </div>
+                     <div class="product-card" data-category="wet">
+                        <img src="https://placehold.co/400x300/a8e6cf/2c3e50?text=Cat+Pâté" alt="Cat Pâté" class="w-full h-56 object-cover rounded-t-xl">
+                        <div class="p-6 bg-white rounded-b-xl shadow-md">
+                            <span class="text-sm font-semibold text-gray-500">For Cats</span>
+                            <h3 class="text-xl font-bold text-dark mt-1">Salmon Pâté</h3>
+                            <p class="mt-2 text-gray-600 text-sm">A smooth and hydrating meal that even the pickiest eaters will adore.</p>
+                        </div>
+                    </div>
+
+                     <!-- Snack Cards -->
+                    <div class="product-card" data-category="snack">
+                        <img src="https://placehold.co/400x300/a8d8ea/2c3e50?text=Dental+Chews" alt="Dental Chews" class="w-full h-56 object-cover rounded-t-xl">
+                        <div class="p-6 bg-white rounded-b-xl shadow-md">
+                            <span class="text-sm font-semibold text-gray-500">For Dogs</span>
+                            <h3 class="text-xl font-bold text-dark mt-1">Dental Chews</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Helps clean teeth and freshen breath with a taste dogs love.</p>
+                        </div>
+                    </div>
+                     <div class="product-card" data-category="snack">
+                        <img src="https://placehold.co/400x300/a8d8ea/2c3e50?text=Cat+Treats" alt="Cat Treats" class="w-full h-56 object-cover rounded-t-xl">
+                        <div class="p-6 bg-white rounded-b-xl shadow-md">
+                            <span class="text-sm font-semibold text-gray-500">For Cats</span>
+                            <h3 class="text-xl font-bold text-dark mt-1">Creamy Tuna Treats</h3>
+                            <p class="mt-2 text-gray-600 text-sm">Lickable, creamy treats perfect for bonding with your feline friend.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t">
+        <div class="container mx-auto px-6 py-8 text-center text-sm text-gray-500">
+            <p>Copyright &copy; 2025 Greatest Pets Care. All Rights Reserved.</p>
+             <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="hover:text-dark">Privacy Policy</a>
+                <a href="#" class="hover:text-dark">Terms of Service</a>
+                <a href="#" class="hover:text-dark">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterContainer = document.querySelector('#filters');
+            const productGrid = document.querySelector('#product-grid');
+            const productCards = productGrid.querySelectorAll('.product-card');
+
+            filterContainer.addEventListener('click', (event) => {
+                if (!event.target.classList.contains('filter-btn')) return;
+
+                const filterValue = event.target.getAttribute('data-filter');
+
+                // Update active button
+                filterContainer.querySelector('.active').classList.remove('active');
+                event.target.classList.add('active');
+
+                // Filter logic
+                productCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || filterValue === cardCategory) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
