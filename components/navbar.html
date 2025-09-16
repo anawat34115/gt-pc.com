@@ -2,19 +2,32 @@
     <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <a href="index.html">
-                <img src="img/logo.png" alt="Greatest Pet Care Logo" class="h-28 w-30 rounded-full" >
-            </a></div>
+                <a href="/index.html"> 
+                    <img src="img/logo.png" alt="Greatest Pet Care Logo" class="h-28 w-30 rounded-full">
+                </a>
+            </div>
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="pages/About-us.html" class="text-white hover:text-cyan-600 transition-colors">About Us</a>
                 <a href="pages/capabilities.html" class="text-white hover:text-cyan-600 transition-colors">Capabilities</a>
                 <a href="pages/Ourproduct.html" class="text-white hover:text-cyan-600 transition-colors">Our Product</a>
-                <a href="#" class="text-white hover:text-cyan-600 transition-colors">Our Brand</a>
+                
+                <div class="relative" id="brand-dropdown-container"> 
+                    <button class="flex items-center text-white hover:text-cyan-600 transition-colors focus:outline-none">
+                        Our Brand
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="brand-dropdown-panel" class="absolute hidden bg-white text-gray-800 mt-2 py-2 rounded-md shadow-xl w-48 z-50">
+                        <a href="pages/Winstar.html" class="block px-4 py-2 text-sm hover:bg-cyan-50">Brand A</a>
+                        <a href="pages/brand-b.html" class="block px-4 py-2 text-sm hover:bg-cyan-50">Brand B</a>
+                        <a href="pages/brand-c.html" class="block px-4 py-2 text-sm hover:bg-cyan-50">Brand C</a>
+                    </div>
+                </div>
+
                 <a href="#" class="text-white hover:text-cyan-600 transition-colors">Contact Us</a>
             </nav>
             <button class="md:hidden p-2 rounded-md hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </div>
