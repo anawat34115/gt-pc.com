@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greattitan Dog Food - ผลิตภัณฑ์เกรทไททัน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background-color: #f75c40; /* ส้มแดงจากโลโก้ */
+            position: relative;
+            overflow: hidden;
+        }
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%232e86de" fill-opacity="1" d="M0,192L80,176C160,160,320,128,480,133.3C640,139,800,181,960,186.7C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>'); /* สีน้ำเงินจากโลโก้ */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .greattitan-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            color: #ffffff; /* เปลี่ยนเป็นสีขาวเพื่อให้ตัดกับพื้นหลังส้มแดง */
+            text-shadow: 2px 2px #2e86de, 4px 4px rgba(0,0,0,0.1); /* เงาสีน้ำเงินจากโลโก้ */
+        }
+        
+        /* New Product Card Styles */
+        .bg-slate-blue { background-color: #e3f2fd; } /* โทนฟ้าอ่อน */
+        .bg-light-roast { background-color: #fff3e0; } /* โทนส้มอ่อน */
+        .bg-silver-mist { background-color: #f0f4f7; } /* โทนเทาฟ้าอ่อน */
+
+        .product-card-v2 {
+            border-radius: 2.5rem; /* 40px */
+            padding: 1.5rem;
+            padding-top: 6rem; /* Make space for the overlapping image */
+            text-align: center;
+            position: relative;
+            margin-top: 5rem; /* Give space for the image to pop out */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            will-change: transform;
+        }
+        .product-card-v2:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+        }
+        .product-image-v2 {
+            position: absolute;
+            top: -5rem; /* Pull the image up */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
+        }
+        .add-to-cart-btn {
+            background-color: #f75c40; /* ส้มแดงจากโลโก้ */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* pill shape */
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #de472c; /* ส้มแดงที่เข้มขึ้นเล็กน้อย */
+        }
+        .header-nav-active {
+            color: #f75c40; /* สีส้มแดงสำหรับเมนูที่ Active */
+            border-color: #f75c40; /* เส้นใต้สีส้มแดง */
+        }
+    </style>
+
+        <script src="../js/main.js"></script>
+  <base href="../">
+</head>
+<body class="bg-gray-50">
+
+
+    <header id="navbar-placeholder"></header>
+
+
+<style>
+    body {
+        font-family: 'Kanit', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+</style>
+
+    <main>
+        <section class="hero-bg">
+            <div class="wave"></div>
+            <div class="container mx-auto px-6 py-16 md:py-20  pt-56 md:pt-48 relative z-10">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center md:text-left">
+                        <h1 class="greattitan-logo">Greattitan</h1>
+                        <div class="mt-4 space-y-3">
+                            <div class="flex items-center justify-center md:justify-start">
+                                <img src="https://placehold.co/32x32/ffffff/f75c40?text=💪" alt="ไอคอนกล้ามเนื้อ" class="w-8 h-8 rounded-full mr-3 bg-white p-1">
+                                <p class="text-xl text-white font-semibold">โปรตีนสูง เสริมสร้างกล้ามเนื้อ</p>
+                            </div>
+                            <div class="flex items-center justify-center md:justify-start">
+                                <img src="https://placehold.co/32x32/ffffff/2e86de?text=🦴" alt="ไอคอนกระดูก" class="w-8 h-8 rounded-full mr-3 bg-white p-1">
+                                <p class="text-xl text-white font-semibold">บำรุงกระดูกและข้อต่อให้แข็งแรง</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+<div class="rounded-full shadow-2xl border-8 border-red-300 w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-white">
+  <img src="./img/greattitan.png" 
+       alt="Great Titan" 
+       class="w-48 h-48 md:w-64 md:h-64 object-contain">
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="w-full max-w-7xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">โภชนาการที่ใช่ เพื่อเพื่อนซี้สี่ขาของคุณ</h2>
+                    <p class="text-gray-500 mt-2">คัดสรรสิ่งที่ดีที่สุดเพื่อสุนัขที่คุณรักในทุกๆ วัน</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-24 mt-16">
+                    <div class="product-card-v2 bg-slate-blue">
+                        <img src="https://placehold.co/400x400/2e86de/ffffff?text=Small+Breed" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์เล็ก" class="product-image-v2">
+                        <h3 class="text-2xl font-bold text-gray-800 mt-8">เกรทไททัน สูตรสุนัขพันธุ์เล็ก</h3>
+                        <p class="text-gray-600 mt-2 mb-6 h-12">รสไก่และข้าว ย่อยง่าย เหมาะสำหรับสุนัขพันธุ์เล็ก</p>
+                        <button class="add-to-cart-btn">
+                            เพิ่มลงตะกร้า
+                        </button>
+                    </div>
+
+                    <div class="product-card-v2 bg-light-roast">
+                        <img src="https://placehold.co/400x400/f75c40/ffffff?text=Large+Breed" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
+                        <h3 class="text-2xl font-bold text-gray-800 mt-8">เกรทไททัน สูตรสุนัขพันธุ์ใหญ่</h3>
+                        <p class="text-gray-600 mt-2 mb-6 h-12">รสเนื้อและข้าว เสริมสร้างกระดูกและข้อต่อให้แข็งแรง</p>
+                        <button class="add-to-cart-btn">
+                            เพิ่มลงตะกร้า
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Friends - News & Activities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+
+        /* Custom Tailwind Colors & Theme */
+        :root {
+            --color-primary: #1E40AF; /* Blue-800 */
+            --color-primary-light: #3B82F6; /* Blue-500 */
+            --color-accent-yellow: #FACC15; /* Yellow-400 */
+            --color-accent-orange: #F97316; /* Orange-500 */
+        }
+        
+        .bg-primary { background-color: var(--color-primary); }
+        .text-accent-yellow { color: var(--color-accent-yellow); }
+        .bg-accent-orange { background-color: var(--color-accent-orange); }
+        .hover\:bg-accent-yellow:hover { background-color: var(--color-accent-yellow); }
+        .text-theme-blue { color: var(--color-primary); }
+
+        .line-clamp-3 {
+           overflow: hidden;
+           display: -webkit-box;
+           -webkit-box-orient: vertical;
+           -webkit-line-clamp: 3;
+        }
+
+    </style>
+                <script src="../js/main.js"></script>
+  <base href="../">
+</head>
+<body class="bg-gray-300 text-gray-800">
+
+    <!-- Header & Navigation -->
+       <header id="navbar-placeholder"></header>
+
+
+    <main>
+        <!-- News Section -->
+        <section id="news" class="py-20 bg-gray-700 pt-32 md:pt-48">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-200">NEWS</h2>
+                    <p class="text-gray-300 mt-2 text-xl">ผลิตภัณฑ์ใหม่ล่าสุดของเรา</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <!-- Oh! Puppy Food -->
+                    <div class="text-center">
+                        <img src="https://placehold.co/600x800/e0f2fe/0c4a6e?text=Oh!+Puppy+Food" alt="Oh! Puppy Food Bag" class="rounded-xl shadow-lg mx-auto max-w-sm w-full">
+                    </div>
+
+                    <!-- Great Titan Snacks -->
+                    <div class="space-y-8">
+                        <div class="bg-red-600 text-white p-8 rounded-xl shadow-lg text-center">
+                            <h3 class="text-4xl font-bold mb-2">Great Titan</h3>
+                            <p>"Great Titan for dog lovers"</p>
+                        </div>
+                        <img src="https://placehold.co/600x400/fee2e2/991b1b?text=Great+Titan+Snacks" alt="Great Titan Snacks" class="rounded-xl shadow-lg w-full">
+                         <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-2">เปิดตัวขนมสุนัข 3 รสชาติใหม่!</h4>
+                            <p class="text-gray-600">
+                                บริษัท เกรทเทสท์ บรีดเดอร์ จำกัด เปิดตัวผลิตภัณฑ์ใหม่ ขนมสุนัข 3 รสชาติจาก Great Titan ผลิตจากวัตถุดิบคุณภาพสูง พร้อมให้เพื่อนสุนัขของคุณได้ลิ้มลองแล้ววันนี้
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Section -->
+        <section id="activity" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">ACTIVITY</h2>
+                    <p class="text-gray-600 mt-2 text-xl">ภาพกิจกรรมที่น่าประทับใจ</p>
+                </div>
+
+                <!-- Simple Image Gallery Layout -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transition hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Pet+Expo" alt="Pet Expo 2019" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500">Bitec Bangna</p>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1">Pet Expo 2019</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transition hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/d9f99d/ffffff?text=Pet+Variety" alt="Pet Variety 2019" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500">Impact Muangthong Thani</p>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1">PET VARIETY 2019</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transition hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/fecaca/ffffff?text=Community" alt="Community Event" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500">กิจกรรม</p>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1">ช่วยเหลือสัตว์จร</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transition hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/fef08a/ffffff?text=Workshop" alt="Workshop Event" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500">Workshop</p>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1">สอนทำขนมน้องหมา</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transition hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/d1d5db/ffffff?text=Meetup" alt="Meetup Event" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500">พบปะ</p>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1">รวมพลคนรักสุนัข</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 6 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transition hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/c4b5fd/ffffff?text=Grand+Sale" alt="Grand Sale" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500">โปรโมชั่น</p>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1">มหกรรมลดราคาสินค้า</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
+
+
+
