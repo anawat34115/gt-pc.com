@@ -25,12 +25,12 @@ body {
 }
 
 /* -------------------- Wavy Background -------------------- */
-.wavy-bg {
+/* .wavy-bg {
 background-image: url("../img/mainsection.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+} */
 
 /* -------------------- Cards -------------------- */
 .brand-card img {

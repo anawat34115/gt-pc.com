@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ease-in-out bg-blue-900 md:bg-transparent">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ease-in-out bg-blue-900 mb-5">
   <div class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
       <div class="flex items-center space-x-2">
@@ -32,6 +32,7 @@
         <a href="pages/About-us.html" class="text-white hover:text-cyan-600 transition-colors">About Us</a>
         <a href="pages/capabilities.html" class="text-white hover:text-cyan-600 transition-colors">Capabilities</a>
         <a href="pages/Ourproduct.html" class="text-white hover:text-cyan-600 transition-colors">Our Product</a>
+        <a href="pages/standard.html" class="text-white hover:text-cyan-600 transition-colors">Standard</a>
 
         <div id="brand-dropdown-container" class="relative">
           <div class="flex items-center">
@@ -57,6 +58,8 @@
         </div>
 
         <a href="pages/activity.html" class="text-white hover:text-cyan-600 transition-colors">Activity</a>
+                <a href="pages/Contact.html" class="text-white hover:text-cyan-600 transition-colors">Contact-us</a>
+
       </nav>
 
       <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-md" aria-controls="mobile-menu" aria-expanded="false">
@@ -82,14 +85,14 @@
         </button>
       </div>
       <div id="mobile-brand-panel" class="hidden flex-col pl-4 space-y-2">
-<a href="pages/greattitan.html" class="block hover:text-cyan-400">Great Titan</a>
-<a href="pages/lincoln.html" class="block hover:text-cyan-400">Lincoln</a>
-<a href="pages/cherman.html" class="block hover:text-cyan-400">Cherman</a>
-<a href="pages/pluto.html" class="block hover:text-cyan-400">Pluto</a>
-<a href="pages/silver.html" class="block hover:text-cyan-400">Silver</a>
-<a href="pages/ole.html" class="block hover:text-cyan-400">Ole</a>
-<a href="pages/winstar.html" class="block hover:text-cyan-400">Winstar</a>
-<a href="pages/dogker.html" class="block hover:text-cyan-400">Dogker</a>
+<a href="pages/Great-titan.html" class="block hover:text-cyan-400">Great Titan</a>
+<a href="pages/Lincoln.html" class="block hover:text-cyan-400">Lincoln</a>
+<a href="pages/Cherman.html" class="block hover:text-cyan-400">Cherman</a>
+<a href="pages/Pluto.html" class="block hover:text-cyan-400">Pluto</a>
+<a href="pages/Silver.html" class="block hover:text-cyan-400">Silver</a>
+<a href="pages/Ole.html" class="block hover:text-cyan-400">Ole</a>
+<a href="pages/Winstar.html" class="block hover:text-cyan-400">Winstar</a>
+<a href="pages/Dogker.html" class="block hover:text-cyan-400">Dogker</a>
       </div>
     </div>
 
@@ -100,26 +103,24 @@
 
 
 <script>
-// Wait for the DOM to be fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Element Selections ---
   const header = document.getElementById('main-header');
   
-  // Mobile menu elements
+  // --- Mobile menu elements ---
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuIcon = document.getElementById('mobile-menu-icon');
 
-  // Desktop dropdown elements
+  // --- Desktop dropdown elements ---
   const desktopDropdownContainer = document.getElementById('brand-dropdown-container');
   const desktopDropdownToggle = document.getElementById('brand-dropdown-toggle');
   const desktopDropdownPanel = document.getElementById('brand-dropdown-panel');
 
-  // Mobile dropdown elements
+  // --- Mobile dropdown elements ---
   const mobileBrandToggle = document.getElementById('mobile-brand-toggle');
   const mobileBrandPanel = document.getElementById('mobile-brand-panel');
-  const mobileBrandIcon = mobileBrandToggle.querySelector('svg');
+  const mobileBrandIcon = mobileBrandToggle?.querySelector('svg');
 
   // SVG paths for hamburger and close icons
   const iconPaths = {
@@ -133,25 +134,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileMenuToggle && mobileMenu && mobileMenuIcon) {
     mobileMenuToggle.addEventListener('click', () => {
       const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-      
       mobileMenu.classList.toggle('hidden');
       mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
       mobileMenuIcon.setAttribute('d', isExpanded ? iconPaths.hamburger : iconPaths.close);
     });
   }
 
-  // 2. Toggle Desktop "Our Brand" Dropdown (Click-based)
+  // 2. Toggle Desktop "Our Brand" Dropdown
   if (desktopDropdownContainer && desktopDropdownToggle && desktopDropdownPanel) {
     desktopDropdownToggle.addEventListener('click', (event) => {
-      // Stop the click from being caught by the document listener below
       event.stopPropagation();
-      
       const isExpanded = desktopDropdownToggle.getAttribute('aria-expanded') === 'true';
       desktopDropdownPanel.classList.toggle('hidden');
       desktopDropdownToggle.setAttribute('aria-expanded', !isExpanded);
     });
 
-    // Close the dropdown if the user clicks anywhere outside of it
     document.addEventListener('click', () => {
       desktopDropdownPanel.classList.add('hidden');
       desktopDropdownToggle.setAttribute('aria-expanded', 'false');
@@ -162,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileBrandToggle && mobileBrandPanel && mobileBrandIcon) {
     mobileBrandToggle.addEventListener('click', () => {
       const isExpanded = mobileBrandToggle.getAttribute('aria-expanded') === 'true';
-
       mobileBrandPanel.classList.toggle('hidden');
       mobileBrandIcon.classList.toggle('rotate-180');
       mobileBrandToggle.setAttribute('aria-expanded', !isExpanded);
@@ -179,8 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 5. Auto add padding-top ให้ element แรกหลัง header
+  const adjustContentPadding = () => {
+    const firstElement = header.nextElementSibling;
+    if(firstElement) {
+      firstElement.style.paddingTop = header.offsetHeight + 'px';
+    }
+  }
+
+  // เรียกครั้งแรก
+  adjustContentPadding();
+
+  // เรียกใหม่เวลาหน้าต่าง resize (responsive)
+  window.addEventListener('resize', adjustContentPadding);
+
 });
 </script>
+
 
 </body>
 </html>

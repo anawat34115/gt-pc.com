@@ -26,8 +26,17 @@
 
     
     <!-- Hero Section -->
-<section class="min-h-[100vh] bg-primary flex items-center justify-center text-white pt-20 wavy-bg">
-  <div class="container mx-auto px-6 flex justify-end">
+<section class="relative min-h-[100vh] flex items-center justify-center text-white pt-20 overflow-hidden">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+    <!-- <source src="./img/video/Greatest Pets Care - Corporate VDO (Male voice) (1).mp4" type="video/mp4"> -->
+  </video>
+
+  <!-- Overlay มืดๆ ทับ video -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Content -->
+  <div class="container mx-auto px-6 flex justify-end relative z-10">
     <div class="max-w-3xl bg-primary-light/60 p-8 rounded-xl backdrop-blur-sm text-right">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-center text-accent-yellow">
         Always there for great friends
@@ -39,12 +48,13 @@
       <div class="flex justify-center">
         <a href="#products"
            class="bg-accent-orange hover:bg-accent-yellow text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg shadow-lg">
-            ดูผลิตภัณฑ์ของเรา
+          ดูผลิตภัณฑ์ของเรา
         </a>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -87,26 +97,35 @@
             </div>
 
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Type Card: DRY -->
-                <div class="text-center p-8 bg-white rounded-xl shadow-md">
-                    <img src="./img/dry.png" alt="Dry Pet Food" class="w-full h-75 object-cover rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">อาหารเม็ด (DRY)</h3>
-                    <p class="text-gray-600">สะดวกในการจัดเก็บ ให้คุณค่าทางโภชนาการที่ครบถ้วนและสมดุล</p>
-                </div>
-                <!-- Type Card: WET -->
-                <div class="text-center p-8 bg-white rounded-xl shadow-md">
-                    <img src="img/wet.png" alt="Wet Pet Food" class="w-full h-75 object-cover rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">อาหารเปียก (WET)</h3>
-                    <p class="text-gray-600">เพิ่มความน่ากินด้วยรสชาติและกลิ่นหอมที่สัตว์เลี้ยงชื่นชอบ พร้อมช่วยเพิ่มน้ำในร่างกาย</p>
-                </div>
-                <!-- Type Card: SNACK -->
-                <div class="text-center p-8 bg-white rounded-xl shadow-md">
-                    <img src="https://placehold.co/400x300/9b59b6/ffffff?text=ขนม+(SNACK)" alt="Pet Snacks" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">ขนม (SNACK)</h3>
-                    <p class="text-gray-600">สำหรับให้เป็นรางวัลหรือของว่าง ช่วยสร้างความสัมพันธ์ที่ดีกับสัตว์เลี้ยง</p>
-                </div>
-            </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Type Card: DRY -->
+    <div class="group text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+        <div class="overflow-hidden rounded-xl mb-4">
+            <img src="img/outproduct/dogfooddry.png" alt="Dry Pet Food" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-gray-800">อาหารเม็ด (DRY)</h3>
+        <p class="text-gray-600">สะดวกในการจัดเก็บ ให้คุณค่าทางโภชนาการที่ครบถ้วนและสมดุล</p>
+    </div>
+
+    <!-- Type Card: WET -->
+    <div class="group text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+        <div class="overflow-hidden rounded-xl mb-4">
+            <img src="img/outproduct/wetfood.png" alt="Wet Pet Food" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-gray-800">อาหารเปียก (WET)</h3>
+        <p class="text-gray-600">เพิ่มความน่ากินด้วยรสชาติและกลิ่นหอมที่สัตว์เลี้ยงชื่นชอบ พร้อมช่วยเพิ่มน้ำในร่างกาย</p>
+    </div>
+
+    <!-- Type Card: SNACK -->
+    <div class="group text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+        <div class="overflow-hidden rounded-xl mb-4">
+            <img src="img/outproduct/Dog Snacks.png" alt="Pet Snacks" class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-gray-800">ขนม (SNACK)</h3>
+        <p class="text-gray-600">สำหรับให้เป็นรางวัลหรือของว่าง ช่วยสร้างความสัมพันธ์ที่ดีกับสัตว์เลี้ยง</p>
+    </div>
+</div>
+
         </div>
     </section>
 
@@ -119,29 +138,30 @@
         <div class="space-y-6">
             <div class="flex flex-col md:flex-row items-center gap-4 bg-gradient-to-r from-blue-100 to-white p-4 rounded-xl shadow-lg">
                 <div class="md:w-1/4">
-                    <img src="./img/house.png" class="rounded-lg shadow-xl w-full" alt="คลังสินค้า">
+                    <img src="./img/Mainpage/Warehouse.jpg" class="rounded-lg shadow-xl w-full" alt="คลังสินค้า">
                 </div>
                 <div class="md:w-2/3">
                     <h3 class="text-xl font-bold mb-2 text-theme-blue">คลังสินค้า (Warehouse)</h3>
-                    <p class="text-base text-gray-700">เรามีคลังสินค้าที่ทันสมัย ควบคุมอุณหภูมิและความชื้นเพื่อให้วัตถุดิบและสินค้าคงคุณภาพดีที่สุดก่อนส่งถึงมือคุณ</p>
+                    <p class="text-base text-gray-700">บริษัทฯ มีกรรมวิธีการผลิตและการจัดเก็บสินค้าแยกตามหมวดหมู่แต่ละประเภทของสินค้า ที่สามารถรองรับสินค้าได้ตามความต้องการของลูกค้า มีความเหมาะสม สะอาดและปลอดภัย ที่ได้รับการรับรองตามมาตรฐานสากล</p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row-reverse items-center gap-4 bg-gradient-to-l from-yellow-100 to-white p-4 rounded-xl shadow-lg">
                 <div class="md:w-1/4">
-                    <img src="./img/scient.png" class="rounded-lg shadow-xl w-full" alt="ความสามารถในการผลิต">
+                    <img src="./img/Mainpage/Product Development.jpg" class="rounded-lg shadow-xl w-full" alt="ความสามารถในการผลิต">
                 </div>
                 <div class="md:w-2/3">
                     <h3 class="text-xl font-bold mb-2 text-theme-blue">ความสามารถในการผลิต (Production Capabilities)</h3>
-                    <p class="text-base text-gray-700">โรงงานของเราใช้เครื่องจักรที่ทันสมัยและมีกำลังการผลิตสูง ผ่านการรับรองมาตรฐานสากล ISO 9001, GMP และ HACCP</p>
+                    <p class="text-base text-gray-700">บริษัทฯ เป็นผู้ผลิตและส่งออกอาหารสัตว์ ที่มีความชำนาญและประสบการณ์ และมีกำลังการผลิต มีศักยภาพการผลิตกว่า 31,000 ตันต่อปี พร้อมอุปกรณ์การผลิตที่ทันสมัย และระบบการควบคุมคุณภาพที่เข้มงวด
+ได้รับการรับรองมาตรฐานการผลิตสากล ได้แก่ ISO 9001:2015, GMP, HACCP และมาตรฐานฮาลาล (Halal)</p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row items-center gap-4 bg-gradient-to-r from-blue-100 to-white p-4 rounded-xl shadow-lg">
                 <div class="md:w-1/4">
-                    <img src="./img/scient.png" class="rounded-lg shadow-xl w-full" alt="ความปลอดภัยและคุณภาพ">
+                    <img src="./img/Mainpage/house.png" class="rounded-lg shadow-xl w-full" alt="ความปลอดภัยและคุณภาพ">
                 </div>
                 <div class="md:w-2/3">
-                    <h3 class="text-xl font-bold mb-2 text-theme-blue">ความปลอดภัยและคุณภาพ (Safety & Quality)</h3>
-                    <p class="text-base text-gray-700">เรามีทีมควบคุมคุณภาพที่ตรวจสอบทุกขั้นตอน ตั้งแต่การคัดเลือกวัตถุดิบจนถึงผลิตภัณฑ์สำเร็จรูป เพื่อให้คุณมั่นใจในทุกคำ</p>
+                    <h3 class="text-xl font-bold mb-2 text-theme-blue">Safety & Quality to Trust</h3>
+                    <p class="text-base text-gray-700">บริษัทฯ มีการคัดเลือกวัตถุดิบที่มีคุณภาพและความปลอดภัย ก่อนเข้าสู่กระบวนการผลิต ด้วยเครื่องจักรที่ทันสมัย จนได้เป็นผลิตภัณฑ์ที่มีความปลอดภัย และสามารถรักษาคุณภาพอาหารได้ตามเกณฑ์ที่กำหนดไว้ และสอดคล้องกับหลักวิชาการ โดยมีผู้เชี่ยวชาญด้านการผลิตและประกันคุณภาพ ควบคุมดูแลอย่างใกล้ชิด</p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row-reverse items-center gap-4 bg-gradient-to-l from-yellow-100 to-white p-4 rounded-xl shadow-lg">
@@ -150,7 +170,7 @@
                 </div>
                 <div class="md:w-2/3">
                     <h3 class="text-xl font-bold mb-2 text-theme-blue">การพัฒนาผลิตภัณฑ์ (Product Development)</h3>
-                    <p class="text-base text-gray-700">ทีมวิจัยและพัฒนาของเรามุ่งมั่นสร้างสรรค์ผลิตภัณฑ์ใหม่ๆ ที่ตอบโจทย์ความต้องการของสัตว์เลี้ยงและเจ้าของ</p>
+                    <p class="text-base text-gray-700">บริษัทฯ มุ่งมั่นวิจัยและพัฒนาสูตรอาหารสัตว์เลี้ยงที่ตอบสนองความต้องการของตลาดที่เปลี่ยนแปลงอยู่เสมอ รวมถึงพัฒนารสชาติและรูปแบบผลิตภัณฑ์ให้เหมาะกับสัตว์เลี้ยงแต่ละประเภทและช่วงวัย เพื่อให้สัตว์เลี้ยงได้รับโภชนาการที่สมดุลและเหมาะสมที่สุด</p>
                 </div>
             </div>
         </div>
