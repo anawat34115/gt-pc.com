@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
         body {
             font-family: 'Kanit', sans-serif;
@@ -38,10 +40,19 @@
             text-shadow: 2px 2px #6b123b, 4px 4px rgba(0,0,0,0.2); /* เงาม่วง */
         }
 
-        /* Product Card */
-        .bg-cosmic-purple { background-color: #f3e5f5; } /* ม่วงอ่อน */
-        .bg-galaxy-gold { background-color: #fff8e1; }   /* เหลืองอ่อน */
-        .bg-space-gray { background-color: #f5f5f5; }    /* เทาอ่อน */
+        /* Pluto - Small Breed Purple */
+.bg-pluto-small-purple { background-color: #f5a79c; }
+
+/* Pluto - Large Breed Green */
+.bg-pluto-large-green { background-color: #E2F0D9; }
+
+/* Pluto - Large Breed Orange */
+.bg-pluto-large-orange { background-color: #FFE6CC; }
+
+/* Pluto - Large Breed Blue */
+.bg-pluto-large-blue { background-color: #f9ded9; }
+.bg-pluto-large-brown { background-color: #f9ded99c; }
+
 
         .product-card-v2 {
             border-radius: 2.5rem;
@@ -101,11 +112,14 @@
                     <h1 class="pluto-logo">Pluto</h1>
                     <div class="mt-4 space-y-3">
                         <div class="flex items-center justify-center md:justify-start">
-                            <img src="https://placehold.co/32x32/ffffff/6b123b?text=⭐" alt="icon" class="w-8 h-8 rounded-full mr-3 bg-white p-1">
+                                  <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
+<i class="fa-solid fa-star"></i>
+                                  </div>  
                             <p class="text-xl text-white font-semibold">พลังงานจากจักรวาล เพื่อเพื่อนซี้สี่ขา</p>
                         </div>
                         <div class="flex items-center justify-center md:justify-start">
-                            <img src="https://placehold.co/32x32/ffffff/f4b400?text=🌙" alt="icon" class="w-8 h-8 rounded-full mr-3 bg-white p-1">
+                                                              <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
+<i class="fa-solid fa-moon"></i>                                  </div>  
                             <p class="text-xl text-white font-semibold">โภชนาการเต็มเปี่ยม แข็งแรงทุกมิติ</p>
                         </div>
                     </div>
@@ -127,7 +141,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
-                <div class="product-card-v2 bg-cosmic-purple">
+                <div class="product-card-v2 bg-pluto-small-purple">
                     <img src="../img/Pluto/pluto1.png" alt="Pluto สูตรสุนัขพันธุ์เล็ก" class="product-image-v2">
                     <h3 class="text-2xl font-bold text-gray-800 mt-8">Pluto สูตรสุนัขพันธุ์เล็ก</h3>
                     <p class="text-gray-600 mt-2 mb-6 h-12">รสไก่และธัญพืช ย่อยง่าย อร่อยทุกคำ</p>
@@ -136,7 +150,7 @@
                     </button>
                 </div>
 
-                <div class="product-card-v2 bg-galaxy-gold">
+                <div class="product-card-v2 bg-pluto-large-green">
                     <img src="../img/Pluto/pluto2.png" alt="Pluto สูตรสุนัขพันธุ์ใหญ่" class="product-image-v2">
                     <h3 class="text-2xl font-bold text-gray-800 mt-8">Pluto สูตรสุนัขพันธุ์ใหญ่</h3>
                     <p class="text-gray-600 mt-2 mb-6 h-12">รสเนื้อและธัญพืช บำรุงกระดูกและข้อต่อ</p>
@@ -145,7 +159,7 @@
                     </button>
                 </div>
 
-                                <div class="product-card-v2 bg-galaxy-gold">
+                                <div class="product-card-v2 bg-pluto-large-orange">
                     <img src="../img/Pluto/pluto3.png" alt="Pluto สูตรสุนัขพันธุ์ใหญ่" class="product-image-v2">
                     <h3 class="text-2xl font-bold text-gray-800 mt-8">Pluto สูตรสุนัขพันธุ์ใหญ่</h3>
                     <p class="text-gray-600 mt-2 mb-6 h-12">รสเนื้อและธัญพืช บำรุงกระดูกและข้อต่อ</p>
@@ -154,7 +168,7 @@
                     </button>
                 </div>
 
-                                <div class="product-card-v2 bg-galaxy-gold">
+                                <div class="product-card-v2 bg-pluto-large-brown">
                     <img src="../img/Pluto/pluto4.png" alt="Pluto สูตรสุนัขพันธุ์ใหญ่" class="product-image-v2">
                     <h3 class="text-2xl font-bold text-gray-800 mt-8">Pluto สูตรสุนัขพันธุ์ใหญ่</h3>
                     <p class="text-gray-600 mt-2 mb-6 h-12">รสเนื้อและธัญพืช บำรุงกระดูกและข้อต่อ</p>
@@ -163,7 +177,7 @@
                     </button>
                 </div>
 
-                                <div class="product-card-v2 bg-galaxy-gold">
+                                <div class="product-card-v2 bg-pluto-large-blue">
                     <img src="../img/Pluto/pluto5.png" alt="Pluto สูตรสุนัขพันธุ์ใหญ่" class="product-image-v2">
                     <h3 class="text-2xl font-bold text-gray-800 mt-8">Pluto สูตรสุนัขพันธุ์ใหญ่</h3>
                     <p class="text-gray-600 mt-2 mb-6 h-12">รสเนื้อและธัญพืช บำรุงกระดูกและข้อต่อ</p>

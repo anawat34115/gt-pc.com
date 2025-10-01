@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
         body {
             font-family: 'Kanit', sans-serif;
@@ -39,9 +41,19 @@
         }
         
         /* New Product Card Styles */
-        .bg-slate-blue { background-color: #e3f2fd; } /* โทนฟ้าอ่อน */
-        .bg-light-roast { background-color: #fff3e0; } /* โทนส้มอ่อน */
-        .bg-silver-mist { background-color: #f0f4f7; } /* โทนเทาฟ้าอ่อน */
+/* Pastel Mint Green */
+.bg-titan-muscle { background-color: #E0F2E1; }
+/* Pastel Orange / Peach */
+.bg-titan-healthy { background-color: #FFE6D2; }
+/* Pastel Pink / Coral */
+.bg-titan-grooming { background-color: #FFDCDD; }
+/* Pastel Pink / Coral */
+.bg-titan-grooming { background-color: #FFDCDD; }
+/* Great Titan - Small Breed Teal */
+.bg-titan-small-breed { background-color: #00968741; }
+
+/* Great Titan - Adult Orange */
+.bg-titan-adult { background-color: #f57b003d; }
 
         .product-card-v2 {
             border-radius: 2.5rem; /* 40px */
@@ -112,11 +124,15 @@
                         <h1 class="greattitan-logo">Great-Titan</h1>
                         <div class="mt-4 space-y-3">
                             <div class="flex items-center justify-center md:justify-start">
-                                <img src="https://placehold.co/32x32/ffffff/f75c40?text=💪" alt="ไอคอนกล้ามเนื้อ" class="w-8 h-8 rounded-full mr-3 bg-white p-1">
-                                <p class="text-xl text-white font-semibold">โปรตีนสูง เสริมสร้างกล้ามเนื้อ</p>
+                                  <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
+                    <i class="fa-solid fa-drumstick-bite "></i>           
+                                  </div>                     
+<p class="text-xl text-white font-semibold">โปรตีนสูง เสริมสร้างกล้ามเนื้อ</p>
                             </div>
                             <div class="flex items-center justify-center md:justify-start">
-                                <img src="https://placehold.co/32x32/ffffff/2e86de?text=🦴" alt="ไอคอนกระดูก" class="w-8 h-8 rounded-full mr-3 bg-white p-1">
+                                  <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
+<i class="fa-solid fa-bone  text-sm"></i>
+</div>
                                 <p class="text-xl text-white font-semibold">บำรุงกระดูกและข้อต่อให้แข็งแรง</p>
                             </div>
                         </div>
@@ -140,7 +156,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
-                    <div class="product-card-v2 bg-slate-blue">
+                    <div class="product-card-v2 bg-titan-muscle">
                         <img src="./img/gtt/gtt-chicken-with-whey-proiten.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์เล็ก" class="product-image-v2">
                         <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan ขนมสุนัข รสไก่และเวย์โปรตีน</h3>
                         <p class="text-gray-600 mt-2 mb-6 h-12"> รสไก่ผสมเวย์โปรตีน สูตร "Strong muscle" ช่วยเสริมสร้างกล้ามเนื้อ สำหรับสุนัขอายุ 3 เดือนขึ้นไป</p>
@@ -149,7 +165,7 @@
                         </button>
                     </div>
 
-                    <div class="product-card-v2 bg-light-roast">
+                    <div class="product-card-v2 bg-titan-healthy">
                         <img src="./img/gtt/Smoke-salmon.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
                         <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan Snack Smoked Salmon original flavour stick</h3>
                         <p class="text-gray-600 mt-2 mb-6 h-12">รสแซลมอนรมควัน สูตร "Healthy" เพื่อสุขภาพที่ดี สำหรับสุนัขอายุ 3 เดือนขึ้นไป</p>
@@ -158,7 +174,7 @@
                         </button>
                     </div>
 
-                                        <div class="product-card-v2 bg-light-roast">
+                                        <div class="product-card-v2 bg-titan-grooming">
                         <img src="./img/gtt/gtt-chicken-with-whey-strawberry.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
                         <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan ขนมสุนัข รสไก่และสตรอว์เบอร์รี</h3>
                         <p class="text-gray-600 mt-2 mb-6 h-12">รสไก่และสตรอว์เบอร์รี สูตร "Great Grooming" ช่วยบำรุงขนให้สวยงาม สำหรับสุนัขอายุ 3 เดือนขึ้นไป</p>
@@ -168,7 +184,7 @@
                     </div>
 
 
-                                        <div class="product-card-v2 bg-light-roast">
+                                        <div class="product-card-v2 bg-titan-small-breed">
                         <img src="./img/gtt/gtt-ไก่และข้าว.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
                         <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan อาหารสุนัขโต สูตรไก่และข้าว สำหรับสุนัขพันธุ์เล็ก</h3>
                         <p class="text-gray-600 mt-2 mb-6 h-12">อาหารเม็ดสำหรับสุนัขโตเต็มวัยพันธุ์เล็ก อายุ 1 ปีขึ้นไป รสไก่และข้าว</p>
@@ -178,7 +194,7 @@
                     </div>
 
 
-                                        <div class="product-card-v2 bg-light-roast">
+                                        <div class="product-card-v2 bg-titan-adult">
                         <img src="./img/gtt/gtt-สูตรเนื้อ.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
                         <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan อาหารสุนัขโต สูตรเนื้อและข้าว สำหรับสุนัขพันธุ์ใหญ่</h3>
                         <p class="text-gray-600 mt-2 mb-6 h-12">อาหารเม็ดสำหรับสุนัขโตเต็มวัยพันธุ์ใหญ่ อายุ 1 ปีขึ้นไป รสเนื้อและข้าว</p>

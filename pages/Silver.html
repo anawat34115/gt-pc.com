@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
         body {
             font-family: 'Kanit', sans-serif;
@@ -41,7 +43,8 @@
         /* Product Card */
         .bg-silver-light { background-color: #f2f2f2; } /* เทาเงินอ่อน */
         .bg-silver-blue { background-color: #e3eaf5; } /* ฟ้าน้ำเงินอ่อน */
-        .bg-silver-cream { background-color: #fff8f0; } /* ครีมอ่อน */
+        .bg-silver-cream { background-color: #f5ddef; } /* ครีมอ่อน */
+        .bg-silver-orange { background-color: #f6f8db; } /* ครีมอ่อน */
 
         .product-card-v2 {
             border-radius: 2.5rem;
@@ -103,11 +106,14 @@
                     <h1 class="silver-logo">Silver</h1>
                     <div class="mt-4 space-y-3">
                         <div class="flex items-center justify-center md:justify-start">
-                            <img src="https://placehold.co/32x32/ffffff/0d2340?text=🐾" alt="icon" class="w-8 h-8 rounded-full mr-3 bg-white p-1">
-                            <p class="text-xl text-white font-semibold">โภชนาการสมดุล สำหรับเพื่อนรักสี่ขา</p>
+                                  <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
+<i class="fa-solid fa-paw"></i>                                  
+</div>                          
+    <p class="text-xl text-white font-semibold">โภชนาการสมดุล สำหรับเพื่อนรักสี่ขา</p>
                         </div>
                         <div class="flex items-center justify-center md:justify-start">
-                            <img src="https://placehold.co/32x32/ffffff/d9d9d9?text=🐱" alt="icon" class="w-8 h-8 rounded-full mr-3 bg-white p-1">
+                                  <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
+<i class="fa-solid fa-cat"></i>                                </div>  
                             <p class="text-xl text-white font-semibold">สูตรพิเศษเพื่อสุขภาพแมวและสุนัข</p>
                         </div>
                     </div>
@@ -128,33 +134,97 @@
                 <p class="text-gray-500 mt-2">Silver Pet Food คัดสรรคุณภาพสำหรับสัตว์เลี้ยงที่คุณรัก</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-x-10 gap-y-24 mt-16">
                 <!-- Chicken Flavor -->
                 <div class="product-card-v2 bg-silver-light">
-                    <img src="https://placehold.co/400x400/d9d9d9/0d2340?text=Chicken" alt="Silver Chicken" class="product-image-v2">
-                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสไก่</h3>
-                    <p class="text-gray-600 mt-2 mb-6 h-12">อร่อย ย่อยง่าย โปรตีนคุณภาพสูง</p>
+                    <img src="../img/Silver/Untitled-2-01.png" alt="Silver Chicken" class="product-image-v2">
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver สูตรปลาทูน่าและข้ามหอมมะลิผสมทูน่าอบแห้ง</h3>
+                    <p class="text-gray-600 mt-2 mb-12 h-12">สำหรับแมวกินยาก ขี้เบื่ออาหาร ช่วยให้เจริญอาหาร
+                         “สูตร Tasty” สูตรปราบเซียน สำหรับแมวทานยาก</p>
                     <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
                 </div>
 
                 <!-- Tuna Flavor -->
                 <div class="product-card-v2 bg-silver-blue">
-                    <img src="https://placehold.co/400x400/0d2340/ffffff?text=Tuna" alt="Silver Tuna" class="product-image-v2">
-                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสปลาทูน่า</h3>
-                    <p class="text-gray-600 mt-2 mb-6 h-12">บำรุงขนเงางาม สุขภาพแข็งแรง</p>
+                    <img src="../img/Silver/Untitled-2-02.png" alt="Silver Tuna" class="product-image-v2">
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสปลาทูน่าและข้าวหอมมะลิ</h3>
+                    <p class="text-gray-600 mt-2 mb-12 h-12">สำหรับแมวเลี้ยงระบบปิด เลี้ยงในบ้าน อึเก็บง่าย ถ่ายเป็นก้อน
+ ช่วยลดกลิ่นมูล กลิ่นปัสสาวะ</p>
                     <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
                 </div>
 
                 <!-- Salmon Flavor -->
                 <div class="product-card-v2 bg-silver-cream">
-                    <img src="https://placehold.co/400x400/f2f2f2/0d2340?text=Salmon" alt="Silver Salmon" class="product-image-v2">
-                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสแซลมอน</h3>
-                    <p class="text-gray-600 mt-2 mb-6 h-12">โอเมก้า 3 บำรุงสมองและหัวใจ</p>
+                    <img src="../img/Silver/Untitled-2-03.png" alt="Silver Salmon" class="product-image-v2">
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสปลาทะเล</h3>
+                    <p class="text-gray-600 mt-2 mb-12 h-12">สำหรับแมวที่ต้องการควบคุมน้ำหนักและรูปร่างที่สมส่วน 
+                        ระบบเผาผลาญทำงานได้ดี</p>
                     <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
                 </div>
+
+                                <div class="product-card-v2 bg-silver-orange">
+                    <img src="../img/Silver/Untitled-2-04.png" alt="Silver Salmon" class="product-image-v2">
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสปลาทูและข้ามหอมมะลิ</h3>
+                    <p class="text-gray-600 mt-2 mb-12 h-12">สำหรับแมวที่ต้องการพลังงานเพื่อฟื่นฟูร่างกาย 
+                        เสริมสร้างกล้ามเนื้อ ตัวแน่น ไม่เหลว</p>
+                    <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+                </div>
+
+
+ 
             </div>
         </div>
     </section>
+
+        <section class="py-20">
+        <div class="w-full max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800">Silver กระสอบ</h2>
+                <p class="text-gray-500 mt-2">Silver Pet Food คัดสรรคุณภาพสำหรับสัตว์เลี้ยงที่คุณรัก</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-x-10 gap-y-24 mt-16">
+                <!-- Chicken Flavor -->
+                <div class="product-card-v2 bg-silver-light">
+                    <img src="../img/Silver/Untitled-2-05.png" alt="Silver Chicken" class="product-image-v2">
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver สูตรปลาทูน่าและข้ามหอมมะลิผสมทูน่าอบแห้ง 1 กก.</h3>
+                    <p class="text-gray-600 mt-2 mb-12 h-12">สำหรับแมวกินยาก ขี้เบื่ออาหาร ช่วยให้เจริญอาหาร
+                        อาหารแมวซิลเวอร์ “สูตร Tasty” สูตรปราบเซียน สำหรับแมวทานยาก</p>
+                    <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+                </div>
+
+                <!-- Tuna Flavor -->
+                <div class="product-card-v2 bg-silver-blue">
+                    <img src="../img/Silver/Untitled-2-06.png" alt="Silver Tuna" class="product-image-v2">
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสปลาทูน่าและข้าวหอมมะลิ 1 กก.</h3>
+                    <p class="text-gray-600 mt-2 mb-12 h-12 ">สำหรับแมวเลี้ยงระบบปิด เลี้ยงในบ้าน อึเก็บง่าย ถ่ายเป็นก้อน
+ ช่วยลดกลิ่นมูล กลิ่นปัสสาวะ</p>
+                    <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+                </div>
+
+                <!-- Salmon Flavor -->
+                <div class="product-card-v2 bg-silver-cream">
+                    <img src="../img/Silver/Untitled-2-07.png" alt="Silver Salmon" class="product-image-v2">
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสปลาทะเล 1กก.</h3>
+                    <p class="text-gray-600 mt-2 mb-12 h-12">สำหรับแมวที่ต้องการควบคุมน้ำหนักและรูปร่างที่สมส่วน 
+                        ระบบเผาผลาญทำงานได้ดี</p>
+                    <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+                </div>
+
+                                <div class="product-card-v2 bg-silver-orange">
+                    <img src="../img/Silver/Untitled-2-08.png" alt="Silver Salmon" class="product-image-v2">
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8">Silver รสปลาทูและข้ามหอมมะลิ 1 กก.</h3>
+                    <p class="text-gray-600 mt-2 mb-12 h-12">สำหรับแมวที่ต้องการพลังงานเพื่อฟื่นฟูร่างกาย 
+                        เสริมสร้างกล้ามเนื้อ ตัวแน่น ไม่เหลว</p>
+                    <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+                </div>
+
+
+ 
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <div id="footer-placeholder"></div>
