@@ -8,29 +8,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Kanit', 'Inter', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .brand-card {
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease-in-out;
-            overflow: hidden; 
-        }
-        .brand-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-        .brand-logo-wrapper {
-            width: 88px;
-            height: 88px;
-            margin-top: -44px; /* Half of height to overlap perfectly */
-            border: 4px solid #ffffff;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-    </style>
+<style>
+    body {
+        font-family: 'Kanit', 'Inter', sans-serif;
+        background-color: #f8f9fa;
+    }
+    .brand-card {
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden; 
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+    .brand-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .brand-logo-wrapper {
+        width: 88px;
+        height: 88px;
+        margin-top: -44px;
+        border: 4px solid #ffffff;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+    /* **การแก้ไข: กำหนดรูปภาพพื้นหลังให้ Hero Section โดยตรง** */
+    .hero-section {
+        background-image: url('../img/banner/ปรับขนาด-AW-1920x800-px-_-รวมแยรนด์.jpg'); 
+        background-size: cover; /* ทำให้รูปภาพขยายเต็มพื้นที่ */
+        background-position: center; /* จัดรูปภาพให้อยู่กึ่งกลาง */
+        position: relative;
+    }
+    /* สีขอบด้านล่างตามสีแบรนด์ */
+    .brand-border-red { border-bottom: 6px solid rgb(239 68 68); } /* red-500 */
+    .brand-border-gray { border-bottom: 6px solid rgb(75 85 99); } /* gray-600 */
+    .brand-border-orange { border-bottom: 6px solid rgb(249 115 22); } /* orange-500 */
+    .brand-border-yellow { border-bottom: 6px solid rgb(234 179 8); } /* yellow-500 */
+    .brand-border-blue { border-bottom: 6px solid rgb(37 99 235); } /* blue-600 */
+    .brand-border-cyan { border-bottom: 6px solid rgb(6 182 212); } /* cyan-600 */
+    .brand-border-amber { border-bottom: 6px solid rgb(245 158 11); } /* amber-500 */
+    .brand-border-lime { border-bottom: 6px solid rgb(101 163 13); } /* lime-600 */
+</style>
     <script src="../js/main.js"></script>
     <base href="../">
 </head>
@@ -39,87 +56,101 @@
 
     <header id="navbar-placeholder"></header>
 
-     <main>
-<section class="bg-gray-400 pt-[100px] pb-16 md:pt-[100px] md:pb-24">
-    <div class="container mx-auto px-6  md:pt-[150px] ">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800">
-                แบรนด์ในครอบครัวของเรา
-            </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-                ทุกแบรนด์ถูกสร้างสรรค์ด้วยความใส่ใจ เพื่อตอบสนองความต้องการเฉพาะของสัตว์เลี้ยงแสนรักของคุณ
-            </p>
+    <main>
+<section class="hero-section text-white min-h-[90vh] flex items-center justify-center py-16">
+    <div class="absolute inset-0 bg-black/40"></div> 
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+            เพราะสัตว์เลี้ยงของคุณคือคนสำคัญ
+        </h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-gray-200">
+            เรามุ่งมั่นสร้างสรรค์ผลิตภัณฑ์อาหารสัตว์เลี้ยงคุณภาพเยี่ยม เพื่อสุขภาพและความสุขที่ดีที่สุดของเพื่อนซี้สี่ขา
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#brands" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300">
+                สำรวจแบรนด์ของเรา
+            </a>
+            <a href="#" class="border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition duration-300">
+                ติดต่อเรา
+            </a>
         </div>
+    </div>
+</section>
 
+        <section id="brands" class="bg-white pt-16 pb-16 md:pt-24 md:pb-24">
+            <div class="container mx-auto px-4 md:px-6 pt-16"> 
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">
+                        แบรนด์ในครอบครัวของเรา ✨
+                    </h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
+                        ทุกแบรนด์ถูกสร้างสรรค์ด้วยความใส่ใจ เพื่อตอบสนองความต้องการเฉพาะของสัตว์เลี้ยงแสนรักของคุณ
+                    </p>
+                </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
                     
-                    <!-- Great Titan Card -->
-                    <div class="brand-card rounded-xl flex flex-col text-center">
-                        <div class="w-full h-48 flex items-center justify-center p-4 bg-white">
+                    <div class="brand-card rounded-xl flex flex-col text-center brand-border-red">
+                        <div class="w-full h-48 flex items-center justify-center p-4 bg-gray-50"> 
                             <img src="./img/greattitan.png" alt="Great Titan" class="max-w-full max-h-full object-contain">
                         </div>
-                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-red-50">
+                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-white"> 
                             <div class="brand-logo-wrapper rounded-full bg-red-600 flex items-center justify-center">
                                 <span class="text-3xl font-bold text-white">Gt</span>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mt-5">Great Titan</h3>
                             <p class="text-gray-600 text-sm mt-2 mb-5 flex-grow">สูตรอาหารแสนอร่อยเพื่อสุขภาพและความสุขในทุกวันของน้องแมว</p>
-                            <a href="#" class="mt-auto text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
+                            <a href="#" class="mt-auto text-sm font-semibold text-red-600 hover:text-red-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Lincoln Card -->
-                    <div class="brand-card rounded-xl flex flex-col text-center">
-                        <div class="w-full h-48 flex items-center justify-center p-4 bg-white">
+                    <div class="brand-card rounded-xl flex flex-col text-center brand-border-gray">
+                        <div class="w-full h-48 flex items-center justify-center p-4 bg-gray-50">
                             <img src="./img/Lincoln.png" alt="Lincoln" class="max-w-full max-h-full object-contain">
                         </div>
-                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-gray-800 text-white">
-                            <div class="brand-logo-wrapper rounded-full bg-gray-600 flex items-center justify-center">
+                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-white">
+                            <div class="brand-logo-wrapper rounded-full bg-gray-800 flex items-center justify-center">
                                 <span class="text-3xl font-bold text-white">Lc</span>
                             </div>
-                            <h3 class="text-2xl font-bold mt-5">Lincoln</h3>
-                            <p class="text-gray-300 text-sm mt-2 mb-5 flex-grow">พลังงานสูงสำหรับสุนัขนักผจญภัยที่รักการเล่นและสำรวจ</p>
-                            <a href="#" class="mt-auto text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-5">Lincoln</h3>
+                            <p class="text-gray-600 text-sm mt-2 mb-5 flex-grow">พลังงานสูงสำหรับสุนัขนักผจญภัยที่รักการเล่นและสำรวจ</p>
+                            <a href="#" class="mt-auto text-sm font-semibold text-gray-800 hover:text-gray-900 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Cherman Card -->
-                    <div class="brand-card rounded-xl flex flex-col text-center">
-                        <div class="w-full h-48 flex items-center justify-center p-4 bg-white">
+                    <div class="brand-card rounded-xl flex flex-col text-center brand-border-orange">
+                        <div class="w-full h-48 flex items-center justify-center p-4 bg-gray-50">
                              <img src="./img/Cherman.png" alt="Cherman" class="max-w-full max-h-full object-contain">
                         </div>
-                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-orange-50">
+                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-white">
                             <div class="brand-logo-wrapper rounded-full bg-orange-500 flex items-center justify-center">
                                 <span class="text-3xl font-bold text-white">Cm</span>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mt-5">Cherman</h3>
                             <p class="text-gray-600 text-sm mt-2 mb-5 flex-grow">คุณภาพที่คัดสรรมาเพื่อสุนัขที่คุณรัก</p>
-                            <a href="#" class="mt-auto text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
+                            <a href="#" class="mt-auto text-sm font-semibold text-orange-600 hover:text-orange-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Pluto Card -->
-                    <div class="brand-card rounded-xl flex flex-col text-center">
-                        <div class="w-full h-48 flex items-center justify-center p-4 bg-white">
+                    <div class="brand-card rounded-xl flex flex-col text-center brand-border-yellow">
+                        <div class="w-full h-48 flex items-center justify-center p-4 bg-gray-50">
                             <img src="./img/pluto.png" alt="Pluto" class="max-w-full max-h-full object-contain">
                         </div>
-                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-yellow-50">
+                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-white">
                             <div class="brand-logo-wrapper rounded-full bg-yellow-500 flex items-center justify-center">
                                 <span class="text-3xl font-bold text-white">Pl</span>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mt-5">Pluto</h3>
                             <p class="text-gray-600 text-sm mt-2 mb-5 flex-grow">ความอร่อยและสุขภาพดีที่แมวของคุณคู่ควร</p>
-                            <a href="#" class="mt-auto text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
+                            <a href="#" class="mt-auto text-sm font-semibold text-yellow-600 hover:text-yellow-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Silver Card -->
-                    <div class="brand-card rounded-xl flex flex-col text-center">
-                        <div class="w-full h-48 flex items-center justify-center p-4 bg-white">
+                    <div class="brand-card rounded-xl flex flex-col text-center brand-border-blue">
+                        <div class="w-full h-48 flex items-center justify-center p-4 bg-gray-50">
                             <img src="./img/silver.png" alt="Silver" class="max-w-full max-h-full object-contain">
                         </div>
-                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-blue-50">
+                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-white">
                             <div class="brand-logo-wrapper rounded-full bg-blue-600 flex items-center justify-center">
                                 <span class="text-3xl font-bold text-white">Si</span>
                             </div>
@@ -129,55 +160,52 @@
                         </div>
                     </div>
 
-                    <!-- Ole Card -->
-                    <div class="brand-card rounded-xl flex flex-col text-center">
-                        <div class="w-full h-48 flex items-center justify-center p-4 bg-white">
+                    <div class="brand-card rounded-xl flex flex-col text-center brand-border-cyan">
+                        <div class="w-full h-48 flex items-center justify-center p-4 bg-gray-50">
                             <img src="./img/ole.png" alt="Ole" class="max-w-full max-h-full object-contain">
                         </div>
-                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-cyan-50">
+                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-white">
                             <div class="brand-logo-wrapper rounded-full bg-cyan-600 flex items-center justify-center">
                                 <span class="text-3xl font-bold text-white">Ol</span>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mt-5">Ole</h3>
                             <p class="text-gray-600 text-sm mt-2 mb-5 flex-grow">รสชาติที่สุนัขชื่นชอบและสารอาหารที่ครบถ้วน</p>
-                            <a href="#" class="mt-auto text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
+                            <a href="#" class="mt-auto text-sm font-semibold text-cyan-600 hover:text-cyan-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Winstar Card -->
-                    <div class="brand-card rounded-xl flex flex-col text-center">
-                        <div class="w-full h-48 flex items-center justify-center p-4 bg-white">
+                    <div class="brand-card rounded-xl flex flex-col text-center brand-border-amber">
+                        <div class="w-full h-48 flex items-center justify-center p-4 bg-gray-50">
                             <img src="./img/winstar.png" alt="Winstar" class="max-w-full max-h-full object-contain">
                         </div>
-                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-amber-50">
+                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-white">
                             <div class="brand-logo-wrapper rounded-full bg-amber-500 flex items-center justify-center">
                                 <span class="text-3xl font-bold text-white">Ws</span>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mt-5">Winstar</h3>
                             <p class="text-gray-600 text-sm mt-2 mb-5 flex-grow">อาหารแมวชั้นเลิศที่เจ้าเหมียวจะต้องหลงรัก</p>
-                            <a href="#" class="mt-auto text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
+                            <a href="#" class="mt-auto text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Dogker Card -->
-                    <div class="brand-card rounded-xl flex flex-col text-center">
-                        <div class="w-full h-48 flex items-center justify-center p-4 bg-white">
+                    <div class="brand-card rounded-xl flex flex-col text-center brand-border-lime">
+                        <div class="w-full h-48 flex items-center justify-center p-4 bg-gray-50">
                            <img src="./img/dogker.png" alt="Dogker" class="max-w-full max-h-full object-contain">
                         </div>
-                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-lime-50">
+                        <div class="p-6 w-full flex-grow flex flex-col items-center bg-white">
                             <div class="brand-logo-wrapper rounded-full bg-lime-600 flex items-center justify-center">
                                 <span class="text-3xl font-bold text-white">Dk</span>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mt-5">Dogker</h3>
                             <p class="text-gray-600 text-sm mt-2 mb-5 flex-grow">ความอร่อยเต็มคำสำหรับเพื่อนสี่ขาของคุณ</p>
-                            <a href="#" class="mt-auto text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
+                            <a href="#" class="mt-auto text-sm font-semibold text-lime-600 hover:text-lime-700 transition-colors">ดูผลิตภัณฑ์ &rarr;</a>
                         </div>
                     </div>
                 </div>
             </div>
             
         </section>
-            <div id="footer-placeholder"></div>
+        <div id="footer-placeholder"></div>
 
     </main>
 
