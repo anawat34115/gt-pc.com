@@ -1,6 +1,15 @@
 const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
 
-// Load Navbar
+// ---------- Lazy load รูปทั้งหมดอัตโนมัติ ----------
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+  });
+});
+
+// ---------- Load Navbar ----------
 fetch(pathPrefix + 'components/navbar.html')
   .then(response => {
     if (!response.ok) throw new Error('Navbar not found: ' + response.status);
@@ -21,22 +30,20 @@ fetch(pathPrefix + 'components/navbar.html')
       let showTimer, hideTimer;
       dropdownContainer.addEventListener('mouseenter', () => {
         clearTimeout(hideTimer);
-        showTimer = setTimeout(() => dropdownPanel.classList.remove('hidden'), 200);
+        showTimer = setTimeout(() => dropdownPanel.classList.remove('hidden'), 150);
       });
       dropdownContainer.addEventListener('mouseleave', () => {
         clearTimeout(showTimer);
-        hideTimer = setTimeout(() => dropdownPanel.classList.add('hidden'), 250);
+        hideTimer = setTimeout(() => dropdownPanel.classList.add('hidden'), 200);
       });
     }
 
     if (brandToggle && dropdownPanel) {
       brandToggle.addEventListener('click', (e) => {
         e.preventDefault();
-        e.stopPropagation(); // ป้องกัน click จาก document
+        e.stopPropagation();
         dropdownPanel.classList.toggle('hidden');
       });
-
-      // ป้องกัน panel ปิดตอน click ข้างใน
       dropdownPanel.addEventListener('click', e => e.stopPropagation());
     }
 
@@ -48,30 +55,29 @@ fetch(pathPrefix + 'components/navbar.html')
     const mobileToggle = navbarPlaceholder.querySelector('#mobile-menu-toggle');
     const mobileMenu = navbarPlaceholder.querySelector('#mobile-menu');
 
-    const hamburgerIcon = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    hamburgerIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
-    hamburgerIcon.setAttribute("stroke-linecap", "round");
-    hamburgerIcon.setAttribute("stroke-linejoin", "round");
-    hamburgerIcon.setAttribute("stroke-width", "2");
-
-    const closeIcon = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    closeIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
-    closeIcon.setAttribute("stroke-linecap", "round");
-    closeIcon.setAttribute("stroke-linejoin", "round");
-    closeIcon.setAttribute("stroke-width", "2");
-    closeIcon.style.display = "none";
-
-    const svg = mobileToggle.querySelector("svg");
-    svg.innerHTML = ""; // ล้าง
-    svg.appendChild(hamburgerIcon);
-    svg.appendChild(closeIcon);
-
     if (mobileToggle && mobileMenu) {
+      const svg = mobileToggle.querySelector("svg");
+      const hamburgerIcon = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      hamburgerIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+      hamburgerIcon.setAttribute("stroke-linecap", "round");
+      hamburgerIcon.setAttribute("stroke-linejoin", "round");
+      hamburgerIcon.setAttribute("stroke-width", "2");
+
+      const closeIcon = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      closeIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
+      closeIcon.setAttribute("stroke-linecap", "round");
+      closeIcon.setAttribute("stroke-linejoin", "round");
+      closeIcon.setAttribute("stroke-width", "2");
+      closeIcon.style.display = "none";
+
+      svg.innerHTML = "";
+      svg.appendChild(hamburgerIcon);
+      svg.appendChild(closeIcon);
+
       const toggleHandler = (e) => {
         e.preventDefault();
         mobileMenu.classList.toggle('hidden');
 
-        // toggle icons
         if (hamburgerIcon.style.display === "none") {
           hamburgerIcon.style.display = "block";
           closeIcon.style.display = "none";
@@ -80,6 +86,7 @@ fetch(pathPrefix + 'components/navbar.html')
           closeIcon.style.display = "block";
         }
       };
+
       mobileToggle.addEventListener('click', toggleHandler);
       mobileToggle.addEventListener('touchend', toggleHandler);
 
@@ -117,15 +124,17 @@ fetch(pathPrefix + 'components/navbar.html')
     // --- Scroll effect ---
     const header = navbarPlaceholder.querySelector('#main-header');
     if (header) {
+      let ticking = false;
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+            ticking = false;
+          });
+          ticking = true;
         }
       });
     }
-
   })
   .catch(err => {
     console.error('Error loading navbar:', err);
@@ -135,7 +144,8 @@ fetch(pathPrefix + 'components/navbar.html')
     }
   });
 
-  fetch(pathPrefix + 'components/footer.html')
+// ---------- Load Footer ----------
+fetch(pathPrefix + 'components/footer.html')
   .then(response => {
     if (!response.ok) throw new Error('Footer not found: ' + response.status);
     return response.text();
