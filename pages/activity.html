@@ -1,214 +1,241 @@
 <!DOCTYPE html>
 <html lang="th" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Friends - News & Activities</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- ✅ Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Great Friends - News & Activities</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-    <script src="../js/main.js"></script>
-    <base href="../">
-    <style>
-      body {
-        font-family: 'Kanit', 'Inter', sans-serif;
-      }
-    </style>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- AOS CSS (Animation on Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <link rel="stylesheet" href="./css/style.css"/>
+
+  <script src="../js/main.js"></script>
+  <base href="../">
+
+  <style>
+    body { font-family: 'Kanit','Inter',sans-serif; }
+
+    /* ปุ่มลูกศรของ Swiper ให้ดูพรีเมียมขึ้น (optional) */
+    .swiper-button-next, .swiper-button-prev {
+      color: #111 !important;
+      background-color: #fff;
+      border-radius: 9999px;
+      width: 46px;
+      height: 46px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.18);
+      transition: transform .25s ease, background-color .25s ease, color .25s ease;
+    }
+    .swiper-button-next:after, .swiper-button-prev:after {
+      font-size: 18px !important;
+      font-weight: 700;
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+      background-color: #fbbf24; /* amber-400 */
+      color: #000 !important;
+      transform: scale(1.08);
+    }
+  </style>
 </head>
 <body class="bg-gray-300 text-gray-800">
 
-    <!-- Header -->
-    <header id="navbar-placeholder"></header>
+  <!-- Header -->
+  <header id="navbar-placeholder"></header>
 
-    <main>
-        <!-- News Section -->
-        <section id="news" class="py-20 bg-gray-700 pt-32 md:pt-48">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-200">NEWS</h2>
-                    <p class="text-gray-300 mt-2 text-xl">ผลิตภัณฑ์ใหม่ล่าสุดของเรา</p>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-8 items-center">
-                    <div class="text-center">
-                        <img src="./img/activity/Logo-GT.png" alt="Oh! Puppy Food Bag" class="rounded-xl shadow-lg mx-auto max-w-sm w-full">
-                    </div>
-
-                    <div class="space-y-8">
-                        <img src="./img/activity/new-p.png" alt="Great Titan Snacks" class="rounded-xl shadow-lg w-full">
-                        <div class="bg-gray-50 p-6 rounded-lg">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-2">เปิดตัวขนมสุนัข 3 รสชาติใหม่!</h4>
-                            <p class="text-gray-600">
-                                บริษัท เกรทเทสท์ บรีดเดอร์ จำกัด เปิดตัวผลิตภัณฑ์ใหม่ ขนมสุนัข 3 รสชาติจาก Great Titan ผลิตจากวัตถุดิบคุณภาพสูง พร้อมให้เพื่อนสุนัขของคุณได้ลิ้มลองแล้ววันนี้
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<!-- ✅ Activity Section (3x2 Carousel) -->
- <section id="activity" class="py-20 bg-gray-100">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-800">ACTIVITY</h2>
-        <p class="text-gray-600 mt-2 text-xl">ภาพกิจกรรมที่น่าประทับใจ</p>
-      </div>
-
-      <div class="swiper activitySwiper">
-        <div class="swiper-wrapper">
-
-          <!-- ✅ Slide 1 -->
-          <div class="swiper-slide">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <!-- 6 การ์ดในหน้านี้ -->
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/LINE_ALBUM_งานเก็น_251004_2.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">กิจกรรมพร้อมเปย์แจกรางวัล</p>
-                  <h3 class="text-xl font-bold mt-1">Greatest Pet Care จัดหนัก! โปรโมชั่น "ซิลเวอร์ แจกหนัก พร้อมเปย์"</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/LINE_ALBUM_งานเก็น_251004_1.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">กิจกรรมรีวิวรับแต้มคูณ 2</p>
-                  <h3 class="text-xl font-bold mt-1">ร่วมแคมเปญ "เรื่องเล่า ชาวมี" ลุ้นรับ iPhone 17!</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/LINE_ALBUM_CSR คุณมิว_251004_3.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">กิจกรรม</p>
-                  <h3 class="text-xl font-bold mt-1">มิว นิษฐา ชวน 'อิ่มบุญ' ส่งอาหาร Pluto ช่วยน้องหมาขาดแคลน</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/LINE_ALBUM_แจ็ค รัสเซล meet _ play_251004_6.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">Workshop</p>
-                  <h3 class="text-xl font-bold mt-1">Pluto ร่วมกิจกรรม "แจ็ค รัสเซล Meet & Play"</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/LINE_ALBUM_รถพุ่มพวง Dogker_251004_2.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">พบปะ</p>
-                  <h3 class="text-xl font-bold mt-1">Greatest Pet Care ผนึกกำลัง "รถพุ่มพวง X Dogker"</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/LINE_ALBUM_7.11.63_251004_1.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">กิจกรรม</p>
-                  <h3 class="text-xl font-bold mt-1">แบรนด์ Silver ยึดพื้นที่งาน Pet Expo!</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ✅ Slide 2 (ถ้ามีการ์ดเพิ่มในอนาคต) -->
-          <div class="swiper-slide">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <!-- 6 การ์ดในหน้านี้ -->
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/S__22560900_0.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                                                          <p class="text-sm text-gray-500">พบปะ</p>
-
-                  <h3 class="text-xl font-bold mt-1">ร่วมบริจาคอาหารแมว</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/Screenshot 2025-10-04 201544.png" class="w-full h-64 object-cover">
-                <div class="p-6">
-                                      <p class="text-sm text-gray-500">review</p>
-                  <h3 class="text-xl font-bold mt-1">รีวิวจากลูกค้า</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/ลููกค้าreview.png" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">sponsor</p>
-                  <h3 class="text-xl font-bold mt-1">สนับสนุนรายการ</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/LINE_ALBUM_Event Cool farenheit @Samyan mitrtown_251004_3.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">Workshop</p>
-                  <h3 class="text-xl font-bold mt-1">Cool Farenheit @ Samyan Mitrtown</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/LINE_ALBUM_Astronaut_251004_7.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">พบปะ</p>
-                  <h3 class="text-xl font-bold mt-1">"Pluto Pet Food Delivery: เบื้องหลังการขนส่งอาหารน้องหมาที่ใส่ใจทุกขั้นตอน</h3>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/IMG_20211104_151208.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                  <p class="text-sm text-gray-500">พบปะ</p>
-                  <h3 class="text-xl font-bold mt-1">Pluto ส่งต่อความสุข — ภารกิจเติมพลังให้น้องหมาทุกตัวทั่วไทย</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-                    <div class="swiper-slide">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <!-- 6 การ์ดในหน้านี้ -->
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-                <img src="./img/activity/1636871360644.jpg" class="w-full h-64 object-cover">
-                <div class="p-6">
-                                                          <p class="text-sm text-gray-500">พบปะ</p>
-
-                  <h3 class="text-xl font-bold mt-1">Silver ส่งต่อความสุข</h3>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-
+  <main>
+    <!-- News Section -->
+    <section id="news" class="py-20 bg-gray-700 pt-32 md:pt-48">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-200">NEWS</h2>
+          <p class="text-gray-300 mt-2 text-xl">ผลิตภัณฑ์ใหม่ล่าสุดของเรา</p>
         </div>
 
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+            <img src="./img/activity/Logo-GT.png" alt="Oh! Puppy Food Bag" class="rounded-xl shadow-lg mx-auto max-w-sm w-full" loading="lazy">
+          </div>
+
+          <div class="space-y-8" data-aos="fade-left" data-aos-delay="200">
+            <img src="./img/activity/new-p.png" alt="Great Titan Snacks" class="rounded-xl shadow-lg w-full" loading="lazy">
+            <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+              <h4 class="text-2xl font-bold text-gray-800 mb-2">เปิดตัวขนมสุนัข 3 รสชาติใหม่!</h4>
+              <p class="text-gray-600">
+                บริษัท เกรทเทสท์ บรีดเดอร์ จำกัด เปิดตัวผลิตภัณฑ์ใหม่ ขนมสุนัข 3 รสชาติจาก Great Titan ผลิตจากวัตถุดิบคุณภาพสูง พร้อมให้เพื่อนสุนัขของคุณได้ลิ้มลองแล้ววันนี้
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Activity Section (3x2 Carousel) -->
+    <section id="activity" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-800">ACTIVITY</h2>
+          <p class="text-gray-600 mt-2 text-xl">ภาพกิจกรรมที่น่าประทับใจ</p>
+        </div>
 
-    </main>
+        <div class="swiper activitySwiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
 
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 6 การ์ด -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="0">
+                  <img src="./img/activity/LINE_ALBUM_งานเก็น_251004_2.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">กิจกรรมพร้อมเปย์แจกรางวัล</p>
+                    <h3 class="text-xl font-bold mt-1">Greatest Pet Care จัดหนัก! โปรโมชั่น "ซิลเวอร์ แจกหนัก พร้อมเปย์"</h3>
+                  </div>
+                </div>
 
-    <!-- ✅ Swiper JS -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="100">
+                  <img src="./img/activity/LINE_ALBUM_งานเก็น_251004_1.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">กิจกรรมรีวิวรับแต้มคูณ 2</p>
+                    <h3 class="text-xl font-bold mt-1">ร่วมแคมเปญ "เรื่องเล่า ชาวมี" ลุ้นรับ iPhone 17!</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="./img/activity/LINE_ALBUM_CSR คุณมิว_251004_3.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">กิจกรรม</p>
+                    <h3 class="text-xl font-bold mt-1">มิว นิษฐา ชวน 'อิ่มบุญ' ส่งอาหาร Pluto ช่วยน้องหมาขาดแคลน</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="300">
+                  <img src="./img/activity/LINE_ALBUM_แจ็ค รัสเซล meet _ play_251004_6.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">Workshop</p>
+                    <h3 class="text-xl font-bold mt-1">Pluto ร่วมกิจกรรม "แจ็ค รัสเซล Meet & Play"</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="400">
+                  <img src="./img/activity/LINE_ALBUM_รถพุ่มพวง Dogker_251004_2.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">พบปะ</p>
+                    <h3 class="text-xl font-bold mt-1">Greatest Pet Care ผนึกกำลัง "รถพุ่มพวง X Dogker"</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="500">
+                  <img src="./img/activity/LINE_ALBUM_7.11.63_251004_1.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">กิจกรรม</p>
+                    <h3 class="text-xl font-bold mt-1">แบรนด์ Silver ยึดพื้นที่งาน Pet Expo!</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="0">
+                  <img src="./img/activity/S__22560900_0.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">พบปะ</p>
+                    <h3 class="text-xl font-bold mt-1">ร่วมบริจาคอาหารแมว</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="100">
+                  <img src="./img/activity/Screenshot 2025-10-04 201544.png" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">review</p>
+                    <h3 class="text-xl font-bold mt-1">รีวิวจากลูกค้า</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="./img/activity/ลููกค้าreview.png" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">sponsor</p>
+                    <h3 class="text-xl font-bold mt-1">สนับสนุนรายการ</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="300">
+                  <img src="./img/activity/LINE_ALBUM_Event Cool farenheit @Samyan mitrtown_251004_3.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">Workshop</p>
+                    <h3 class="text-xl font-bold mt-1">Cool Farenheit @ Samyan Mitrtown</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="400">
+                  <img src="./img/activity/LINE_ALBUM_Astronaut_251004_7.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">พบปะ</p>
+                    <h3 class="text-xl font-bold mt-1">"Pluto Pet Food Delivery: เบื้องหลังการขนส่งอาหารน้องหมาที่ใส่ใจทุกขั้นตอน</h3>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="500">
+                  <img src="./img/activity/IMG_20211104_151208.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">พบปะ</p>
+                    <h3 class="text-xl font-bold mt-1">Pluto ส่งต่อความสุข — ภารกิจเติมพลังให้น้องหมาทุกตัวทั่วไทย</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="0">
+                  <img src="./img/activity/1636871360644.jpg" class="w-full h-64 object-cover" loading="lazy">
+                  <div class="p-6">
+                    <p class="text-sm text-gray-500">พบปะ</p>
+                    <h3 class="text-xl font-bold mt-1">Silver ส่งต่อความสุข</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Nav -->
+          <div class="swiper-button-next" data-aos="fade-left" data-aos-delay="200"></div>
+          <div class="swiper-button-prev" data-aos="fade-right" data-aos-delay="200"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      offset: 12,
+      easing: 'ease-out-cubic'
+    });
+
     const swiper = new Swiper(".activitySwiper", {
-      slidesPerView: 1, // ✅ 1 หน้า = 6 การ์ด (เราใส่ grid เอง)
+      slidesPerView: 1,             // 1 หน้า = 6 การ์ด (grid เราจัดเอง)
       spaceBetween: 30,
       loop: true,
       navigation: {

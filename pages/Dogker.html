@@ -1,138 +1,144 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silver Pet Food - อาหารสัตว์เลี้ยงซิลเวอร์</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-                          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silver Pet Food - อาหารสัตว์เลี้ยงซิลเวอร์</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- ✅ เพิ่ม AOS Animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-    <style>
-        /* --- STYLE ใหม่จะถูกใส่แทนที่ตรงนี้ทั้งหมด --- */
-        body { font-family: 'Kanit', sans-serif; background-color: #FDF6E3; color: #211515; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
+  <style>
+    body { font-family: 'Kanit', sans-serif; background-color: #FDF6E3; color: #211515; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
 
-        /* Hero */
-        .hero-bg {
-            background-color: #211515; /* น้ำตาลเข้ม */
-            color: #FDF6E3; /* ตัวอักษรครีม */
-        }
+    .hero-bg {
+      background-color: #211515;
+      color: #FDF6E3;
+    }
 
-        /* Logo text - เปลี่ยนชื่อคลาส แต่ยังใช้กับโลโก้เดิม */
-        .dogker-logo {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 3.5rem;
-            color: #FDF6E3;
-            text-shadow: 1px 1px rgba(0,0,0,0.2);
-        }
+    .dogker-logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #FDF6E3;
+      text-shadow: 1px 1px rgba(0,0,0,0.2);
+    }
 
-        /* Product Card */
-        .product-card-v2 {
-            border-radius: 2.5rem;
-            padding: 1.5rem;
-            padding-top: 6rem;
-            text-align: center;
-            position: relative;
-            margin-top: 5rem;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            will-change: transform;
-            background-color: #ffffff; /* พื้นขาว */
-            border: 1px solid #A1887F; /* ขอบเทาอมน้ำตาล */
-        }
-        .product-card-v2:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
-        }
-        .product-image-v2 {
-            position: absolute;
-            top: -5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 180px;
-            height: 180px;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
-        }
-        .add-to-cart-btn {
-            background-color: #E57A44; /* ส้มอิฐ */
-            color: #FDF6E3;
-            font-weight: bold;
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .add-to-cart-btn:hover {
-            background-color: #cf6735;
-        }
-    </style>
-          <script src="../js/main.js"></script>
+    .product-card-v2 {
+      border-radius: 2.5rem;
+      padding: 1.5rem;
+      padding-top: 6rem;
+      text-align: center;
+      position: relative;
+      margin-top: 5rem;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      will-change: transform;
+      background-color: #ffffff;
+      border: 1px solid #A1887F;
+    }
+    .product-card-v2:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    }
+
+    .product-image-v2 {
+      position: absolute;
+      top: -5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
+    }
+
+    .add-to-cart-btn {
+      background-color: #E57A44;
+      color: #FDF6E3;
+      font-weight: bold;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .add-to-cart-btn:hover { background-color: #cf6735; }
+  </style>
+
+  <script src="../js/main.js"></script>
   <base href="../">
 </head>
 <body>
-
 <header id="navbar-placeholder"></header>
 
 <main>
-    <section class="hero-bg">
-        <div class="container mx-auto px-6 py-16 md:py-20 pt-56 md:pt-48 relative z-10">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="text-center md:text-left">
-                    <h1 class="dogker-logo">Dogker</h1> 
-                    <div class="mt-4 space-y-3">
-                        <div class="flex items-center justify-center md:justify-start">
-                                  <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
-<i class="fa-solid fa-dog text-black"></i>                                    </div>                              <p class="text-xl font-semibold">โภชนาการสมดุล สำหรับเพื่อนรักสี่ขา</p>
-                        </div>
-                        <div class="flex items-center justify-center md:justify-start">
-                                  <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
-<i class="fa-solid fa-heart text-black"></i>                                    </div>                              <p class="text-xl font-semibold">สูตรพิเศษเพื่อสุขภาพแมวและสุนัข</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <div class="rounded-full shadow-2xl border-8 border-gray-300 w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-white">
-                        <img src="./img/Dogker.png" alt="Silver Logo" class="w-48 h-48 md:w-64 md:h-64 object-contain">
-                    </div>
-                </div>
+  <section class="hero-bg">
+    <div class="container mx-auto px-6 py-16 md:py-20 pt-56 md:pt-48 relative z-10">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="text-center md:text-left" data-aos="fade-right">
+          <h1 class="dogker-logo">Dogker</h1>
+          <div class="mt-4 space-y-3">
+            <div class="flex items-center justify-center md:justify-start">
+              <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
+                <i class="fa-solid fa-dog text-black"></i>
+              </div>
+              <p class="text-xl font-semibold">โภชนาการสมดุล สำหรับเพื่อนรักสี่ขา</p>
             </div>
-        </div>
-    </section>
-
-<section class="py-20">
-    <div class="w-full max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold">อาหารพรีเมียม เพื่อสุขภาพที่ดีกว่า</h2>
-            <p class="mt-2">Silver Pet Food คัดสรรคุณภาพสำหรับสัตว์เลี้ยงที่คุณรัก</p>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-x-10 gap-y-24 mt-16">
-
-            <div class="product-card-v2">
-                <img src="./img/dogker/dogkerรสเนื้อ.png" alt="Silver Tuna" class="product-image-v2">
-                <h3 class="text-2xl font-bold mt-8">DogKer อาหารสุนัขโต รสเนื้อ</h3>
-                <p class="mt-2 mb-6 h-12">อาหารเม็ดสำหรับสุนัขโต อายุ 1 ปีขึ้นไป รสเนื้อ มีโปรตีน 18%</p>
-                <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+            <div class="flex items-center justify-center md:justify-start">
+              <div class="w-8 h-8 flex items-center justify-center rounded-full mr-3 bg-white border-2 border-black">
+                <i class="fa-solid fa-heart text-black"></i>
+              </div>
+              <p class="text-xl font-semibold">สูตรพิเศษเพื่อสุขภาพแมวและสุนัข</p>
             </div>
-
-            <div class="product-card-v2">
-                <img src="./img/dogker/dogkerรสตับ.png" alt="Silver Salmon" class="product-image-v2">
-                <h3 class="text-2xl font-bold mt-8">DogKer อาหารสุนัขโต รสตับ</h3>
-                <p class="mt-2 mb-6 h-12">อาหารเม็ดสำหรับสุนัขโต อายุ 1 ปีขึ้นไป รสตับ มีโปรตีน 18%</p>
-                <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
-            </div>
-            
+          </div>
         </div>
+        <div class="flex justify-center" data-aos="fade-left">
+          <div class="rounded-full shadow-2xl border-8 border-gray-300 w-64 h-64 md:w-80 md:h-80 flex items-center justify-center bg-white">
+            <img src="./img/Dogker.png" alt="Dogker Logo" class="w-48 h-48 md:w-64 md:h-64 object-contain">
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+
+  <section class="py-20" data-aos="fade-up">
+    <div class="w-full max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold">อาหารพรีเมียม เพื่อสุขภาพที่ดีกว่า</h2>
+        <p class="mt-2">Silver Pet Food คัดสรรคุณภาพสำหรับสัตว์เลี้ยงที่คุณรัก</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-x-10 gap-y-24 mt-16">
+        <div class="product-card-v2" data-aos="zoom-in-up" data-aos-delay="100">
+          <img src="./img/dogker/dogkerรสเนื้อ.png" alt="Dogker รสเนื้อ" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">DogKer อาหารสุนัขโต รสเนื้อ</h3>
+          <p class="mt-2 mb-6 h-12">อาหารเม็ดสำหรับสุนัขโต อายุ 1 ปีขึ้นไป รสเนื้อ มีโปรตีน 18%</p>
+          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="product-card-v2" data-aos="zoom-in-up" data-aos-delay="200">
+          <img src="./img/dogker/dogkerรสตับ.png" alt="Dogker รสตับ" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">DogKer อาหารสุนัขโต รสตับ</h3>
+          <p class="mt-2 mb-6 h-12">อาหารเม็ดสำหรับสุนัขโต อายุ 1 ปีขึ้นไป รสตับ มีโปรตีน 18%</p>
+          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <div id="footer-placeholder"></div>
+
+<!-- ✅ สคริปต์ AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true, offset: 120 });
+</script>
 
 </body>
 </html>
