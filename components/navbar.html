@@ -1,198 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="overflow-x-hidden">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greatest Pet Care</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Custom styles can go here */
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      /* Scroll effect for the header on desktop */
-      @media (min-width: 768px) {
-        #main-header.scrolled {
-          background-color: rgba(30, 58, 138, 0.9); /* A semi-transparent blue */
-          backdrop-filter: blur(10px);
-        }
-      }
-    </style>
+  <!-- ใช้ Tailwind (ลบออกได้ถ้า project คุณ build เองอยู่แล้ว) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Header — No Horizontal Scroll</title>
+
+  <style>
+    /* กันล้นแนวนอนทั้งหน้าแบบ hard-stop */
+    html, body { overflow-x: hidden; }
+    /* ให้ทุกชิ้นคำนวณขนาดแบบไม่ล้นเพราะ padding/margin */
+    *, *::before, *::after { box-sizing: border-box; }
+    /* รูป/วิดีโอไม่ดันท้ายจอ */
+    img, video { max-width: 100%; height: auto; }
+    /* บางที shadow/blur ของ fixed header ทำให้เกิด sub-pixel overflow -> clip ไปเลย */
+    #main-header { overflow-x: clip; }
+  </style>
 </head>
-<body>
+<body class="antialiased bg-white text-slate-900">
 
-<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ease-in-out bg-blue-900 mb-5">
-  <div class="container mx-auto px-6 py-4">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <a href="index.html">
-          <img src="img/logo.png" alt="Greatest Pet Care Logo" class="h-20 w-auto rounded-full">
-        </a>
-      </div>
-
-      <nav class="hidden md:flex items-center space-x-6">
-        <a href="pages/About-us.html" class="text-white hover:text-cyan-600 transition-colors">About Us</a>
-        <a href="pages/capabilities.html" class="text-white hover:text-cyan-600 transition-colors">Capabilities</a>
-        <a href="pages/Ourproduct.html" class="text-white hover:text-cyan-600 transition-colors">Our Product</a>
-        <a href="pages/standard.html" class="text-white hover:text-cyan-600 transition-colors">Standard</a>
-
-        <div id="brand-dropdown-container" class="relative">
-          <div class="flex items-center">
-            <a href="pages/ourbrands.html" class="text-white hover:text-cyan-600 transition-colors">Our Brand</a>
-            <button id="brand-dropdown-toggle" aria-controls="brand-dropdown-panel" aria-expanded="false" class="ml-1 text-white hover:text-cyan-600 transition-colors">
-              <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-          </div>
-          <div id="brand-dropdown-panel" class="absolute left-0 mt-2 w-40 bg-blue-900 rounded-lg shadow-lg hidden flex-col z-50">
-            <a href="pages/Great-titan.html" class="block px-4 py-2 text-white hover:bg-blue-800">Great Titan</a>
-            <a href="pages/Lincoln.html" class="block px-4 py-2 text-white hover:bg-blue-800">Lincoln</a>
-            <a href="pages/Cherman.html" class="block px-4 py-2 text-white hover:bg-blue-800">Cherman</a>
-            <a href="pages/Pluto.html" class="block px-4 py-2 text-white hover:bg-blue-800">Pluto</a>
-            <a href="pages/Silver.html" class="block px-4 py-2 text-white hover:bg-blue-800">Silver</a>
-            <a href="pages/Ole.html" class="block px-4 py-2 text-white hover:bg-blue-800">Ole</a>
-            <a href="pages/Winstar.html" class="block px-4 py-2 text-white hover:bg-blue-800">Winstar</a>
-            <a href="pages/Dogker.html" class="block px-4 py-2 text-white hover:bg-blue-800">Dogker</a>
-
-
-          </div>
+  <!-- HEADER -->
+  <header id="main-header"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 border-b border-blue-900/10 backdrop-blur mb-5
+           w-full overflow-x-clip">
+    <div class="container mx-auto px-6 py-3">
+      <div class="flex items-center justify-between">
+        <!-- logo -->
+        <div class="flex items-center space-x-2">
+          <a href="index.html" class="inline-flex items-center">
+            <img src="img/logo.png" alt="Greatest Pet Care Logo" class="h-16 w-auto rounded-full">
+          </a>
         </div>
 
-        <a href="pages/activity.html" class="text-white hover:text-cyan-600 transition-colors">Activity</a>
-                <a href="pages/Contact.html" class="text-white hover:text-cyan-600 transition-colors">Contact-us</a>
+        <!-- nav (desktop) -->
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="pages/About-us.html" class="text-blue-900 hover:text-blue-700 transition-colors">About Us</a>
+          <a href="pages/capabilities.html" class="text-blue-900 hover:text-blue-700 transition-colors">Capabilities</a>
+          <a href="pages/Ourproduct.html" class="text-blue-900 hover:text-blue-700 transition-colors">Our Product</a>
+          <a href="pages/standard.html" class="text-blue-900 hover:text-blue-700 transition-colors">Standard</a>
 
-      </nav>
+          <!-- our brand dropdown -->
+          <div id="brand-dropdown-container" class="relative">
+            <div class="flex items-center">
+              <a href="pages/ourbrands.html" class="text-blue-900 hover:text-blue-700 transition-colors">Our Brand</a>
+              <button id="brand-dropdown-toggle" aria-controls="brand-dropdown-panel" aria-expanded="false" class="ml-1 text-blue-900 hover:text-blue-700 transition-colors">
+                <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path id="brand-dropdown-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+            </div>
+            <div id="brand-dropdown-panel"
+                 class="absolute left-0 mt-2 w-44 bg-white border border-blue-900/10 rounded-lg shadow-lg hidden flex-col z-50
+                        max-w-[calc(100vw-1rem)] overflow-x-hidden">
+              <a href="pages/Great-titan.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Great Titan</a>
+              <a href="pages/Lincoln.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Lincoln</a>
+              <a href="pages/Pluto.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Pluto</a>
+              <a href="pages/Silver.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Silver</a>
+              <a href="pages/Cherman.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Cherman</a>
+              <a href="pages/Ole-Dog.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Ole Dog</a>
+              <a href="pages/Ole-Cat.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Ole Cat</a>
+              <a href="pages/Dogker.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Dogker</a>
+              <a href="pages/Winstar.html" class="block px-4 py-2 text-blue-900 hover:bg-blue-50">Winstar</a>
+            </div>
+          </div>
 
-      <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-md" aria-controls="mobile-menu" aria-expanded="false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path id="mobile-menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-    </div>
-  </div>
+          <a href="pages/activity.html" class="text-blue-900 hover:text-blue-700 transition-colors">Activity</a>
+          <a href="pages/Contact.html" class="text-blue-900 hover:text-blue-700 transition-colors">Contact-us</a>
+        </nav>
 
-<div id="mobile-menu" class="hidden md:hidden bg-blue-900 text-white px-6 py-4 space-y-4 rounded-b-2xl shadow-lg">
-    <a href="pages/About-us.html" class="block hover:text-cyan-400">About Us</a>
-    <a href="pages/capabilities.html" class="block hover:text-cyan-400">Capabilities</a>
-    <a href="pages/Ourproduct.html" class="block hover:text-cyan-400">Our Product</a>
+        <!-- actions right: Online Shopping + PDF -->
+        <div class="hidden md:flex items-center space-x-3">
+          <a href="https://gtpcpetshop.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-900/20 shadow-sm text-blue-900 hover:bg-blue-50 transition">
+            <!-- cart icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="9" cy="20" r="1" stroke-width="2"></circle>
+              <circle cx="17" cy="20" r="1" stroke-width="2"></circle>
+              <path d="M3 4h2l2.4 12.5A2 2 0 0 0 9.36 18H18a2 2 0 0 0 1.96-1.6L21 8H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <span class="font-medium">ONLINE SHOPPING</span>
+          </a>
 
-    <div class="flex flex-col space-y-2">
-      <div class="flex justify-between items-center">
-        <a href="pages/ourbrands.html" class="hover:text-cyan-400">Our Brand</a>
-        <button id="mobile-brand-toggle" aria-controls="mobile-brand-panel" aria-expanded="false">
-          <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          <a href="docs/gtpc-catalog.pdf" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-blue-900/20 hover:bg-blue-50 transition" aria-label="Product Catalog (PDF)">
+            <!-- PDF icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-900" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.828a2 2 0 0 0-.586-1.414l-4.828-4.828A2 2 0 0 0 13.172 2H6zm7 2.828V8h3.172L13 4.828zM8 12h3a1 1 0 1 1 0 2H9v4H8v-6zm5 0h2.5a1.5 1.5 0 0 1 0 3H14v3h-1v-6zm1.5 2a.5.5 0 0 0 0-1H14v1h.5z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- hamburger -->
+        <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="mobile-menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
       </div>
-      <div id="mobile-brand-panel" class="hidden flex-col pl-4 space-y-2">
-<a href="pages/Great-titan.html" class="block hover:text-cyan-400">Great Titan</a>
-<a href="pages/Lincoln.html" class="block hover:text-cyan-400">Lincoln</a>
-<a href="pages/Cherman.html" class="block hover:text-cyan-400">Cherman</a>
-<a href="pages/Pluto.html" class="block hover:text-cyan-400">Pluto</a>
-<a href="pages/Silver.html" class="block hover:text-cyan-400">Silver</a>
-<a href="pages/Ole.html" class="block hover:text-cyan-400">Ole</a>
-<a href="pages/Winstar.html" class="block hover:text-cyan-400">Winstar</a>
-<a href="pages/Dogker.html" class="block hover:text-cyan-400">Dogker</a>
-      </div>
     </div>
 
-    <a href="#contact" class="block hover:text-cyan-400">Contact Us</a>
-  </div>
-</header>
+    <!-- mobile menu -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden bg-white text-blue-900 px-6 py-4 space-y-4 border-t border-blue-900/10 rounded-b-2xl shadow-lg
+             z-[60] max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain
+             w-full max-w-full overflow-x-hidden">
+      <a href="pages/About-us.html" class="block hover:text-blue-700">About Us</a>
+      <a href="pages/capabilities.html" class="block hover:text-blue-700">Capabilities</a>
+      <a href="pages/Ourproduct.html" class="block hover:text-blue-700">Our Product</a>
+
+      <div class="flex flex-col space-y-2">
+        <div class="flex justify-between items-center">
+          <a href="pages/ourbrands.html" class="hover:text-blue-700">Our Brand</a>
+          <button id="mobile-brand-toggle" aria-controls="mobile-brand-panel" aria-expanded="false" aria-label="Toggle brands">
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+        </div>
+        <div id="mobile-brand-panel" class="hidden flex-col pl-4 pr-2 space-y-2">
+          <a href="pages/Great-titan.html" class="block hover:text-blue-700">Great Titan</a>
+          <a href="pages/Lincoln.html" class="block hover:text-blue-700">Lincoln</a>
+          <a href="pages/Pluto.html" class="block hover:text-blue-700">Pluto</a>
+          <a href="pages/Silver.html" class="block hover:text-blue-700">Silver</a>
+          <a href="pages/Cherman.html" class="block hover:text-blue-700">Cherman</a>
+          <a href="pages/Ole-Dog.html" class="block hover:text-blue-700">Ole Dog</a>
+          <a href="pages/Ole-Cat.html" class="block hover:text-blue-700">Ole Cat</a>
+          <a href="pages/Dogker.html" class="block hover:text-blue-700">Dogker</a>
+          <a href="pages/Winstar.html" class="block hover:text-blue-700">Winstar</a>
+        </div>
+      </div>
+
+      <!-- mobile actions -->
+      <a href="https://gtpcpetshop.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-900/20 shadow-sm hover:bg-blue-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="9" cy="20" r="1" stroke-width="2"></circle>
+          <circle cx="17" cy="20" r="1" stroke-width="2"></circle>
+          <path d="M3 4h2l2.4 12.5A2 2 0 0 0 9.36 18H18a2 2 0 0 0 1.96-1.6L21 8H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span class="font-medium">ONLINE SHOPPING</span>
+      </a>
+
+      <a href="docs/gtpc-catalog.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-blue-900/20 hover:bg-blue-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.828a2 2 0 0 0-.586-1.414l-4.828-4.828A2 2 0 0 0 13.172 2H6zm7 2.828V8h3.172L13 4.828zM8 12h3a1 1 0 1 1 0 2H9v4H8v-6zm5 0h2.5a1.5 1.5 0 0 1 0 3H14v3h-1v-6zm1.5 2a.5.5 0 0 0 0-1H14v1h.5z" clip-rule="evenodd"/>
+        </svg>
+        <span class="font-medium">Product Catalog (PDF)</span>
+      </a>
+
+      <a href="pages/Contact.html" class="block hover:text-blue-700">Contact Us</a>
+    </div>
+  </header>
 
 
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('main-header');
 
-  const header = document.getElementById('main-header');
-  
-  // --- Mobile menu elements ---
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+      // mobile
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuIcon = document.getElementById('mobile-menu-icon');
 
-  // --- Desktop dropdown elements ---
-  const desktopDropdownContainer = document.getElementById('brand-dropdown-container');
-  const desktopDropdownToggle = document.getElementById('brand-dropdown-toggle');
-  const desktopDropdownPanel = document.getElementById('brand-dropdown-panel');
+      // desktop dropdown
+      const desktopDropdownToggle = document.getElementById('brand-dropdown-toggle');
+      const desktopDropdownPanel = document.getElementById('brand-dropdown-panel');
 
-  // --- Mobile dropdown elements ---
-  const mobileBrandToggle = document.getElementById('mobile-brand-toggle');
-  const mobileBrandPanel = document.getElementById('mobile-brand-panel');
-  const mobileBrandIcon = mobileBrandToggle?.querySelector('svg');
+      // mobile dropdown
+      const mobileBrandToggle = document.getElementById('mobile-brand-toggle');
+      const mobileBrandPanel = document.getElementById('mobile-brand-panel');
+      const mobileBrandIcon = mobileBrandToggle?.querySelector('svg');
 
-  // SVG paths for hamburger and close icons
-  const iconPaths = {
-    hamburger: "M4 6h16M4 12h16m-7 6h7",
-    close: "M6 18L18 6M6 6l12 12"
-  };
+      const iconPaths = {
+        hamburger: "M4 6h16M4 12h16m-7 6h7",
+        close: "M6 18L18 6M6 6l12 12"
+      };
 
-  // --- Event Listeners ---
+      // toggle mobile menu (updated)
+      if (mobileMenuToggle && mobileMenu && mobileMenuIcon && header) {
+        const lockScroll = (lock) => {
+          document.documentElement.style.overflow = lock ? 'hidden' : '';
+          document.body.style.overflow = lock ? 'hidden' : '';
+          document.body.style.touchAction = lock ? 'none' : '';
+        };
 
-  // 1. Toggle Mobile Menu (Hamburger)
-  if (mobileMenuToggle && mobileMenu && mobileMenuIcon) {
-    mobileMenuToggle.addEventListener('click', () => {
-      const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-      mobileMenu.classList.toggle('hidden');
-      mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
-      mobileMenuIcon.setAttribute('d', isExpanded ? iconPaths.hamburger : iconPaths.close);
-    });
-  }
+        const setMobileMenuMaxHeight = () => {
+          const viewportH = window.innerHeight || document.documentElement.clientHeight;
+          const headerH = header.offsetHeight || 80;
+          mobileMenu.style.maxHeight = Math.max(0, viewportH - headerH) + 'px';
+        };
 
-  // 2. Toggle Desktop "Our Brand" Dropdown
-  if (desktopDropdownContainer && desktopDropdownToggle && desktopDropdownPanel) {
-    desktopDropdownToggle.addEventListener('click', (event) => {
-      event.stopPropagation();
-      const isExpanded = desktopDropdownToggle.getAttribute('aria-expanded') === 'true';
-      desktopDropdownPanel.classList.toggle('hidden');
-      desktopDropdownToggle.setAttribute('aria-expanded', !isExpanded);
-    });
+        setMobileMenuMaxHeight();
+        window.addEventListener('resize', setMobileMenuMaxHeight);
 
-    document.addEventListener('click', () => {
-      desktopDropdownPanel.classList.add('hidden');
-      desktopDropdownToggle.setAttribute('aria-expanded', 'false');
-    });
-  }
+        mobileMenuToggle.addEventListener('click', () => {
+          const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+          const willOpen = !isExpanded;
 
-  // 3. Toggle Mobile "Our Brand" Sub-menu
-  if (mobileBrandToggle && mobileBrandPanel && mobileBrandIcon) {
-    mobileBrandToggle.addEventListener('click', () => {
-      const isExpanded = mobileBrandToggle.getAttribute('aria-expanded') === 'true';
-      mobileBrandPanel.classList.toggle('hidden');
-      mobileBrandIcon.classList.toggle('rotate-180');
-      mobileBrandToggle.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
+          // update icon path
+          mobileMenuIcon.setAttribute('d', willOpen ? iconPaths.close : iconPaths.hamburger);
 
-  // 4. Header Style Change on Scroll
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+          // show/hide menu
+          mobileMenu.classList.toggle('hidden', !willOpen);
+          mobileMenuToggle.setAttribute('aria-expanded', String(willOpen));
+
+          // update height each toggle
+          setMobileMenuMaxHeight();
+
+          // lock/unlock scroll
+          lockScroll(willOpen);
+        });
+
+        // close on ESC
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && mobileMenuToggle.getAttribute('aria-expanded') === 'true') {
+            mobileMenuToggle.click();
+          }
+        });
       }
+
+      // desktop dropdown
+      if (desktopDropdownToggle && desktopDropdownPanel) {
+        desktopDropdownToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isExpanded = desktopDropdownToggle.getAttribute('aria-expanded') === 'true';
+          desktopDropdownPanel.classList.toggle('hidden');
+          desktopDropdownToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+        });
+
+        document.addEventListener('click', () => {
+          desktopDropdownPanel.classList.add('hidden');
+          desktopDropdownToggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      // mobile brand submenu
+      if (mobileBrandToggle && mobileBrandPanel && mobileBrandIcon) {
+        mobileBrandToggle.addEventListener('click', () => {
+          const isExpanded = mobileBrandToggle.getAttribute('aria-expanded') === 'true';
+          mobileBrandPanel.classList.toggle('hidden');
+          mobileBrandIcon.classList.toggle('rotate-180');
+          mobileBrandToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+
+          // ensure brand panel is visible within scroll area
+          if (!mobileBrandPanel.classList.contains('hidden')) {
+            mobileBrandToggle.scrollIntoView({ block: 'nearest' });
+          }
+        });
+      }
+
+      // add shadow on scroll
+      if (header) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 20) header.classList.add('shadow-md');
+          else header.classList.remove('shadow-md');
+        });
+      }
+
+      // auto padding-top for first element after header
+      const adjustContentPadding = () => {
+        const firstElement = header.nextElementSibling;
+        if (firstElement) firstElement.style.paddingTop = header.offsetHeight + 'px';
+      };
+      adjustContentPadding();
+      window.addEventListener('resize', adjustContentPadding);
     });
-  }
-
-  // 5. Auto add padding-top ให้ element แรกหลัง header
-  const adjustContentPadding = () => {
-    const firstElement = header.nextElementSibling;
-    if(firstElement) {
-      firstElement.style.paddingTop = header.offsetHeight + 'px';
-    }
-  }
-
-  // เรียกครั้งแรก
-  adjustContentPadding();
-
-  // เรียกใหม่เวลาหน้าต่าง resize (responsive)
-  window.addEventListener('resize', adjustContentPadding);
-
-});
-</script>
-
-
+  </script>
 </body>
 </html>

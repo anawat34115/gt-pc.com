@@ -52,6 +52,24 @@
             height: 70vh; /* ใช้ 100vh = เต็มจอแน่นอน */
 
         }
+
+        .equal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.equal-card img {
+  height: 160px; /* ขนาดรูปเท่ากันหมด */
+  object-fit: contain;
+}
+
+.equal-card p {
+  flex-grow: 1; /* ขยายเท่ากันเพื่อดันปุ่มให้ตรง */
+}
+
+
     </style>
 
 </head>
@@ -166,205 +184,197 @@
                 </div>
             </div>
 
-            <div class="category-content hidden-no-transition" data-category="dry-cat">
-                <section class="py-8">
-                    <div class="flex items-start gap-x-8">
-                        <h2 class="text-2xl font-bold text-red-500 pt-10" style="writing-mode: vertical-rl; transform: rotate(180deg);">CAT DRY</h2>
-                        <div class="w-full overflow-x-auto">
-<table class="w-full border-collapse text-center bg-white rounded-lg shadow-md overflow-hidden">
-<thead class="bg-gray-50">
-    <tr>
-        <th class="p-4 border">
-            <div class="flex flex-wrap gap-0 items-center justify-center">
-                <img src="./img/lincole/Picture3.png" alt="Lincoln Product 1" class="h-32 object-contain">
+<div class="category-content hidden-no-transition" data-category="dry-cat">
+  <section class="py-8">
+    <div class="flex items-start gap-x-8">
+      <h2 class="text-2xl font-bold text-red-500 pt-10" >CAT DRY</h2>
+      <div class="w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Lincoln -->
+<div class="bg-sky-50  equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+  <img src="./img/lincole/Picture3.png" alt="Lincoln" class="cursor-pointer rounded-lg transition-transform hover:scale-105" onclick="openImageModal(this.src)">
+  <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+    อาหารแมวลินคอร์น เกรดโฮลิสติก ผลิตจากวัตถุดิบชั้นดีเกรดเดียวกับคนทาน 
+    (<b>Human-grade</b>) สูตรลูกแมวและแม่แมว สูตรแมวโตเลี้ยงในบ้าน
+  </p>
+  <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">PREMIUM GRADE</span>
+</div>
 
-            </div>
-        </th>
-        <th class="p-4 border">
-            <div class="flex flex-wrap justify-center items-center gap-0">
-                <img src="./img/Silver/Picture2.png" alt="Silver Products" class="h-32 object-contain">
-            </div>
-        </th>
-        <th class="p-4 border">
-             <div class="flex flex-wrap justify-center items-center gap-0">
-                <img src="./img/ourproduct/Picture4.png" alt="Ole Kat Products" class="h-32 object-contain">
 
-            </div>
-        </th>
-        <th class="p-4 border">
-             <div class="flex flex-wrap justify-center items-center gap-0">
-                <img src="./img/ourproduct/Picture5.png" alt="Winstar Products" class="h-32 object-contain">
+          <!-- Silver -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+            <img src="./img/Silver/Picture2.png" alt="Silver" class="h-40 object-contain cursor-pointer rounded-lg transition-transform hover:scale-105" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              อาหารแมวซิลเวอร์ สูตรป้องกันการเกิดนิ่วในไต ตอบโจทย์เจ้าเหมียวทุกกิจกรรม เหมาะสำหรับแมวทุกสายพันธุ์
+            </p>
+            <span class="mt-5 inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-full">STANDARD GRADE</span>
+          </div>
 
-            </div>
-        </th>
-    </tr>
-</thead>
-    <tbody>
-        <tr>
-            <td class="p-4 border align-middle">อาหารแมวเกรดโฮลิสติกผลิตจากวัตถุดิบชั้นดีเกรดเดียวกับคนทาน สูตรลูกแมวและแม่แมว สูตรแมวโตเลี้ยงในบ้าน</td>
-            <td class="p-4 border align-middle">อาหารโฮลิสติกปราศจากธัญพืช, โปรตีนชั้นดี, โซเดียมต่ำ</td>
-            <td class="p-4 border align-middle">สินค้าอาหารสุนัขราคาประหยัดและแข็งแรงสมบูรณ์</td>
-            <td class="p-4 border align-middle">สารอาหารครบถ้วนตามที่แมวต้องการ</td>
-        </tr>
-        <tr>
-            <td class="p-4 border align-middle">อาหารแมวพรีเมียมที่ตอบอย่างรู้ใจ</td>
-            <td class="p-4 border align-middle">หอม อร่อย ไม่เปลี่ยนรส</td>
-            <td class="p-4 border align-middle">โอเล่ อร่อยทุกคำ ราคาสบายใจ</td>
-            <td class="p-4 border align-middle">อร่อยคุ้มค่าสารอาหารครบถ้วน</td>
-        </tr>
-        <tr>
-            <td class="p-4 border align-middle font-bold text-red-500">PREMIUM GRADE</td>
-            <td class="p-4 border align-middle font-bold text-red-500">STANDARD GRADE</td>
-            <td class="p-4 border align-middle font-bold text-red-500">HIGH ECO</td>
-            <td class="p-4 border align-middle font-bold text-red-500">ECO</td>
-        </tr>
-        <tr>
-            <td class="p-4 border align-middle">Human-grade</td>
-            <td class="p-4 border align-middle">สูตรลดความเสี่ยงการเกิดนิ่วในไต</td>
-            <td class="p-4 border align-middle">Hairball Control</td>
-            <td class="p-4 border align-middle"></td>
-        </tr>
-    </tbody>
-</table>
-                        </div>
-                    </div>
-                </section>
-            </div>
+          <!-- Ole Kat -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+            <img src="./img/ourproduct/Picture4.png" alt="Ole Kat" class="h-40 object-contain cursor-pointer rounded-lg transition-transform hover:scale-105" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              อาหารแมวโอเล่แคท ทุกสูตรมี <b>Hairball Control</b> อร่อยทุกคำ ราคาสบายใจ
+            </p>
+            <span class="mt-5 inline-block bg-green-500 text-white font-semibold px-6 py-2 rounded-full">HIGH ECO</span>
+          </div>
+
+          <!-- Winstar -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+            <img src="./img/ourproduct/Picture5.png" alt="Winstar" class="h-40 object-contain cursor-pointer rounded-lg transition-transform hover:scale-105" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              อาหารแมววินสตาร์ สารอาหารครบถ้วนตามที่เจ้าเหมียวต้องการ อร่อย คุ้มค่า เหมาะสำหรับแมวทุกสายพันธุ์
+            </p>
+            <span class="mt-5 inline-block bg-gray-500 text-white font-semibold px-6 py-2 rounded-full">ECO</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
             
-            <div class="category-content hidden-no-transition" data-category="wet-cat">
-                 <section class="py-8">
-                    <div class="flex items-start gap-x-8">
-                        <h2 class="text-2xl font-bold text-red-500 pt-10" style="writing-mode: vertical-rl; transform: rotate(180deg);">WET CAT</h2>
-                        <div class="w-full overflow-x-auto">
-                           <table class="w-full border-collapse text-center bg-white rounded-lg shadow-md overflow-hidden">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th class="p-4 border min-w-[200px]">
-                                                        <div class="flex flex-wrap gap-0 items-center justify-center">
-                                            <img src="./img/Silver/Picture1.png" alt="Silver Wet" class="mx-auto h-24 object-contain">
-                                                        </div>
-                                        </th>
-                                        <th class="p-4 border min-w-[200px]">
-                                            <img src="./img/ourproduct/Picture7.png" alt="Cherman Jelly" class="mx-auto h-24 object-contain">
-                                        </th>
-                                        <th class="p-4 border min-w-[200px]">
-                                            <img src="./img/ourproduct/Picture8.png" alt="Cherman Mousse" class="mx-auto h-24 object-contain"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="p-2 border align-middle"><b>GRAVY</b><br>ชั้นเนื้อในน้ำซุป<br>ผลิตจากปลาเนื้อขาวคุณภาพสูง<br>3 สูตรครบทุกช่วงวัย</td>
-                                        <td class="p-2 border align-middle"><b>JELLY</b><br>ผลิตจากปลาทูน่าเนื้อขาวแดง<br>เนื้อชิ้นเต็มคำ ให้ น้องทานน้ำได้เยอะ</td>
-                                        <td class="p-2 border align-middle"><b>MOUSSE</b><br>ผลิตจากปลาทูน่าเนื้อขาวล้วน<br>เนื้อมูสนุ่ม ทานง่าย อร่อยง่าย</td>
-                                    </tr>
-                                     <tr>
-                                        <td class="p-4 border align-middle">หอม อร่อย ไม่เปลี่ยนรส</td>
-                                        <td class="p-4 border align-middle">รางวัลสำหรับเจ้าเหมียวแสนรู้</td>
-                                        <td class="p-4 border align-middle">รางวัลสำหรับเจ้าเหมียวแสนรู้</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-4 border align-middle font-bold text-red-500">PREMIUM GRADE</td>
-                                        <td class="p-4 border align-middle font-bold text-red-500">STANDARD GRADE<br>Fighting Brand</td>
-                                        <td class="p-4 border align-middle font-bold text-red-500">PREMIUM GRADE</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-4 border align-middle">Complete & Balanced</td>
-                                        <td class="p-4 border align-middle">ผลิตจากปลาเนื้อขาว<br>ไม่เติมโซเดียม</td>
-                                        <td class="p-4 border align-middle">สารสกัดจากชาเขียว<br>SALMON OIL</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            </div>
+<div class="category-content hidden-no-transition" data-category="wet-cat">
+  <section class="py-8">
+    <div class="flex items-start gap-x-8">
+      <h2 class="text-2xl font-bold text-red-500 pt-10" >WET CAT</h2>
+      <div class="w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Silver Gravy -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/Silver/Picture1.png" alt="Silver Wet" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              อาหารแมวเปียกซิลเวอร์เกรวี่ สูตร Complete & Balanced
+ชิ้นเนื้อในน้ำซุป ผลิตจากปลาเนื้อขาวคุณภาพสูง มี 3 สูตร ครบทุกช่วงวัย
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">GRAVY</span>
+          </div>
 
-            <div class="category-content hidden-no-transition" data-category="dry-dog">
-                <section class="py-8">
-                    <div class="flex items-start gap-x-8">
-                        <h2 class="text-2xl font-bold text-red-500 pt-10" style="writing-mode: vertical-rl; transform: rotate(180deg);">DOG DRY</h2>
-                        <div class="w-full overflow-x-auto">
-                           <table class="w-full border-collapse text-center bg-white rounded-lg shadow-md overflow-hidden">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th class="p-4 border min-w-[200px]">
-                                            
-                                            <img src="./img/ourproduct/gtt.png" alt="Great Titan" class="mx-auto h-24 object-contain">
-                                        
-                                        </th>
-                                        <th class="p-4 border min-w-[200px]"><img src="./img/ourproduct/pluto-all.png" alt="Pluto" class="mx-auto h-24 object-contain"></th>
-                                        <th class="p-4 border min-w-[200px]"><img src="./img/ourproduct/oleall.png" alt="Ole Dog" class="mx-auto h-24 object-contain"></th>
-                                        <th class="p-4 border min-w-[200px]"><img src="./img/ourproduct/dogkerall.png" alt="Doctor Dog" class="mx-auto h-24 object-contain"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="p-4 border align-middle">อาหารสุนัขเกรดโฮลิสติกสำหรับสุนัขพันธุ์เล็ก<br>วัตถุดิบเดียวกับอาหารคนทาน</td>
-                                        <td class="p-4 border align-middle">สาร SHAPE พิเศษ ลดการสะสมคราบหินปูน และ Special Shape</td>
-                                        <td class="p-4 border align-middle">สารสกัดจากยัคคา</td>
-                                        <td class="p-4 border align-middle">สารอาหารครบถ้วน มีเม็ดหลายสี</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-4 border align-middle">อาหารสุนัขพรีเมียมที่รู้ใจสุนัขทุกตัว</td>
-                                        <td class="p-4 border align-middle">อร่อยครบคุณค่า</td>
-                                        <td class="p-4 border align-middle">โอเล่ อร่อยทุกคำ แข็งแรง</td>
-                                        <td class="p-4 border align-middle">สุขภาพดีอร่อย</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-4 border align-middle font-bold text-red-500">PREMIUM GRADE</td>
-                                        <td class="p-4 border align-middle font-bold text-red-500">STANDARD GRADE</td>
-                                        <td class="p-4 border align-middle font-bold text-red-500">HIGH ECO Fighting Brand</td>
-                                        <td class="p-4 border align-middle font-bold text-red-500">ECO</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-4 border align-middle">Human-grade</td>
-                                        <td class="p-4 border align-middle">Special Shape ที่ช่วยขูดและปากให้สะอาด แข็งแรง</td>
-                                        <td class="p-4 border align-middle">Hairball Control</td>
-                                        <td class="p-4 border align-middle"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            </div>
+          <!-- Cherman Jelly -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/ourproduct/Picture7.png" alt="Cherman Jelly" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+อาหารแมวเปียกเนื้อเจลลี่ ผลิตจากปลาทูน่าเนื้อขาวและเนื้อแดง ชิ้นเนื้อเต็มคำ ช่วยให้เจ้าเหมียวทานน้ำได้เยอะขึ้น ไม่เติมเกลือ            </p>
+            <span class="mt-5 inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-full">JELLY</span>
+          </div>
 
-            <div class="category-content hidden-no-transition" data-category="snack-dog">
-                <section class="py-8">
-                    <div class="flex flex-wrap justify-center items-start gap-12">
-                        <div class="flex-shrink-0">
-                             <h2 class="text-2xl font-bold text-red-500 text-center mb-4">Snacks Dog</h2>
-                             <table class="w-full border-collapse text-center bg-white rounded-lg shadow-md overflow-hidden">
-                                 <thead class="bg-gray-50">
-                                     <tr>
-                                         <th class="p-4 border"><img src="./img/ourproduct/gttsnack.png" alt="Titan Snacks" class="mx-auto h-24 object-contain"></th>
-                                     </tr>
-                                 </thead>
-                                 <tbody>
-                                     <tr><td class="p-4 border">ขนมสุนัขแบบแท่ง<br>โปรตีนคุณภาพดี กล้ามเนื้อแข็งแรง</td></tr>
-                                     <tr><td class="p-4 border">3 ความอร่อย 3 รสชาติ</td></tr>
-                                     <tr><td class="p-4 border font-bold text-red-500">PREMIUM GRADE</td></tr>
-                                 </tbody>
-                             </table>
-                        </div>
-                        <div class="flex-shrink-0">
-                             <h2 class="text-2xl font-bold text-red-500 text-center mb-4">Dental Treats</h2>
-                             <table class="w-full border-collapse text-center bg-white rounded-lg shadow-md overflow-hidden">
-                                 <thead class="bg-gray-50">
-                                     <tr>
-                                         <th class="p-4 border"><img src="./img/ourproduct/dental.png" alt="Sharpy Treats" class="mx-auto h-24 object-contain"></th>
-                                     </tr>
-                                 </thead>
-                                 <tbody>
-                                     <tr><td class="p-4 border"><b>DENTAL TREATS</b><br>ขบ.ขัดฟัน ดูแลช่องปาก</td></tr>
-                                     <tr><td class="p-4 border">หอม อร่อย ดูแลช่องปาก กลิ่นหอม<br>หายใจสดชื่น</td></tr>
-                                     <tr><td class="p-4 border font-bold text-red-500">PREMIUM GRADE</td></tr>
-                                 </tbody>
-                             </table>
-                        </div>
-                    </div>
-                </section>
-            </div>
+          <!-- Cherman Mousse -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/ourproduct/Picture8.png" alt="Cherman Mousse" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+อาหารแมวเปียกเนื้อมูส เนื้อมูสนุ่ม ทานง่าย อร่อย มีสารสกัดจากชาเขียวและ Salmon Oil ช่วยบำรุงให้ชุ่มชื้น ขนสวย เงางาม            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">MOUSSE</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div class="category-content hidden-no-transition" data-category="dry-dog">
+  <section class="py-8">
+    <div class="flex items-start gap-x-8">
+      <h2 class="text-2xl font-bold text-red-500 pt-10" >DOG DRY</h2>
+      <div class="w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <!-- Great Titan -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/ourproduct/gtt.png" alt="Great Titan" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              อาหารสุนัขเกรทไททัน เกรดโฮลิสติก<br>
+              ผลิตจากวัตถุดิบชั้นดีเกรดเดียวกับคนทาน<br>
+              (Human-grade) สำหรับสุนัขสายพันธุ์เล็ก-ใหญ่
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">PREMIUM GRADE</span>
+          </div>
+
+          <!-- Pluto -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/ourproduct/pluto-all.png" alt="Pluto" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              อาหารสุนัขพลูโต อาหารที่มี Special Shape<br>
+              ลดการสะสมของคราบหินปูน บำรุงขนสวยเงางาม<br>
+              และช่วยเรื่องการขับถ่ายเป็นก้อนด้วยยัคคา
+            </p>
+            <span class="mt-5 inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-full">STANDARD GRADE</span>
+          </div>
+
+          <!-- Ole Dog -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/ourproduct/oleall.png" alt="Ole Dog" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              อาหารสุนัขโอเล่ด็อก ทุกสูตรมี Hairball Control<br>
+              และสารสกัดจากยัคคา ช่วยเรื่องระบบขับถ่าย<br>
+              ทำงานได้อย่างมีประสิทธิภาพ
+            </p>
+            <span class="mt-5 inline-block bg-green-500 text-white font-semibold px-6 py-2 rounded-full">HIGH ECO</span>
+          </div>
+
+          <!-- Dogker -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/ourproduct/dogkerall.png" alt="Doctor Dog" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              อาหารสุนัขด็อกเกอร์ สารอาหารครบถ้วนตามที่สุนัขต้องการ<br>
+              อร่อย คุ้มค่า เหมาะสำหรับสุนัขทุกสายพันธุ์
+            </p>
+            <span class="mt-5 inline-block bg-gray-500 text-white font-semibold px-6 py-2 rounded-full">ECO</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<div class="category-content hidden-no-transition" data-category="snack-dog">
+  <section class="py-8">
+    <div class="flex items-start gap-x-8">
+      <h2 class="text-2xl font-bold text-red-500 pt-10" >DOG SNACK</h2>
+      <div class="w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+          <!-- Titan Snacks -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/ourproduct/gttsnack.png" alt="Titan Snacks" 
+                 class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" 
+                 onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+ขนมสุนัขเกรทไททัน ขนมแบบแท่ง โปรตีนสูงด้วยเนื้อสัตว์จริง คุณภาพดี เพื่อเสริมกล้ามเนื้อที่แข็งแรง
+ด้วย 3 รสชาติความอร่อย
+
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">
+SNACKS DOG
+            </span>
+          </div>
+
+          <!-- Dental Treats -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="./img/ourproduct/dental.png" alt="Dental Treats" 
+                 class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" 
+                 onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+ขนมขัดฟันสตาร์รี่ ขนมขัดฟัน Special Shape ช่วยขัดฟันและดูแลช่องปาก ให้มีกลิ่นหอม สดชื่น
+
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">
+DENTAL TREATS
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 
             <div id="dry-dog-cards" class="hidden-no-transition grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
                 <div class="product-card rounded-lg bg-blue-100 border border-blue-200">
