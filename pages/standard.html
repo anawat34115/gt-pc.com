@@ -155,49 +155,63 @@
     </section>
 
     <!-- Interactive Standards Section -->
-    <section id="standards" class="py-20 bg-white" data-aos="fade-up">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12" data-aos="fade-down">
-          <h2 class="text-3xl font-bold text-navy">Our Certifications Explained</h2>
-          <p class="mt-2 text-gray-500">Click on a standard to learn more about our commitment.</p>
+<section id="standards" class="py-20 bg-white" data-aos="fade-up">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12" data-aos="fade-down">
+      <h2 class="text-3xl font-bold text-navy">Our Certifications Explained</h2>
+      <p class="mt-2 text-gray-500">Click on a standard to learn more about our commitment.</p>
+    </div>
+    <div>
+      <!-- Tabs -->
+      <div class="border-b border-gray-200 mb-8" data-aos="zoom-in">
+        <nav id="tabs" class="flex flex-wrap justify-center -mb-px space-x-2 sm:space-x-8" aria-label="Tabs">
+          <button class="tab-btn tab-active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500" data-target="panel-haccp">HACCP</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-iso">ISO 9001</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-aafco">AAFCO</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-gmp">GMP</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-halal">HALAL</button>
+          <!-- 🔹 เพิ่มแท็บ BRC -->
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-brc">BRC</button>
+        </nav>
+      </div>
+
+      <!-- Tab Panels -->
+      <div id="tab-content" class="max-w-4xl mx-auto">
+        <div id="panel-haccp" class="tab-panel p-6 bg-gray-50 rounded-lg" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">HACCP <span class="text-base font-medium text-gray-500">(Hazard Analysis Critical Control Point)</span></h3>
+          <p class="text-gray-700">The Hazard Analysis Critical Control Point is used as a utile to specify, evaluate and control any possible dangers occurring during the production process. This system is widely approved by many countries in its efficiency and safety control of the products for the consumers.</p>
         </div>
-        <div>
-          <!-- Tabs -->
-          <div class="border-b border-gray-200 mb-8" data-aos="zoom-in">
-            <nav id="tabs" class="flex flex-wrap justify-center -mb-px space-x-2 sm:space-x-8" aria-label="Tabs">
-              <button class="tab-btn tab-active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500" data-target="panel-haccp">HACCP</button>
-              <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-iso">ISO 9001</button>
-              <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-aafco">AAFCO</button>
-              <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-gmp">GMP</button>
-              <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-halal">HALAL</button>
-            </nav>
-          </div>
-          <!-- Tab Panels -->
-          <div id="tab-content" class="max-w-4xl mx-auto">
-            <div id="panel-haccp" class="tab-panel p-6 bg-gray-50 rounded-lg" data-aos="fade-up">
-              <h3 class="font-bold text-2xl text-navy mb-2">HACCP <span class="text-base font-medium text-gray-500">(Hazard Analysis Critical Control Point)</span></h3>
-              <p class="text-gray-700">The Hazard Analysis Critical Control Point is used as a utile to specify, evaluate and control any possible dangers occurring during the production process. This system is widely approved by many countries in its efficiency and safety control of the products for the consumers.</p>
-            </div>
-            <div id="panel-iso" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
-              <h3 class="font-bold text-2xl text-navy mb-2">ISO 9001:2015</h3>
-              <p class="text-gray-700">ISO 9001:2015 is the quality system used in quality assurance and process management in the organization of the Supplier or the manufacturer which can use as a guideline or condition in an international agreement between a buyer or a seller and a manufacturer or a supplier in order to make continuous improvement and satisfy the clients.</p>
-            </div>
-            <div id="panel-aafco" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
-              <h3 class="font-bold text-2xl text-navy mb-2">AAFCO <span class="text-base font-medium text-gray-500">(The Association of American Feed Control Officials)</span></h3>
-              <p class="text-gray-700">Our production process is approved by the AAFCO. Our products have enough nutrition according to the National Research Center (USA). We have an effective selection of quality ingredients and use also a modern production process in order to produce qualitative pet food with adequate nutrition.</p>
-            </div>
-            <div id="panel-gmp" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
-              <h3 class="font-bold text-2xl text-navy mb-2">GMP <span class="text-base font-medium text-gray-500">(Good Manufacturing Practice)</span></h3>
-              <p class="text-gray-700">GMP is the minimum obligations that have to be conducted in order that the food will be safe for human consumption. It is the readiness management of the production process status.</p>
-            </div>
-            <div id="panel-halal" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
-              <h3 class="font-bold text-2xl text-navy mb-2">HALAL SUCI</h3>
-              <p class="text-gray-700">Our products were passing through the mixing, seasoning, assembling and packaging processes in accordance with Islamic rules approved by Islamic Food Research Centre (Hong Kong) or IFRC Hong Kong which guarantees that our products can find acts with correctness, cleanness and safety under the Islamic religion.</p>
-            </div>
-          </div>
+
+        <div id="panel-iso" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">ISO 9001:2015</h3>
+          <p class="text-gray-700">ISO 9001:2015 is the quality system used in quality assurance and process management in the organization of the Supplier or the manufacturer which can use as a guideline or condition in an international agreement between a buyer or a seller and a manufacturer or a supplier in order to make continuous improvement and satisfy the clients.</p>
+        </div>
+
+        <div id="panel-aafco" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">AAFCO <span class="text-base font-medium text-gray-500">(The Association of American Feed Control Officials)</span></h3>
+          <p class="text-gray-700">Our production process is approved by the AAFCO. Our products have enough nutrition according to the National Research Center (USA). We have an effective selection of quality ingredients and use also a modern production process in order to produce qualitative pet food with adequate nutrition.</p>
+        </div>
+
+        <div id="panel-gmp" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">GMP <span class="text-base font-medium text-gray-500">(Good Manufacturing Practice)</span></h3>
+          <p class="text-gray-700">GMP is the minimum obligations that have to be conducted in order that the food will be safe for human consumption. It is the readiness management of the production process status.</p>
+        </div>
+
+        <div id="panel-halal" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">HALAL SUCI</h3>
+          <p class="text-gray-700">Our products were passing through the mixing, seasoning, assembling and packaging processes in accordance with Islamic rules approved by Islamic Food Research Centre (Hong Kong) or IFRC Hong Kong which guarantees that our products can find acts with correctness, cleanness and safety under the Islamic religion.</p>
+        </div>
+
+        <!-- 🔹 เพิ่มเนื้อหา BRC -->
+        <div id="panel-brc" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">BRC</h3>
+          <p class="text-gray-700">เป็นมาตรฐานสากลที่เน้นความปลอดภัยและคุณภาพของผลิตภัณฑ์ที่เข้มงวด เพื่อให้ผู้บริโภคมั่นใจได้ว่าผลิตภัณฑ์นั้นปลอดภัย ถูกกฎหมาย และมีคุณภาพสูง</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <!-- Footer -->
