@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เกรทเทส เพ็ทแคร์ - มาตรฐานคุณภาพของเรา</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../js/main.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <base href="../">
+
+  <!-- ✅ AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    .bg-navy { background-color: #002F5D; }
+    .bg-dark-blue { background-color: #004B87; }
+    .bg-orange-gold { background-color: #F39C12; }
+    .text-navy { color: #002F5D; }
+    .text-dark-blue { color: #004B87; }
+    .text-orange-gold { color: #F39C12; }
+    .border-dark-blue { border-color: #004B87; }
+    .border-orange-gold { border-color: #F39C12; }
+    .hover\:text-dark-blue:hover { color: #004B87; }
+    .tab-active {
+      border-bottom-color: #F39C12;
+      color: #002F5D;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+  <header id="navbar-placeholder"></header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-navy from-blue-50 to-white py-20 pt-24 md:pt-48" data-aos="fade-down">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-5xl font-bold text-white">มาตรฐานของเรา</h1>
+        <p class="mt-4 max-w-4xl mx-auto text-gray-200 leading-relaxed text-lg">
+          บริษัท เกรทเทส เพ็ทแคร์ มุ่งมั่นที่จะเป็นผู้นำในการผลิตและจัดจำหน่ายอาหารสัตว์เลี้ยงคุณภาพสูงในเอเชีย เราจำหน่ายเฉพาะผลิตภัณฑ์ที่มีคุณภาพและความปลอดภัยตามมาตรฐานสากล ISO 9001:2015, GMP, HACCP และ SUCI HALAL ผลิตภัณฑ์ของเรามีคุณภาพดีและเหมาะสมกับความต้องการของคุณเสมอ
+        </p>
+      </div>
+    </section>
+
+    <!-- Certifications Image Section -->
+    <section class="container mx-auto px-6 -mt-12" data-aos="zoom-in">
+      <div class="bg-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
+        <div class="absolute -top-10 -left-10 w-32 h-32 bg-light-blue/10 rounded-full"></div>
+        <div class="absolute -bottom-12 -right-12 w-40 h-40 bg-orange-gold/10 rounded-full"></div>
+        <div class="relative flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <img src="./img/Standard/all-logo.png" alt="มาตรฐาน ISO 9001" class="h-24 transition-transform duration-300 hover:scale-110" title="ISO 9001:2015" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Gallery Section -->
+<section class="container mx-auto px-6 mt-16" data-aos="fade-up">
+  <div class="bg-white p-10 rounded-2xl shadow-lg">
+    <h2 class="text-center text-2xl md:text-3xl font-bold text-navy mb-10">
+      ใบรับรองมาตรฐานของเรา
+    </h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-center">
+      <img src="./img/certificate/5_page-0001.jpg" alt="ใบรับรอง HACCP"
+           class="w-32 sm:w-40 md:w-44 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+           onclick="openLightbox(this.src, 'ใบรับรอง HACCP')">
+
+      <img src="./img/certificate/4_page-0001.jpg" alt="ใบรับรอง ISO"
+           class="w-32 sm:w-40 md:w-44 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+           onclick="openLightbox(this.src, 'ใบรับรอง ISO 9001:2015')">
+
+      <img src="./img/certificate/3_page-0001.jpg" alt="ใบรับรอง AAFCO"
+           class="w-32 sm:w-40 md:w-44 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+           onclick="openLightbox(this.src, 'ใบรับรอง AAFCO')">
+
+      <img src="./img/certificate/2_page-0001.jpg" alt="ใบรับรอง GMP"
+           class="w-32 sm:w-40 md:w-44 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+           onclick="openLightbox(this.src, 'ใบรับรอง GMP')">
+
+      <img src="./img/certificate/1_page-0001.jpg" alt="ใบรับรอง HALAL"
+           class="w-32 sm:w-40 md:w-44 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+           onclick="openLightbox(this.src, 'ใบรับรอง HALAL')">
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+  <div class="relative">
+    <img id="lightbox-img" src="" class="max-h-[90vh] rounded-lg shadow-2xl">
+    <p id="lightbox-caption" class="text-center text-white mt-4 text-lg"></p>
+    <button onclick="closeLightbox()" class="absolute top-2 right-2 bg-white text-black rounded-full w-8 h-8 flex items-center justify-center font-bold hover:bg-gray-200">✕</button>
+  </div>
+</div>
+
+<script>
+  function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').innerText = caption;
+    document.getElementById('lightbox').classList.remove('hidden');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+  }
+
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+</script>
+
+<!-- Why It Matters Section -->
+<section class="py-20 bg-gray-50" data-aos="fade-up">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 max-w-3xl mx-auto" data-aos="fade-down">
+      <h2 class="text-3xl font-bold text-navy">ทำไมมาตรฐานของเราจึงสำคัญ</h2>
+      <p class="mt-4 text-gray-600">มาตรฐานเหล่านี้ไม่ใช่แค่โลโก้บนบรรจุภัณฑ์ แต่มันคือคำสัญญาที่เรามอบให้กับคุณและสัตว์เลี้ยงของคุณในทุกวัน</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+        <svg class="w-12 h-12 text-dark-blue mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <h3 class="text-xl font-semibold text-navy">ความสบายใจของคุณ</h3>
+        <p class="mt-2 text-gray-600">มั่นใจได้ว่าอาหารสัตว์เลี้ยงของคุณผลิตในโรงงานที่ได้มาตรฐานความปลอดภัยและสุขอนามัยสูงสุดระดับโลก</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+        <svg class="w-12 h-12 text-dark-blue mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <h3 class="text-xl font-semibold text-navy">คุณภาพที่สม่ำเสมอ</h3>
+        <p class="mt-2 text-gray-600">กระบวนการผลิตที่ผ่านการรับรองช่วยให้มั่นใจได้ว่าคุณค่าทางโภชนาการในทุกคำยังคงเท่าเดิมตั้งแต่ต้นจนจบ</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+        <svg class="w-12 h-12 text-dark-blue mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+        <h3 class="text-xl font-semibold text-navy">ชีวิตที่มีสุขภาพดีขึ้น</h3>
+        <p class="mt-2 text-gray-600">ด้วยมาตรฐานด้านโภชนาการและคุณภาพที่เข้มงวด เราช่วยให้คุณสร้างพื้นฐานของชีวิตที่ยืนยาวและมีความสุขให้กับสัตว์เลี้ยงของคุณ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Standards Section -->
+<section id="standards" class="py-20 bg-white" data-aos="fade-up">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12" data-aos="fade-down">
+      <h2 class="text-3xl font-bold text-navy">คำอธิบายมาตรฐานของเรา</h2>
+      <p class="mt-2 text-gray-500">คลิกที่แต่ละมาตรฐานเพื่อเรียนรู้เพิ่มเติมเกี่ยวกับความมุ่งมั่นของเรา</p>
+    </div>
+    <div>
+      <div class="border-b border-gray-200 mb-8" data-aos="zoom-in">
+        <nav id="tabs" class="flex flex-wrap justify-center -mb-px space-x-2 sm:space-x-8" aria-label="Tabs">
+          <button class="tab-btn tab-active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500" data-target="panel-haccp">HACCP</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-iso">ISO 9001</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-aafco">AAFCO</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-gmp">GMP</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-halal">HALAL</button>
+          <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 border-transparent" data-target="panel-brc">BRC</button>
+        </nav>
+      </div>
+
+      <div id="tab-content" class="max-w-4xl mx-auto">
+        <div id="panel-haccp" class="tab-panel p-6 bg-gray-50 rounded-lg" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">HACCP <span class="text-base font-medium text-gray-500">(Hazard Analysis Critical Control Point)</span></h3>
+          <p class="text-gray-700">ระบบ HACCP ใช้ในการระบุ ประเมิน และควบคุมความเสี่ยงที่อาจเกิดขึ้นระหว่างกระบวนการผลิต เป็นระบบที่ได้รับการยอมรับจากหลายประเทศในด้านความปลอดภัยของผลิตภัณฑ์เพื่อผู้บริโภค</p>
+        </div>
+
+        <div id="panel-iso" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">ISO 9001:2015</h3>
+          <p class="text-gray-700">ISO 9001:2015 เป็นระบบบริหารคุณภาพที่ใช้เพื่อรับรองการจัดการกระบวนการผลิตและการควบคุมคุณภาพในองค์กร เพื่อการปรับปรุงอย่างต่อเนื่องและสร้างความพึงพอใจให้กับลูกค้า</p>
+        </div>
+
+        <div id="panel-aafco" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">AAFCO <span class="text-base font-medium text-gray-500">(The Association of American Feed Control Officials)</span></h3>
+          <p class="text-gray-700">กระบวนการผลิตของเราได้รับการรับรองจาก AAFCO โดยผลิตภัณฑ์ของเรามีสารอาหารครบถ้วนตามมาตรฐานของศูนย์วิจัยแห่งชาติสหรัฐฯ (NRC) และใช้วัตถุดิบคุณภาพสูงร่วมกับกระบวนการผลิตที่ทันสมัย</p>
+        </div>
+
+        <div id="panel-gmp" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">GMP <span class="text-base font-medium text-gray-500">(Good Manufacturing Practice)</span></h3>
+          <p class="text-gray-700">GMP คือข้อกำหนดขั้นต่ำที่ต้องปฏิบัติเพื่อให้ผลิตภัณฑ์มีความปลอดภัย เหมาะสมสำหรับการบริโภค และควบคุมคุณภาพในทุกขั้นตอนการผลิต</p>
+        </div>
+
+        <div id="panel-halal" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">HALAL SUCI</h3>
+          <p class="text-gray-700">ผลิตภัณฑ์ของเราได้ผ่านกระบวนการผสม ปรุงรส ประกอบ และบรรจุภัณฑ์ตามหลักศาสนาอิสลาม โดยได้รับการรับรองจาก Islamic Food Research Centre (Hong Kong) ซึ่งยืนยันถึงความถูกต้อง ความสะอาด และความปลอดภัยตามหลักศาสนา</p>
+        </div>
+
+        <div id="panel-brc" class="tab-panel p-6 bg-gray-50 rounded-lg hidden" data-aos="fade-up">
+          <h3 class="font-bold text-2xl text-navy mb-2">BRC</h3>
+          <p class="text-gray-700">มาตรฐาน BRC (British Retail Consortium) เป็นมาตรฐานสากลที่มุ่งเน้นด้านความปลอดภัย คุณภาพ และกฎหมายของผลิตภัณฑ์ เพื่อให้ผู้บริโภคมั่นใจได้ว่าผลิตภัณฑ์มีคุณภาพสูง ปลอดภัย และถูกต้องตามกฎหมาย</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <script>
+    const tabs = document.getElementById('tabs');
+    const tabButtons = tabs.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    tabs.addEventListener('click', (e) => {
+      if (e.target.classList.contains('tab-btn')) {
+        tabButtons.forEach(btn => btn.classList.remove('tab-active'));
+        e.target.classList.add('tab-active');
+        tabPanels.forEach(panel => panel.classList.add('hidden'));
+        document.getElementById(e.target.dataset.target).classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

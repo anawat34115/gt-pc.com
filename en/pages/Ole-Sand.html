@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ole-Sand ทรายแมว</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- ✅ เพิ่ม AOS Animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <style>
+    body { font-family: 'Kanit', sans-serif; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+
+    .hero-bg {
+      background: linear-gradient(to right, #22d3ee, #3b82f6);
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .ole-logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px rgba(0,0,0,0.2);
+    }
+
+    .product-card-v2 {
+      border-radius: 2.5rem;
+      padding: 1.5rem;
+      padding-top: 6rem;
+      text-align: center;
+      position: relative;
+      margin-top: 5rem;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      will-change: transform;
+      background-color: #ecfeff;
+    }
+
+    .product-card-v2:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    }
+
+    .product-image-v2 {
+      position: absolute;
+      top: -5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
+    }
+
+    .add-to-cart-btn {
+      background-color: #2563eb;
+      color: white;
+      font-weight: bold;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    .header-nav-active {
+      color: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+  </style>
+
+  <script src="../js/main.js"></script>
+  <base href="../">
+</head>
+<body class="bg-gray-50">
+
+<header id="navbar-placeholder"></header>
+
+<main>
+  <section class="hero-bg pt-20 ">
+    <img src="./img/LINE_ALBUM_ทรายแมว_251020_1.jpg" alt="">
+  </section>
+
+
+
+  <!-- Section 2 -->
+  <section class="py-20" data-aos="fade-up">
+    <div class="w-full max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800">Ole Sand</h2>
+        <p class="text-gray-500 mt-2">Ole ทรายแมวดินภูเขาไฟไรฝุ่น</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-x-10 gap-y-24 mt-16">
+        <div class="product-card-v2" data-aos="zoom-in-up" data-aos-delay="100">
+          <img src="./img/Ole Sand/Picture1.png" alt="Ole ทรายแมว" class="product-image-v2">
+          <h3 class="text-2xl font-bold text-gray-800 mt-8">Green Apple</h3>
+          <p class="text-gray-600 mt-2 mb-12 h-12">ดูดซับเร็ว จับตัวเป็นก้อนแน่น (Quick Absorption, Clump Tightly)</p>
+          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="product-card-v2" data-aos="zoom-in-up" data-aos-delay="200">
+          <img src="./img/Ole Sand/Picture2.png" alt="Ole ทรายแมว" class="product-image-v2">
+          <h3 class="text-2xl font-bold text-gray-800 mt-8">Coffee </h3>
+          <p class="text-gray-600 mt-2 mb-12 h-12">ฝุ่นน้อย (Less Dust)</p>
+          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="product-card-v2" data-aos="zoom-in-up" data-aos-delay="300">
+          <img src="./img/Ole Sand/Picture3.png" alt="Ole ทรายแมว" class="product-image-v2">
+          <h3 class="text-2xl font-bold text-gray-800 mt-8">Lemon</h3>
+          <p class="text-gray-600 mt-2 mb-12 h-12">ควบคุมกลิ่นฉี่และอึ (Urine and Feces Odor Control)</p>
+          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        </div>
+
+        <div class="product-card-v2" data-aos="zoom-in-up" data-aos-delay="400">
+          <img src="./img/Ole Sand/Picture4.png" alt="Ole ทรายแมว" class="product-image-v2">
+          <h3 class="text-2xl font-bold text-gray-800 mt-8">Strawberry</h3>
+          <p class="text-gray-600 mt-2 mb-12 h-12">ปลอดภัยต่อสัตว์เลี้ยง</p>
+          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<!-- ✅ สคริปต์ AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true, offset: 120 });
+</script>
+
+</body>
+</html>
