@@ -1,16 +1,24 @@
-// ✅ Dynamic Path Prefix Fix — No more "en/en" issue!
-const currentPath = window.location.pathname;
+// ✅ FIX: Prevent double /en/en
 let pathPrefix = '';
 
-if (currentPath.includes('/en/pages/')) {
-  pathPrefix = '../../';
-} else if (currentPath.includes('/en/')) {
-  pathPrefix = '../';
-} else if (currentPath.includes('/pages/')) {
-  pathPrefix = '../';
-} else {
+const path = window.location.pathname;
+
+// อยู่หน้า root ของภาษา เช่น /en/index.html
+if (/^\/[a-z]{2}\/[^/]+$/.test(path)) {
   pathPrefix = '';
 }
+// อยู่ใน pages ของภาษา เช่น /en/pages/xxx.html
+else if (/^\/[a-z]{2}\/pages\//.test(path)) {
+  pathPrefix = '../';
+}
+// หน้า TH หรืออื่นๆ
+else {
+  pathPrefix = '';
+}
+
+console.log('DEBUG pathPrefix:', pathPrefix);
+console.log('DEBUG pathname:', path);
+
 
 // ---------- Lazy load รูปทั้งหมดอัตโนมัติ ----------
 document.addEventListener('DOMContentLoaded', () => {
