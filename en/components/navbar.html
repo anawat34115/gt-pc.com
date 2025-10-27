@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ใช้ Tailwind (ลบออกได้ถ้า project คุณ build เองอยู่แล้ว) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <title>Header — No Horizontal Scroll</title>
@@ -22,30 +21,25 @@
 </head>
 <body class="antialiased bg-white text-slate-900">
 
-  <!-- HEADER -->
   <header id="main-header"
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 border-b border-blue-900/10 backdrop-blur mb-5
            w-full overflow-x-clip">
-    <div class="container mx-auto px-6 py-3">
-      <div class="flex items-center justify-between">
-        <!-- logo -->
+    <div class="container mx-auto px-6 py-3"> <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2">
           <a href="/en/index.html" class="inline-flex items-center">
             <img src="/img/logo.png" alt="Greatest Pet Care Logo" class="h-16 w-auto rounded-full">
           </a>
         </div>
 
-        <!-- nav (desktop) -->
         <nav class="hidden md:flex items-center space-x-6">
         <a href="/en/pages/About-us.html" class="text-blue-900 hover:text-blue-700 transition-colors">About Us</a>
         <a href="/en/pages/capabilities.html" class="text-blue-900 hover:text-blue-700 transition-colors">Capabilities</a>
         <a href="/en/pages/Ourproduct.html" class="text-blue-900 hover:text-blue-700 transition-colors">Our Product</a>
         <a href="/en/pages/standard.html" class="text-blue-900 hover:text-blue-700 transition-colors">Standard</a>
 
-          <!-- our brand dropdown -->
           <div id="brand-dropdown-container" class="relative">
             <div class="flex items-center">
-          <a href="/en/pages/ourbrands.html" class="text-blue-900 hover:text-blue-700 transition-colors">Our Brand</a>
+          <a href="en/pages/ourbrands.html" class="text-blue-900 hover:text-blue-700 transition-colors">Our Brand</a>
               <button id="brand-dropdown-toggle" aria-controls="brand-dropdown-panel" aria-expanded="false" class="ml-1 text-blue-900 hover:text-blue-700 transition-colors">
                 <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path id="brand-dropdown-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -72,10 +66,8 @@
           <a href="/en/pages/Contact.html" class="text-blue-900 hover:text-blue-700 transition-colors">Contact-us</a>
         </nav>
 
-        <!-- actions right: Online Shopping + PDF -->
         <div class="hidden md:flex items-center space-x-3">
           <a href="https://gtpcpetshop.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-900/20 shadow-sm text-blue-900 hover:bg-blue-50 transition">
-            <!-- cart icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <circle cx="9" cy="20" r="1" stroke-width="2"></circle>
               <circle cx="17" cy="20" r="1" stroke-width="2"></circle>
@@ -85,15 +77,12 @@
           </a>
 
           <a href="../img/GTPC Pet Food - Catalog(1).pdf" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-blue-900/20 hover:bg-blue-50 transition" aria-label="Product Catalog (PDF)">
-            <!-- PDF icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-900" viewBox="0 0 24 24" fill="currentColor">
               <path fill-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.828a2 2 0 0 0-.586-1.414l-4.828-4.828A2 2 0 0 0 13.172 2H6zm7 2.828V8h3.172L13 4.828zM8 12h3a1 1 0 1 1 0 2H9v4H8v-6zm5 0h2.5a1.5 1.5 0 0 1 0 3H14v3h-1v-6zm1.5 2a.5.5 0 0 0 0-1H14v1h.5z" clip-rule="evenodd"/>
             </svg>
           </a>
         </div>
-        <!-- Language Switcher -->
-<!-- Language Switcher (Desktop) -->
-<div class="hidden md:flex items-center space-x-2">
+        <div class="hidden md:flex items-center space-x-2">
   <a href="index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">TH</a>
   <a href="en/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">EN</a>
   <a href="zh/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">中文</a>
@@ -101,7 +90,6 @@
 
 
 
-        <!-- hamburger -->
         <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="mobile-menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -110,7 +98,6 @@
       </div>
     </div>
 
-    <!-- mobile menu -->
     <div
       id="mobile-menu"
       class="hidden md:hidden bg-white text-blue-900 px-6 py-4 space-y-4 border-t border-blue-900/10 rounded-b-2xl shadow-lg
@@ -136,14 +123,13 @@
           <a href="pages/Silver.html" class="block hover:text-blue-700">Silver</a>
           <a href="pages/Cherman.html" class="block hover:text-blue-700">Cherman</a>
           <a href="pages/Ole-Dog.html" class="block hover:text-blue-700">Ole Dog</a>
-          <a href="pages/Ole-Cat.html" class="block hover:text-blue-700">Ole Cat</a>
+          <a href="pages/Ole-Cat.html" class{="block hover:text-blue-700"}>Ole Cat</a>
           <a href="pages/Ole-Sand.html" class="block hover:text-blue-700">Ole Sand</a>
           <a href="pages/Dogker.html" class="block hover:text-blue-700">Dogker</a>
           <a href="pages/Winstar.html" class="block hover:text-blue-700">Winstar</a>
         </div>
       </div>
 
-      <!-- mobile actions -->
       <a href="https://gtpcpetshop.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-900/20 shadow-sm hover:bg-blue-50">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <circle cx="9" cy="20" r="1" stroke-width="2"></circle>
@@ -162,8 +148,7 @@
 
       <a href="/en/pages/Contact.html" class="block hover:text-blue-700">Contact Us</a>
 
-      <!-- mobile language -->
-<div class="flex items-center gap-2 pt-2">
+      <div class="flex items-center gap-2 pt-2">
 <a href="/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">TH</a>
 <a href="/en/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">EN</a>
 <a href="/zh/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">中文</a>
@@ -178,6 +163,8 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const header = document.getElementById('main-header');
+      // <-- FIX 1: ตรึงเป้าหมายไปที่ .container ซึ่งเป็นแถบบนที่ความสูงคงที่
+      const topBar = header ? header.querySelector('.container') : null; 
 
       // mobile
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -199,16 +186,19 @@
       };
 
       // toggle mobile menu (updated)
-      if (mobileMenuToggle && mobileMenu && mobileMenuIcon && header) {
+      // เช็ค topBar ด้วย
+      if (mobileMenuToggle && mobileMenu && mobileMenuIcon && header && topBar) { 
+        
+        // ฟังก์ชัน lockScroll (แก้แบบเดิมคือลบ touchAction ออก)
         const lockScroll = (lock) => {
           document.documentElement.style.overflow = lock ? 'hidden' : '';
           document.body.style.overflow = lock ? 'hidden' : '';
-          document.body.style.touchAction = lock ? 'none' : '';
         };
 
         const setMobileMenuMaxHeight = () => {
           const viewportH = window.innerHeight || document.documentElement.clientHeight;
-          const headerH = header.offsetHeight || 80;
+          // <-- FIX 2: เปลี่ยนจาก header.offsetHeight เป็น topBar.offsetHeight
+          const headerH = topBar.offsetHeight || 80; 
           mobileMenu.style.maxHeight = Math.max(0, viewportH - headerH) + 'px';
         };
 
@@ -227,7 +217,7 @@
           mobileMenuToggle.setAttribute('aria-expanded', String(willOpen));
 
           // update height each toggle
-          setMobileMenuMaxHeight();
+          setMobileMenuMaxHeight(); // <-- การเรียกฟังก์ชันนี้ปลอดภัยแล้ว
 
           // lock/unlock scroll
           lockScroll(willOpen);
@@ -284,20 +274,11 @@
         const firstElement = header.nextElementSibling;
         if (firstElement) firstElement.style.paddingTop = header.offsetHeight + 'px';
       };
-      adjustContentPadding();
+      // ต้องรอให้รูปโลโก้โหลดเสร็จก่อน (หรือรอสักครู่) เพื่อให้ได้ความสูงที่แท้จริง
+      // ใช้ setTimeout เพื่อหน่วงเวลาเล็กน้อยให้ browser คำนวณ layout เสร็จ
+      setTimeout(adjustContentPadding, 100); 
       window.addEventListener('resize', adjustContentPadding);
     });
-
-
-    // Fix language buttons on mobile
-document.querySelectorAll('#mobile-menu .flex a').forEach(link => {
-  link.addEventListener('click', () => {
-    // close mobile menu instantly so redirect works
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
-  });
-});
-
 
   </script>
 </body>
