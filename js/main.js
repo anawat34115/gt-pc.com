@@ -163,16 +163,22 @@ fetch(pathPrefix + 'components/footer.html')
     }
   });
 
-  // ✅ Mobile language switcher
+// --- Mobile language switcher (moved inside navbar load scope) ---
 const langButtons = navbarPlaceholder.querySelectorAll('.lang-btn');
-langButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const lang = btn.dataset.lang;
-    let target = '/index.html';
+if (langButtons.length) {
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault(); // กัน event แปลกๆ บนมือถือ
+      const lang = btn.dataset.lang;
+      let target = '/index.html';
+      if (lang === 'en') target = '/en/index.html';
+      if (lang === 'zh') target = '/zh/index.html';
 
-    if (lang === 'en') target = '/en/index.html';
-    if (lang === 'zh') target = '/zh/index.html';
-
-    window.location.href = target;
+      // ปิดเมนูแล้วค่อยนำทาง
+      const mobileMenu = navbarPlaceholder.querySelector('#mobile-menu');
+      if (mobileMenu) mobileMenu.classList.add('hidden');
+      window.location.href = target;
+    });
   });
-});
+}
+
