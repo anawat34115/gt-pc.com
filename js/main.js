@@ -162,3 +162,17 @@ fetch(pathPrefix + 'components/footer.html')
       footerPlaceholder.innerHTML = '<p style="color:red; text-align:center;">Failed to load footer.</p>';
     }
   });
+
+  // ✅ Mobile language switcher
+const langButtons = navbarPlaceholder.querySelectorAll('.lang-btn');
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.lang;
+    let target = '/index.html';
+
+    if (lang === 'en') target = '/en/index.html';
+    if (lang === 'zh') target = '/zh/index.html';
+
+    window.location.href = target;
+  });
+});
