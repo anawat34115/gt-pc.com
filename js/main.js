@@ -88,7 +88,7 @@ fetch(pathPrefix + 'components/navbar.html')
       };
 
       mobileToggle.addEventListener('click', toggleHandler);
-      mobileToggle.addEventListener('touchend', toggleHandler);
+      // mobileToggle.addEventListener('touchend', toggleHandler);
 
       // ปิด menu เมื่อกด link
       mobileMenu.querySelectorAll('a').forEach(a => {
