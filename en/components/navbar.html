@@ -9,7 +9,7 @@
   <title>Header — No Horizontal Scroll</title>
   <script src="/js/main.js"></script>
   <base href="../" />
-  
+
   <style>
     /* กันล้นแนวนอนทั้งหน้าแบบ hard-stop */
     html, body { overflow-x: hidden; }
@@ -41,12 +41,12 @@
 
           <div id="brand-dropdown-container" class="relative">
             <div class="flex items-center">
-          <a href="https://gt-pc.com/en/pages/ourbrands.html" class="text-blue-900 hover:text-blue-700 transition-colors">Our Brand</a>
-              <button id="brand-dropdown-toggle" aria-controls="brand-dropdown-panel" aria-expanded="false" class="ml-1 text-blue-900 hover:text-blue-700 transition-colors">
-                <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path id="brand-dropdown-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                </svg>
-              </button>
+          <a href="/en/pages/ourbrands.html" class=text-blue-900 hover:text-blue-700 transition-colors>Our Brand</a>
+          <button id="mobile-brand-toggle" aria-controls="mobile-brand-panel" aria-expanded="false" aria-label="Toggle brands">
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
             </div>
             <div id="brand-dropdown-panel"
                  class="absolute left-0 mt-2 w-44 bg-white border border-blue-900/10 rounded-lg shadow-lg hidden flex-col z-50
