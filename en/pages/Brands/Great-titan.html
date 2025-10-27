@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greattitan Dog Food - ผลิตภัณฑ์เกรทไททัน</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- ✅ AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/png" href="img/logo.png">
+
+  <style>
+    body { font-family: 'Kanit', sans-serif; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    .hero-bg { background-color: #f75c40; position: relative; overflow: hidden; }
+    .wave { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%232e86de" fill-opacity="1" d="M0,192L80,176C160,160,320,128,480,133.3C640,139,800,181,960,186.7C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>');
+      background-repeat: no-repeat; background-size: cover; }
+    .greattitan-logo {
+      font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 3.5rem;
+      color: #ffffff; text-shadow: 2px 2px #2e86de, 4px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Product backgrounds */
+    .bg-titan-muscle { background-color: #E0F2E1; }
+    .bg-titan-healthy { background-color: #FFE6D2; }
+    .bg-titan-grooming { background-color: #FFDCDD; }
+    .bg-titan-small-breed { background-color: #00968741; }
+    .bg-titan-adult { background-color: #f57b003d; }
+
+    .product-card-v2 {
+      border-radius: 2.5rem; padding: 1.5rem; padding-top: 6rem;
+      text-align: center; position: relative; margin-top: 5rem;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      will-change: transform;
+    }
+    .product-card-v2:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    }
+    .product-image-v2 {
+      position: absolute; top: -5rem; left: 50%; transform: translateX(-50%);
+      width: 180px; height: 180px; object-fit: contain;
+      filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
+    }
+    .add-to-cart-btn {
+      background-color: #f75c40; color: white; font-weight: bold;
+      padding: 0.75rem 2rem; border-radius: 9999px; border: none;
+      cursor: pointer; transition: background-color 0.3s ease;
+    }
+    .add-to-cart-btn:hover { background-color: #de472c; }
+    .header-nav-active { color: #f75c40; border-color: #f75c40; }
+
+    .hero-bg {
+  position: relative;
+  background-image: url('../img/ปรับขนาดป้าย/ปรับขนาด-AW-1920x800-px-_-เกรทไททัน.jpg'); /* เปลี่ยนชื่อไฟล์ตามของคุณ */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ให้เต็มจอ */
+}
+
+  </style>
+
+  <script src="../js/main.js"></script>
+  <base href="../">
+</head>
+
+<body class="bg-gray-50">
+  <header id="navbar-placeholder"></header>
+
+  <main>
+    <!-- ✅ Hero Section -->
+
+  <section class="hero-bg pt-20 ">
+    <img src="./img/ปรับขนาดป้าย/ปรับขนาด-AW-1920x800-px-_-เกรทไททัน.jpg" alt="">
+  </section>
+
+
+
+
+
+
+
+    <!-- ✅ Product Section -->
+    <section class="py-20 flex justify-center items-center" data-aos="fade-up">
+      <div class="w-full max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="text-4xl font-bold text-gray-800">โภชนาการที่ใช่ เพื่อเพื่อนซี้สี่ขาของคุณ</h2>
+          <p class="text-gray-500 mt-2">คัดสรรสิ่งที่ดีที่สุดเพื่อสุนัขที่คุณรักในทุกๆ วัน</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
+          <!-- Product 1 -->
+          <div class="product-card-v2 bg-titan-muscle" data-aos="zoom-in" data-aos-delay="100">
+            <img src="./img/gtt/gtt-chicken-with-whey-proiten.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์เล็ก" class="product-image-v2">
+            <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan ขนมสุนัข รสไก่และเวย์โปรตีน</h3>
+            <p class="text-gray-600 mt-2 mb-6 h-12">รสไก่ผสมเวย์โปรตีน สูตร "Strong muscle" ช่วยเสริมสร้างกล้ามเนื้อ สำหรับสุนัขอายุ 3 เดือนขึ้นไป</p>
+            <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card-v2 bg-titan-healthy" data-aos="zoom-in" data-aos-delay="200">
+            <img src="./img/gtt/Smoke-salmon.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
+            <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan Snack Smoked Salmon original flavour stick</h3>
+            <p class="text-gray-600 mt-2 mb-6 h-12">รสแซลมอนรมควัน สูตร "Healthy" เพื่อสุขภาพที่ดี สำหรับสุนัขอายุ 3 เดือนขึ้นไป</p>
+            <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card-v2 bg-titan-grooming" data-aos="zoom-in" data-aos-delay="300">
+            <img src="./img/gtt/gtt-chicken-with-whey-strawberry.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
+            <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan ขนมสุนัข รสไก่และสตรอว์เบอร์รี</h3>
+            <p class="text-gray-600 mt-2 mb-6 h-12">รสไก่และสตรอว์เบอร์รี สูตร "Great Grooming" ช่วยบำรุงขนให้สวยงาม สำหรับสุนัขอายุ 3 เดือนขึ้นไป</p>
+            <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card-v2 bg-titan-small-breed" data-aos="zoom-in" data-aos-delay="400">
+            <img src="./img/gtt/gtt-ไก่และข้าว.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
+            <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan อาหารสุนัขโต สูตรไก่และข้าว สำหรับสุนัขพันธุ์เล็ก</h3>
+            <p class="text-gray-600 mt-2 mb-6 h-12">อาหารเม็ดสำหรับสุนัขโตเต็มวัยพันธุ์เล็ก อายุ 1 ปีขึ้นไป รสไก่และข้าว</p>
+            <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card-v2 bg-titan-adult" data-aos="zoom-in" data-aos-delay="500">
+            <img src="./img/gtt/gtt-สูตรเนื้อ.png" alt="อาหารสุนัขเกรทไททันสำหรับสุนัขพันธุ์ใหญ่" class="product-image-v2">
+            <h3 class="text-2xl font-bold text-gray-800 mt-8">Great Titan อาหารสุนัขโต สูตรเนื้อและข้าว สำหรับสุนัขพันธุ์ใหญ่</h3>
+            <p class="text-gray-600 mt-2 mb-6 h-12">อาหารเม็ดสำหรับสุนัขโตเต็มวัยพันธุ์ใหญ่ อายุ 1 ปีขึ้นไป รสเนื้อและข้าว</p>
+            <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- ✅ AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true
+    });
+  </script>
+</body>
+</html>

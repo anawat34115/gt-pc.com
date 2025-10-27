@@ -1,150 +1,85 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alpha Pet</title>
+  <title>Alpha Pet — Precious Cats</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
   <!-- ✅ AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-<link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="icon" type="image/png" href="img/logo.png">
 
   <style>
-    body {
-      font-family: 'Kanit', sans-serif;
-      background-color: #111;
-    }
+    body { font-family: 'Kanit', sans-serif; background-color: #111; }
     .font-poppins { font-family: 'Poppins', sans-serif; }
-    .hero-bg {
-      background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
-      position: relative;
-      overflow: hidden;
-    }
+    .hero-bg { background: linear-gradient(180deg, #000 0%, #1a1a1a 100%); position: relative; overflow: hidden; }
     .bg-pastel-blue { background-color: #E0F2FE; }
     .bg-pastel-pink { background-color: #fca77669; }
     .bg-pastel-peach { background-color: #ff5c5c4f; }
-    .wave {
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 100%; height: 150px;
-      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="%23C4A64F"/><stop offset="1" stop-color="%23000000"/></linearGradient></defs><path fill="url(%23grad)" fill-opacity="1" d="M0,192L80,176C160,160,320,128,480,133.3C640,139,800,181,960,186.7C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>');
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    .lincoln-logo {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
-      color: #C4A64F;
-      text-shadow: 2px 2px #000, 4px 4px rgba(0,0,0,0.5);
-    }
-    .product-card-v2 {
-      border-radius: 2.5rem;
-      padding: 1.5rem;
-      padding-top: 6rem;
-      text-align: center;
-      position: relative;
-      margin-top: 5rem;
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      color: #111;
-    }
-    .product-card-v2:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-    }
-    .product-image-v2 {
-      position: absolute;
-      top: -5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 8px rgba(0,0,0,0.4));
-    }
-    .add-to-cart-btn {
-      background-color: #C4A64F;
-      color: white;
-      font-weight: bold;
-      padding: 0.75rem 2rem;
-      border-radius: 9999px;
-      transition: background-color 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-    .add-to-cart-btn:hover {
-      background-color: #9E7D3C;
-    }
+    .wave { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="%23C4A64F"/><stop offset="1" stop-color="%23000000"/></linearGradient></defs><path fill="url(%23grad)" fill-opacity="1" d="M0,192L80,176C160,160,320,128,480,133.3C640,139,800,181,960,186.7C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>'); background-repeat: no-repeat; background-size: cover; }
+    .lincoln-logo { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 3.5rem; color: #C4A64F; text-shadow: 2px 2px #000, 4px 4px rgba(0,0,0,0.5); }
+    .product-card-v2 { border-radius: 2.5rem; padding: 1.5rem; padding-top: 6rem; text-align: center; position: relative; margin-top: 5rem; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; color: #111; }
+    .product-card-v2:hover { transform: translateY(-10px); box-shadow: 0 15px 25px rgba(0,0,0,0.2); }
+    .product-image-v2 { position: absolute; top: -5rem; left: 50%; transform: translateX(-50%); width: 180px; height: 180px; object-fit: contain; filter: drop-shadow(0 10px 8px rgba(0,0,0,0.4)); }
+    .add-to-cart-btn { background-color: #C4A64F; color: white; font-weight: bold; padding: 0.75rem 2rem; border-radius: 9999px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+    .add-to-cart-btn:hover { background-color: #9E7D3C; }
   </style>
 
-  <script src="../js/main.js"></script>
+  <script src="/js/main.js"></script>
   <base href="../">
 </head>
 
 <body class="bg-[#111] text-white">
   <header id="navbar-placeholder"></header>
 
-  <!-- Hero Section -->
-<!-- Hero Section for Precious Cats -->
-<section class="relative flex flex-col items-center justify-center text-center h-[85vh] overflow-hidden bg-gradient-to-b from-[#001a4d] via-[#002b7f] to-[#001a4d]">
-  
-  <!-- Decorative glowing orbs -->
-  <div class="absolute w-full h-full overflow-hidden">
-    <div class="absolute w-56 h-56 bg-[#FFD700]/20 rounded-full blur-3xl top-1/3 left-1/4 animate-pulse"></div>
-    <div class="absolute w-40 h-40 bg-[#FFD700]/15 rounded-full blur-2xl top-2/3 left-2/3 animate-ping"></div>
-  </div>
-
-  <!-- Hero content -->
-  <div class="relative z-10 px-6" data-aos="fade-up" data-aos-delay="100">
-    <h1 class="text-6xl md:text-7xl font-poppins font-bold text-[#FFD700] drop-shadow-[0_2px_10px_rgba(255,215,0,0.3)]">
-      Precious Cats
-    </h1>
-    <p class="text-gray-200 mt-4 text-xl md:text-2xl">
-      “อร่อยคุ้มค่า โปรตีนสูง 26% — สำหรับแมวที่คุณรัก”
-    </p>
-    <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
-      <button class="bg-[#FFD700] hover:bg-[#e6c200] text-[#001a4d] font-bold py-3 px-10 rounded-full transition-all duration-300">
-        สั่งซื้อเลย
-      </button>
-      <button class="border border-[#FFD700] hover:bg-[#FFD700]/10 text-[#FFD700] font-bold py-3 px-10 rounded-full transition-all duration-300">
-        ดูสินค้า
-      </button>
+  <!-- Hero Section for Precious Cats -->
+  <section class="relative flex flex-col items-center justify-center text-center h-[85vh] overflow-hidden bg-gradient-to-b from-[#001a4d] via-[#002b7f] to-[#001a4d]">
+    <!-- Decorative glowing orbs -->
+    <div class="absolute w-full h-full overflow-hidden">
+      <div class="absolute w-56 h-56 bg-[#FFD700]/20 rounded-full blur-3xl top-1/3 left-1/4 animate-pulse"></div>
+      <div class="absolute w-40 h-40 bg-[#FFD700]/15 rounded-full blur-2xl top-2/3 left-2/3 animate-ping"></div>
     </div>
-  </div>
 
-  <!-- Subtle wave at bottom -->
-  <div class="absolute bottom-0 w-full">
-    <svg viewBox="0 0 1440 320" class="w-full" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#FFD700" fill-opacity="0.15" d="M0,256L80,224C160,192,320,128,480,106.7C640,85,800,107,960,133.3C1120,160,1280,192,1360,213.3L1440,235L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-    </svg>
-  </div>
-</section>
+    <!-- Hero content -->
+    <div class="relative z-10 px-6" data-aos="fade-up" data-aos-delay="100">
+      <h1 class="text-6xl md:text-7xl font-poppins font-bold text-[#FFD700] drop-shadow-[0_2px_10px_rgba(255,215,0,0.3)]">Precious Cats</h1>
+      <p class="text-gray-200 mt-4 text-xl md:text-2xl">“Great taste, great value. High protein 26% — for the cats you love.”</p>
+      <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+        <button class="bg-[#FFD700] hover:bg-[#e6c200] text-[#001a4d] font-bold py-3 px-10 rounded-full transition-all duration-300">Order Now</button>
+        <button class="border border-[#FFD700] hover:bg-[#FFD700]/10 text-[#FFD700] font-bold py-3 px-10 rounded-full transition-all duration-300">View Products</button>
+      </div>
+    </div>
 
+    <!-- Subtle wave at bottom -->
+    <div class="absolute bottom-0 w-full">
+      <svg viewBox="0 0 1440 320" class="w-full" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#FFD700" fill-opacity="0.15" d="M0,256L80,224C160,192,320,128,480,106.7C640,85,800,107,960,133.3C1120,160,1280,192,1360,213.3L1440,235L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
 
   <!-- Products Section -->
-  <section class="py-20 bg-white" >
+  <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12" data-aos="fade-down" data-aos-delay="100">
-        <h2 class="text-4xl font-bold text-[#C4A64F]">อาหารแมว</h2>
-        <p class="text-gray-600 mt-2">Precious-Cats</p>
+        <h2 class="text-4xl font-bold text-[#C4A64F]">Cat Food</h2>
+        <p class="text-gray-600 mt-2">Precious Cats</p>
       </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
-  <!-- Center the single product card -->
-  <div class="col-span-1 md:col-start-2">
-    <!-- Product 1 -->
-    <div class="product-card-v2 bg-pastel-blue" data-aos="zoom-in" data-aos-delay="100">
-      <img src="./img/Artboard 1_0.png" alt="อาหารแมว Lincoln สูตร 1" class="product-image-v2">
-      <h3 class="text-2xl font-bold mt-8">พรีเชียสแคท รสปลาทูน่า โปรตีน 26%</h3>
-      <p class="text-gray-600 mt-2 mb-6 h-12">“อร่อยคำโต คุ้มค่าเกินราคา”
-บำรุงผิวหนังและเส้นขน</p>
-      <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
-    </div>
-  </div>
-</div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
+        <!-- Center the single product card -->
+        <div class="col-span-1 md:col-start-2">
+          <!-- Product 1 -->
+          <div class="product-card-v2 bg-pastel-blue" data-aos="zoom-in" data-aos-delay="100">
+            <img src="/img/Artboard 1_0.png" alt="Precious Cats – Tuna Flavor, 26% Protein" class="product-image-v2">
+            <h3 class="text-2xl font-bold mt-8">Precious Cats – Tuna Flavor (26% Protein)</h3>
+            <p class="text-gray-600 mt-2 mb-6 h-12">“Big, tasty bites. Great value.” Supports skin and coat health.</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -154,10 +89,7 @@
   <!-- ✅ AOS Script -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+    AOS.init({ duration: 1000, once: true });
   </script>
 </body>
 </html>

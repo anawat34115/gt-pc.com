@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cherman Cat Food - ผลิตภัณฑ์เชอร์แมน</title>
+  <title>Cherman Cat Food - Cherman Products</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -13,11 +13,9 @@
   <style>
     body {
       font-family: 'Kanit', sans-serif;
-      background-color: #111; /* BG ดำ */
+      background-color: #111; /* Dark BG */
     }
-    .font-poppins {
-      font-family: 'Poppins', sans-serif;
-    }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
     .hero-bg {
       background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
       position: relative;
@@ -34,13 +32,13 @@
       background-size: cover;
     }
     .cherman-logo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 3rem;
-    background: linear-gradient(90deg, #CBA64B, #E3C769);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px #ffffff, 4px 4px rgba(0,0,0,0.5);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      background: linear-gradient(90deg, #CBA64B, #E3C769);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px #ffffff, 4px 4px rgba(0,0,0,0.5);
     }
     .product-card-v2 {
       border-radius: 2.5rem;
@@ -68,70 +66,41 @@
       filter: drop-shadow(0 10px 8px rgba(0,0,0,0.4));
     }
     .add-to-cart-btn {
-    background: linear-gradient(90deg, #CBA64B, #E3C769);
-    color: white;
-    font-weight: bold;
-    padding: 0.75rem 2rem;
-    border-radius: 9999px;
-    transition: opacity 0.3s ease;
-    border: none;
-    cursor: pointer;
+      background: linear-gradient(90deg, #CBA64B, #E3C769);
+      color: white;
+      font-weight: bold;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      transition: opacity 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
-    .add-to-cart-btn:hover {
-    opacity: 0.85;
-    }
+    .add-to-cart-btn:hover { opacity: 0.85; }
+
     .bg-pastel-blue { background-color: #E0F2FE; }
     .bg-pastel-pink { background-color: #FCE7F3; }
     .bg-pastel-peach { background-color: #FFF7ED; }
-    /* MONDAY - Light Yellow */
-.bg-cherman-light-yellow { background-color: #FFF2CD; }
 
-/* TUESDAY - Light Pink */
-.bg-cherman-light-rose { background-color: #FDD7E0; }
+    /* Day-theme backgrounds */
+    .bg-cherman-light-yellow { background-color: #FFF2CD; } /* MONDAY */
+    .bg-cherman-light-rose { background-color: #FDD7E0; }   /* TUESDAY */
+    .bg-cherman-light-green { background-color: #D3EDD4; }  /* WEDNESDAY */
+    .bg-cherman-light-orange { background-color: #FDDCCB; } /* THURSDAY */
+    .bg-cherman-light-cyan { background-color: #C6EFEF; }   /* FRIDAY */
+    .bg-cherman-light-pink { background-color: #f8d6e6; }   /* SATURDAY */
+    .bg-cherman-light-red { background-color: #F8D0D2; }    /* SUNDAY */
 
-/* WEDNESDAY - Light Green */
-.bg-cherman-light-green { background-color: #D3EDD4; }
-
-/* THURSDAY - Light Orange */
-.bg-cherman-light-orange { background-color: #FDDCCB; }
-
-/* FRIDAY - Light Cyan */
-.bg-cherman-light-cyan { background-color: #C6EFEF; }
-
-/* SATURDAY - Light Purple */
-.bg-cherman-light-pink { background-color: #f8d6e6; }
-
-/* SUNDAY - Light Red */
-.bg-cherman-light-red { background-color: #F8D0D2; }
-
-
-/* Tuna (Green) */
-.bg-cherman-tuna { background-color: #008c563b; }
-
-/* Tuna and Bonito (Teal) */
-.bg-cherman-bonito { background-color: #007c7641; }
-
-/* Herring (Pink) */
-.bg-cherman-herring { background-color: #d9006d36; }
-
-/* Salmon (Orange) */
-.bg-cherman-salmon { background-color: #e353052c; }
-
-/* Lobster (Red) */
-.bg-cherman-lobster { background-color: #c8102f48; }
-
-/* Alaska King Crab (Coral) */
-.bg-cherman-crab { background-color: #e74a5221; }
-
-/* Tuna and Scallop (Purple) */
-.bg-cherman-scallop { background-color: #6a2b8338; }
-
-/* Cheese & Truffle (Black) */
-.bg-cherman-truffle { background-color: #0000001f; }
-
-
+    /* Flavor palettes */
+    .bg-cherman-tuna { background-color: #008c563b; }
+    .bg-cherman-bonito { background-color: #007c7641; }
+    .bg-cherman-herring { background-color: #d9006d36; }
+    .bg-cherman-salmon { background-color: #e353052c; }
+    .bg-cherman-lobster { background-color: #c8102f48; }
+    .bg-cherman-crab { background-color: #e74a5221; }
+    .bg-cherman-scallop { background-color: #6a2b8338; }
+    .bg-cherman-truffle { background-color: #0000001f; }
   </style>
-            <script src="../js/main.js"></script>
+  <script src="../js/main.js"></script>
   <base href="../">
 </head>
 
@@ -141,181 +110,169 @@
 
   <!-- Hero Section -->
   <section class="hero-bg pt-20 ">
-    <img src="./img/ปรับขนาดป้าย/ปรับขนาด-AW-1920x800-px-_-เชอร์แมน.jpg" alt="">
+    <img src="./img/ปรับขนาดป้าย/ปรับขนาด-AW-1920x800-px-_-เชอร์แมน.jpg" alt="Cherman hero banner">
   </section>
 
-  <!-- Products Section -->
+  <!-- Products Section: Jelly -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-[#FFD700]">Cherman (Jelly)</h2>
-        <p class="text-gray-600 mt-2">Cherman - อาหารแมวพรีเมียมเพื่อสุขภาพและความสุข</p>
+        <p class="text-gray-600 mt-2">Cherman – Premium cat food for health and happiness.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
 
         <!-- Product 1 -->
         <div class="product-card-v2 bg-cherman-light-red">
-          <img src="./img/cherman/cherman(jelly)/cherman1.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสทูน่าในเยลลี่</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยเสริมสร้างระบบภูมิคุ้มกัน ทำให้ร่างกายทำงานอย่างมีประสิทธิภาพ</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          <img src="./img/cherman/cherman(jelly)/cherman1.png" alt="Cherman Tuna in Jelly" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Tuna in Jelly</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Supports the immune system for better overall performance.</p>
+          <a class="add-to-cart-btn" href="https://www.gtpcpetshop.com/cherman">Add to Cart</a>
         </div>
 
         <!-- Product 2 -->
         <div class="product-card-v2 bg-cherman-light-green">
-          <img src="./img/cherman/cherman(jelly)/cherman2.png" alt="อาหารแมว Cherman สูตร 2" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสทูน่าและไก่ในเยลลี่</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยเสริมสร้างกล้ามเนื้อ บำรุงผิว ขนสวย</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          <img src="./img/cherman/cherman(jelly)/cherman2.png" alt="Cherman Tuna & Chicken in Jelly" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Tuna & Chicken in Jelly</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Helps build muscle; nourishes skin and coat.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
         <!-- Product 3 -->
         <div class="product-card-v2 bg-cherman-light-yellow">
-          <img src="./img/cherman/cherman(jelly)/cherman3.png" alt="อาหารแมว Cherman สูตร 3" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสไก่และผักในเยลลี่</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยบำรุงสายตา และต้านอนุมูลอิสระ</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          <img src="./img/cherman/cherman(jelly)/cherman3.png" alt="Cherman Chicken & Vegetables in Jelly" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Chicken & Vegetables in Jelly</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Supports eye health and provides antioxidant benefits.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-                <div class="product-card-v2 bg-cherman-light-orange">
-          <img src="./img/cherman/cherman(jelly)/cherman4.png" alt="อาหารแมว Cherman สูตร 3" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสทูน่าและแซลมอนในเยลลี่ </h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยดูแลระบบย่อยอาหาร</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-light-orange">
+          <img src="./img/cherman/cherman(jelly)/cherman4.png" alt="Cherman Tuna & Salmon in Jelly" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Tuna & Salmon in Jelly</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Supports digestive health.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-                <div class="product-card-v2 bg-cherman-light-cyan">
-          <img src="./img/cherman/cherman(jelly)/cherman5.png" alt="อาหารแมว Cherman สูตร 3" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสปลาทูในเยลลี่</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยบำรุงประสาทและสมอง</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-light-cyan">
+          <img src="./img/cherman/cherman(jelly)/cherman5.png" alt="Cherman Mackerel in Jelly" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Mackerel in Jelly</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Helps support the nervous system and brain function.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-                <div class="product-card-v2 bg-cherman-light-pink">
-          <img src="./img/cherman/cherman(jelly)/cherman6.png" alt="อาหารแมว Cherman สูตร 3" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสทูน่าและกุ้งเยลลี่</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยบำรุงผิวหนังและขน ลดภาวะการอักเสบ</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-light-pink">
+          <img src="./img/cherman/cherman(jelly)/cherman6.png" alt="Cherman Tuna & Shrimp in Jelly" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Tuna & Shrimp in Jelly</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Nourishes skin and coat; helps reduce inflammation.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
       </div>
     </div>
   </section>
 
-      <section class="py-20 bg-white">
+  <!-- Products Section: Lick -->
+  <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-[#FFD700]">Cherman (Lick)</h2>
-        <p class="text-gray-600 mt-2">Cherman - อาหารแมวพรีเมียมเพื่อสุขภาพและความสุข</p>
+        <p class="text-gray-600 mt-2">Cherman – Premium cat food for health and happiness.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
 
-
-                <div class="product-card-v2 bg-cherman-lobster">
-          <img src="./img/cherman/cherman(lick)/Untitled-2-44.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสล็อบสเตอร์ </h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยบำรุงขนให้สวยเงางาม (Coat Grooming)</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-lobster">
+          <img src="./img/cherman/cherman(lick)/Untitled-2-44.png" alt="Cherman Lobster Flavor (Lick)" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Lobster Flavor</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Promotes a shiny, well-groomed coat.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-
-                <div class="product-card-v2 bg-cherman-herring">
-          <img src="./img/cherman/cherman(lick)/Untitled-2-46.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสปลาเฮอร์ริ่ง</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยเสริมสร้างกล้ามเนื้อ (Builds Muscle)</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-herring">
+          <img src="./img/cherman/cherman(lick)/Untitled-2-46.png" alt="Cherman Herring Flavor (Lick)" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Herring Flavor</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Helps build muscle.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-        
-                        <div class="product-card-v2 bg-cherman-salmon">
-          <img src="./img/cherman/cherman(lick)/Untitled-2-48.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสแซลมอน</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยดูแลระบบย่อยอาหาร (Digestive Care)</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-salmon">
+          <img src="./img/cherman/cherman(lick)/Untitled-2-48.png" alt="Cherman Salmon Flavor (Lick)" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Salmon Flavor</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Supports digestive care.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-
-
-                    <div class="product-card-v2 bg-cherman-truffle">
-          <img src="./img/cherman/cherman(lick)/Untitled-2-50.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสชีสและทรัฟเฟิล</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยเสริมสร้างระบบภูมิคุ้มกัน (Immune Support)</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-truffle">
+          <img src="./img/cherman/cherman(lick)/Untitled-2-50.png" alt="Cherman Cheese & Truffle Flavor (Lick)" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Cheese & Truffle Flavor</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Supports the immune system.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-
-                    <div class="product-card-v2 bg-cherman-tuna">
-          <img src="./img/cherman/cherman(lick)/Untitled-2-52.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสทูน่า</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยลดการเกิดก้อนขน (Hairball Control)</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-tuna">
+          <img src="./img/cherman/cherman(lick)/Untitled-2-52.png" alt="Cherman Tuna Flavor (Lick)" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Tuna Flavor</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Helps reduce hairballs.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-
-                    <div class="product-card-v2 bg-cherman-bonito">
-          <img src="./img/cherman/cherman(lick)/Untitled-2-54.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสทูน่าและปลาโอ</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยดูแลทำความสะอาดฟัน (Dental Care)</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-bonito">
+          <img src="./img/cherman/cherman(lick)/Untitled-2-54.png" alt="Cherman Tuna & Bonito Flavor (Lick)" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Tuna & Bonito Flavor</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Supports dental care and cleanliness.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-
-                    <div class="product-card-v2 bg-cherman-crab">
-          <img src="./img/cherman/cherman(lick)/Untitled-2-56.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสปูอลาสก้า</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยบำรุงข้อ (Joint Care)</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-crab">
+          <img src="./img/cherman/cherman(lick)/Untitled-2-56.png" alt="Cherman Alaska King Crab Flavor (Lick)" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Alaska King Crab Flavor</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Supports joint health.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
-
-
-                            <div class="product-card-v2 bg-cherman-scallop">
-          <img src="./img/cherman/cherman(lick)/Untitled-2-58.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสทูน่าและหอยเชลล์</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ช่วยให้แมวรู้สึกผ่อนคลาย (Calming)</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+        <div class="product-card-v2 bg-cherman-scallop">
+          <img src="./img/cherman/cherman(lick)/Untitled-2-58.png" alt="Cherman Tuna & Scallop Flavor (Lick)" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Tuna & Scallop Flavor</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Helps your cat feel relaxed and calm.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
-
-
 
       </div>
     </div>
   </section>
 
-    <section class="py-20 bg-white">
+  <!-- Products Section: Mousse -->
+  <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-[#FFD700]">Cherman (Mousse)</h2>
-        <p class="text-gray-600 mt-2">Cherman - อาหารแมวพรีเมียมเพื่อสุขภาพและความสุข</p>
+        <p class="text-gray-600 mt-2">Cherman – Premium cat food for health and happiness.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
 
         <!-- Product 1 -->
         <div class="product-card-v2 bg-pastel-blue">
-          <img src="./img/cherman/cherman(Mousse)/cherman-m1.png" alt="อาหารแมว Cherman สูตร 1" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสไก่มูส (Chicken Mousse)</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">บำรุงผิวหนัง ลดการขาดหลุดร่วงของเส้นขน</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          <img src="./img/cherman/cherman(Mousse)/cherman-m1.png" alt="Cherman Chicken Mousse" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Chicken Mousse</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Nourishes the skin and helps reduce shedding.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
 
         <!-- Product 2 -->
         <div class="product-card-v2 bg-pastel-pink">
-          <img src="./img/cherman/cherman(Mousse)/cherman-m2.png" alt="อาหารแมว Cherman สูตร 2" class="product-image-v2">
-          <h3 class="text-2xl font-bold mt-8">Cherman รสทูน่ามูส (Tuna Mousse)</h3>
-          <p class="text-gray-600 mt-2 mb-6 h-12">ต้านแบคทีเรียลดการละคายเคืองของผิวหนัง</p>
-          <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+          <img src="./img/cherman/cherman(Mousse)/cherman-m2.png" alt="Cherman Tuna Mousse" class="product-image-v2">
+          <h3 class="text-2xl font-bold mt-8">Cherman Tuna Mousse</h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12">Antibacterial properties to soothe skin irritation.</p>
+          <button class="add-to-cart-btn">Add to Cart</button>
         </div>
-
 
       </div>
     </div>
   </section>
   <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
+  <div id="footer-placeholder"></div>
 
 </body>
 </html>

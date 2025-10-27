@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
 
   <!-- ✅ AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <link rel="icon" type="image/png" href="img/logo.png">
+<link rel="icon" type="image/png" href="img/logo.png">
 
   <style>
     body {
@@ -80,7 +80,7 @@
     }
   </style>
 
-  <script src="/js/main.js"></script>
+  <script src="../js/main.js"></script>
   <base href="../">
 </head>
 
@@ -88,65 +88,66 @@
   <header id="navbar-placeholder"></header>
 
   <!-- Hero Section -->
-  <section class="hero-bg relative flex flex-col items-center justify-center text-center h-[85vh] overflow-hidden">
-    <!-- Gradient background animation -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-[#1a1a1a] to-[#000000]"></div>
-    
-    <!-- Floating golden particles -->
-    <div class="absolute w-full h-full overflow-hidden">
-      <div class="absolute w-2 h-2 bg-[#C4A64F] rounded-full opacity-60 animate-ping top-1/4 left-1/3"></div>
-      <div class="absolute w-3 h-3 bg-[#C4A64F] rounded-full opacity-40 animate-pulse top-2/3 left-2/4"></div>
-      <div class="absolute w-1.5 h-1.5 bg-[#C4A64F] rounded-full opacity-50 animate-ping top-1/3 left-2/5"></div>
-    </div>
+<!-- Hero Section -->
+<section class="hero-bg relative flex flex-col items-center justify-center text-center h-[85vh] overflow-hidden">
+  <!-- Gradient background animation -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black via-[#1a1a1a] to-[#000000]"></div>
+  
+  <!-- Floating golden particles -->
+  <div class="absolute w-full h-full overflow-hidden">
+    <div class="absolute w-2 h-2 bg-[#C4A64F] rounded-full opacity-60 animate-ping top-1/4 left-1/3"></div>
+    <div class="absolute w-3 h-3 bg-[#C4A64F] rounded-full opacity-40 animate-pulse top-2/3 left-2/4"></div>
+    <div class="absolute w-1.5 h-1.5 bg-[#C4A64F] rounded-full opacity-50 animate-ping top-1/3 left-2/5"></div>
+  </div>
 
-    <!-- Hero content -->
-    <div class="relative z-10 px-6" data-aos="fade-up" data-aos-delay="100">
-      <h1 class="text-6xl md:text-7xl font-poppins font-bold text-[#C4A64F] drop-shadow-lg">
-        Alpha Pet
-      </h1>
-      <p class="text-gray-300 mt-4 text-xl md:text-2xl">
-        "Premium-quality pet food for your four-legged friend"
-      </p>
-      <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
-        <button class="bg-[#C4A64F] hover:bg-[#9E7D3C] text-white font-bold py-3 px-10 rounded-full transition-all duration-300">
-          Order Now
-        </button>
-        <button class="border border-[#C4A64F] hover:bg-[#C4A64F]/10 text-[#C4A64F] font-bold py-3 px-10 rounded-full transition-all duration-300">
-          View Products
-        </button>
-      </div>
+  <!-- Hero content -->
+  <div class="relative z-10 px-6" data-aos="fade-up" data-aos-delay="100">
+    <h1 class="text-6xl md:text-7xl font-poppins font-bold text-[#C4A64F] drop-shadow-lg">
+      Alpha Pet
+    </h1>
+    <p class="text-gray-300 mt-4 text-xl md:text-2xl">
+      "อาหารสัตว์คุณภาพพรีเมียม เพื่อเพื่อนสี่ขาของคุณ"
+    </p>
+    <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+      <button class="bg-[#C4A64F] hover:bg-[#9E7D3C] text-white font-bold py-3 px-10 rounded-full transition-all duration-300">
+        สั่งซื้อเลย
+      </button>
+      <button class="border border-[#C4A64F] hover:bg-[#C4A64F]/10 text-[#C4A64F] font-bold py-3 px-10 rounded-full transition-all duration-300">
+        ดูสินค้า
+      </button>
     </div>
+  </div>
 
-    <!-- Subtle wave at the bottom -->
-    <div class="absolute bottom-0 w-full">
-      <svg viewBox="0 0 1440 320" class="w-full" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#C4A64F" fill-opacity="0.15" d="M0,192L80,160C160,128,320,64,480,58.7C640,53,800,107,960,133.3C1120,160,1280,160,1360,154.7L1440,149.3L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-      </svg>
-    </div>
-  </section>
+  <!-- Subtle wave at the bottom -->
+  <div class="absolute bottom-0 w-full">
+    <svg viewBox="0 0 1440 320" class="w-full" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#C4A64F" fill-opacity="0.15" d="M0,192L80,160C160,128,320,64,480,58.7C640,53,800,107,960,133.3C1120,160,1280,160,1360,154.7L1440,149.3L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+    </svg>
+  </div>
+</section>
 
 
   <!-- Products Section -->
   <section class="py-20 bg-white" >
     <div class="container mx-auto px-6">
       <div class="text-center mb-12" data-aos="fade-down" data-aos-delay="100">
-        <h2 class="text-4xl font-bold text-[#C4A64F]">Adult Dog Food</h2>
-        <p class="text-gray-600 mt-2">Alpha Pet</p>
+        <h2 class="text-4xl font-bold text-[#C4A64F]">อาหารสุนัขโต</h2>
+        <p class="text-gray-600 mt-2">Alpha Pet อัลฟ่า</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
-        <!-- Center the single product card -->
-        <div class="col-span-1 md:col-start-2">
-          <!-- Product 1 -->
-          <div class="product-card-v2 bg-pastel-blue" data-aos="zoom-in" data-aos-delay="100">
-            <img src="/img/Artboard 2_0.png" alt="Alpha Pet Dog Food – Beef Flavor" class="product-image-v2">
-            <h3 class="text-2xl font-bold mt-8">Alpha Pet – Beef Flavor, 18% Protein</h3>
-            <p class="text-gray-600 mt-2 mb-6 h-12">“Tasty and great value”
-Supports strong bones and teeth.</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
+  <!-- Center the single product card -->
+  <div class="col-span-1 md:col-start-2">
+    <!-- Product 1 -->
+    <div class="product-card-v2 bg-pastel-blue" data-aos="zoom-in" data-aos-delay="100">
+      <img src="./img/Artboard 2_0.png" alt="อาหารแมว Lincoln สูตร 1" class="product-image-v2">
+      <h3 class="text-2xl font-bold mt-8">อัลฟ่าเพ็ท รสเนื้อ โปรตีน 18%</h3>
+      <p class="text-gray-600 mt-2 mb-6 h-12">"อร่อยถูกปาก คุ้มค่าถูกใจ"
+บำรุงกระดูกและฟัน</p>
+      <button class="add-to-cart-btn">เพิ่มลงตะกร้า</button>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 
