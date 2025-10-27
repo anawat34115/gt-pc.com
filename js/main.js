@@ -1,4 +1,16 @@
-const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
+const currentPath = window.location.pathname;
+
+let pathPrefix = '';
+
+if (currentPath.includes('/en/pages/')) {
+  pathPrefix = '../../';
+} else if (currentPath.includes('/en/')) {
+  pathPrefix = '../';
+} else if (currentPath.includes('/pages/')) {
+  pathPrefix = '../';
+} else {
+  pathPrefix = '';
+}
 
 // ---------- Lazy load รูปทั้งหมดอัตโนมัติ ----------
 document.addEventListener('DOMContentLoaded', () => {
