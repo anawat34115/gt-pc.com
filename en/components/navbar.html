@@ -164,9 +164,10 @@
 
       <!-- mobile language -->
 <div class="flex items-center gap-2 pt-2">
-  <a href="index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">TH</a>
-  <a href="en/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">EN</a>
-  <a href="zh/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">中文</a>
+<a href="/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">TH</a>
+<a href="/en/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">EN</a>
+<a href="/zh/index.html" class="px-3 py-1 rounded-full border border-blue-900/20 hover:bg-blue-50">中文</a>
+
 </div>
 
     </div>
@@ -286,6 +287,18 @@
       adjustContentPadding();
       window.addEventListener('resize', adjustContentPadding);
     });
+
+
+    // Fix language buttons on mobile
+document.querySelectorAll('#mobile-menu .flex a').forEach(link => {
+  link.addEventListener('click', () => {
+    // close mobile menu instantly so redirect works
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  });
+});
+
+
   </script>
 </body>
 </html>
