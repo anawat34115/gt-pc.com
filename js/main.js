@@ -1,14 +1,19 @@
 /*
   main.js — i18n-aware component loader (Drop-in Fix v2)
-  - No need to move your existing /components/footer.html (Thai default).
-  - English (and other langs) will load from /components/<lang>/footer.html if present.
-  - Works under subfolders (uses document.baseURI for relative resolution).
-  - Adds detailed console logs to debug quickly.
+  - ไม่ต้องย้าย /components/footer.html (ไทยเดิม) ก็ได้
+  - ถ้ามี /components/<lang>/footer.html จะโหลดตามภาษาอัตโนมัติ
+  - รองรับเว็บอยู่ใต้ซับโฟลเดอร์ ใช้ document.baseURI
+  - ใส่ console logs ไว้ดีบักง่าย
 */
 
-// ------------------------------
-// Language detection
-// ------------------------------
+/* ---------- compatibility shim: กันโค้ดเก่าอ้าง navbarPlaceholder นอกสโคป ---------- */
+if (typeof window.navbarPlaceholder === 'undefined') {
+  window.navbarPlaceholder = document.getElementById('navbar-placeholder');
+}
+
+/* ------------------------------ */
+/* Language detection              */
+/* ------------------------------ */
 const SUPPORTED_LANGS = ['th', 'en', 'zh'];
 
 const detectLang = () => {
@@ -20,27 +25,34 @@ const detectLang = () => {
 
 const LANG = detectLang();
 
-// Small helper to build URLs safely even if site is hosted under a subdirectory
-const buildUrl = (relativePath) => new URL(relativePath.replace(/^\//, ''), document.baseURI).toString();
+/* ------------------------------ */
+/* Helpers                         */
+/* ------------------------------ */
+const buildUrl = (relativePath) =>
+  new URL(relativePath.replace(/^\//, ''), document.baseURI).toString();
 
 const byId = (id) => document.getElementById(id);
 
 const safeFetchText = async (url) => {
-  const res = await fetch(url + (url.includes('?') ? '&' : '?') + 'v=' + Date.now(), { cache: 'no-cache' });
+  const withBuster = url + (url.includes('?') ? '&' : '?') + 'v=' + Date.now();
+  const res = await fetch(withBuster, { cache: 'no-cache' });
   if (!res.ok) throw new Error(`${url} -> ${res.status}`);
   return res.text();
 };
 
 const injectHTML = (el, html, fallbackMsg) => {
   if (!el) return;
-  el.innerHTML = html || `<p style="color:red; text-align:center;">${fallbackMsg || 'Failed to load content.'}</p>`;
+  el.innerHTML =
+    html ||
+    `<p style="color:red; text-align:center;">${
+      fallbackMsg || 'Failed to load content.'
+    }</p>`;
 };
 
-// ------------------------------
-// Component loader
-// ------------------------------
+/* ------------------------------ */
+/* Component loader                */
+/* ------------------------------ */
 const loadComponent = async (placeholderId, candidates, onLoaded) => {
-  // candidates: array of relative paths, try in order until one works
   const host = byId(placeholderId);
   if (!host) return;
 
@@ -48,14 +60,14 @@ const loadComponent = async (placeholderId, candidates, onLoaded) => {
   for (const rel of candidates) {
     const url = buildUrl(rel);
     try {
-      console.log(`[components] Trying:`, rel);
+      console.log('[components] Trying:', rel);
       const html = await safeFetchText(url);
       injectHTML(host, html);
-      console.log(`[components] Loaded:`, rel);
+      console.log('[components] Loaded:', rel);
       if (typeof onLoaded === 'function') onLoaded(host);
       return;
     } catch (e) {
-      console.warn(`[components] Failed: ${rel}`, e);
+      console.warn('[components] Failed:', rel, e);
       lastErr = e;
     }
   }
@@ -63,9 +75,9 @@ const loadComponent = async (placeholderId, candidates, onLoaded) => {
   injectHTML(host, '', `Failed to load component for ${placeholderId}.`);
 };
 
-// ------------------------------
-// Navbar behaviors (adjust selectors to your markup)
-// ------------------------------
+/* ------------------------------ */
+/* Navbar behaviors (edit selectorsให้ตรง markup คุณ) */
+/* ------------------------------ */
 const enhanceNavbar = (navbarRoot) => {
   if (!navbarRoot) return;
 
@@ -73,8 +85,13 @@ const enhanceNavbar = (navbarRoot) => {
   const menuBtn = navbarRoot.querySelector('[data-toggle="mobile-menu"]');
   const mobileMenu = navbarRoot.querySelector('#mobile-menu');
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // ปิดเมนูเมื่อคลิกลิงก์
+    mobileMenu.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
   }
 
   // Language switchers (.lang-btn[data-lang])
@@ -86,35 +103,37 @@ const enhanceNavbar = (navbarRoot) => {
     });
   });
 
+  // Active state
   const activeBtn = navbarRoot.querySelector(`.lang-btn[data-lang="${LANG}"]`);
   if (activeBtn) activeBtn.setAttribute('aria-current', 'true');
 };
 
-// ------------------------------
-// Language routing: preserve current path/filename
-// ------------------------------
+/* ------------------------------ */
+/* Language routing                */
+/* ------------------------------ */
 const routeToLanguage = (toLang) => {
   if (!SUPPORTED_LANGS.includes(toLang)) toLang = 'th';
 
   const parts = window.location.pathname.split('/').filter(Boolean);
 
+  // แทนที่ prefix ภาษาเดิม หรือ prepend ใหม่ถ้าไม่มี
   if (parts.length && SUPPORTED_LANGS.includes(parts[0])) {
-    parts[0] = toLang; // replace existing prefix
+    parts[0] = toLang;
   } else if (toLang !== 'th') {
-    parts.unshift(toLang); // add prefix for non-default
+    parts.unshift(toLang);
   }
 
   const newPath = '/' + parts.join('/');
   window.location.href = newPath + window.location.search + window.location.hash;
 };
 
-// ------------------------------
-// Boot
-// ------------------------------
+/* ------------------------------ */
+/* Boot                            */
+/* ------------------------------ */
 (async () => {
-  console.log(`[i18n] LANG=`, LANG, ` pathname=`, window.location.pathname);
+  console.log('[i18n] LANG =', LANG, 'pathname =', window.location.pathname);
 
-  // NAVBAR: try i18n path first, then fallback to default /components/navbar.html
+  // NAVBAR: ลองโหลดตามภาษา → ถ้าไม่เจอ fallback เป็น default
   await loadComponent(
     'navbar-placeholder',
     [
@@ -124,7 +143,7 @@ const routeToLanguage = (toLang) => {
     enhanceNavbar
   );
 
-  // FOOTER: try i18n path first, then fallback to default /components/footer.html
+  // FOOTER: ลองโหลดตามภาษา → ถ้าไม่เจอ fallback เป็น default
   await loadComponent(
     'footer-placeholder',
     [
