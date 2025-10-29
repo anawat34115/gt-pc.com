@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Pets Care - Our Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="/js/main.js"></script>
+  <base href="../" />
+    <link rel="stylesheet" href="/css/style.css">  <!-- custom CSS -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        .filter-btn.active {
+            background-color: #ef4444; /* red-500 */
+            color: white;
+            border-color: #ef4444;
+        }
+        /* Style for Product Cards */
+        .product-card {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            opacity: 1;
+            transform: scaleY(1);
+        }
+        .card-hidden {
+            opacity: 0;
+            transform: scaleY(0);
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 0 !important;
+        }
+        /* Hide element without transition */
+        .hidden-no-transition {
+            display: none !important;
+        }
+        .products-section {
+
+            background-image: url(/img/outproduct/banner.png);
+
+            background-size: contain; /* รูปไม่โดนตัด แต่ไม่เต็ม */
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            width: 100%;
+
+            height: 70vh; /* ใช้ 100vh = เต็มจอแน่นอน */
+
+        }
+
+        .equal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.equal-card img {
+  height: 160px; /* ขนาดรูปเท่ากันหมด */
+  object-fit: contain;
+}
+
+.equal-card p {
+  flex-grow: 1; /* ขยายเท่ากันเพื่อดันปุ่มให้ตรง */
+}
+
+
+    </style>
+
+</head>
+<body class="bg-gray-50 text-gray-700">
+    <header id="navbar-placeholder"></header>
+
+
+    <main class="pt-12" >
+<section class="products-section pt-36 md:pt-44 pb-10">
+
+  <div class="container mx-auto px-6 text-center">
+
+  </div>
+
+</section>
+
+        <section class="py-12">
+            <div class="container mx-auto px-6">
+                <div id="filters" class="flex flex-wrap justify-center gap-2 md:gap-4">
+                    <button class="filter-btn active font-semibold py-2 px-6 rounded-full bg-white shadow-sm border" data-filter="all">All Products</button>
+                    <button class="filter-btn font-semibold py-2 px-6 rounded-full bg-white shadow-sm border" data-filter="dry-cat">Dry Food (Cat)</button>
+                    <button class="filter-btn font-semibold py-2 px-6 rounded-full bg-white shadow-sm border" data-filter="wet-cat">Wet Food (Cat)</button>
+                    <button class="filter-btn font-semibold py-2 px-6 rounded-full bg-white shadow-sm border" data-filter="dry-dog">Dry Food (Dog)</button>
+                    <button class="filter-btn font-semibold py-2 px-6 rounded-full bg-white shadow-sm border" data-filter="snack-dog">Snacks & Treats (Dog)</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="content-container" class="container mx-auto px-4 pb-16">
+
+<div id="all-products-brands" class="py-8 max-w-6xl mx-auto">
+
+  <!-- ===== CAT ===== -->
+  <section class="rounded-2xl p-5 md:p-6 bg-amber-50/40 ring-1 ring-amber-100">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 ring-1 ring-amber-200">
+        <!-- cat icon -->
+        <svg viewBox="0 0 24 24" class="h-6 w-6 text-amber-700" fill="currentColor" aria-hidden="true">
+          <path d="M4 4l3 2 3-2 3 2 3-2 3 2v5a8 8 0 11-16 0V4zM9 14a1 1 0 100-2 1 1 0 000 2zm6-1a1 1 0 11-2 0 1 1 0 012 0zm-6.5 3.5a.75.75 0 01.75-.75h6.5a.75.75 0 010 1.5h-6.5a.75.75 0 01-.75-.75z"/>
+        </svg>
+      </span>
+      <div class="w-full">
+        <h3 class="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight">CAT FOOD</h3>
+        <div class="mt-2 flex items-center gap-3">
+          <span class="inline-block text-[11px] uppercase tracking-wider text-amber-700/80 bg-amber-50 ring-1 ring-amber-200 px-2.5 py-0.5 rounded-full">For cat</span>
+          <div class="h-px w-full bg-gradient-to-r from-amber-200 via-amber-100 to-transparent"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-6">
+      <a href="pages/Lincoln.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/lincoln.png" alt="Lincoln Logo" class="max-h-full max-w-full object-contain">
+      </a>
+      <a href="pages/Silver.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/silver.png" alt="Silver Logo" class="max-h-full max-w-full object-contain">
+      </a>
+      <a href="pages/Winstar.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/winstar.png" alt="Winstar Logo" class="max-h-full max-w-full object-contain">
+      </a>
+      <a href="pages/Ole-Cat.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/ole kat.png" alt="Ole Kat Logo" class="max-h-full max-w-full object-contain">
+      </a>
+      <a href="pages/Cherman.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/cherman.png" alt="Cherman Logo" class="max-h-full max-w-full object-contain">
+      </a>
+      <a href="pages/Ole-Sand.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/ole kat sand.jpg" alt="Ole Kat Sand Logo" class="max-h-full max-w-full object-contain">
+      </a>
+            <a href="pages/Precious-cats.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/preciouse.png" alt="Precious Cats Logo" class="max-h-full max-w-full object-contain">
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== DOG ===== -->
+  <section class="mt-10 rounded-2xl p-5 md:p-6 bg-sky-50/40 ring-1 ring-sky-100">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 ring-1 ring-sky-200">
+        <!-- dog icon -->
+        <svg viewBox="0 0 24 24" class="h-6 w-6 text-sky-700" fill="currentColor" aria-hidden="true">
+          <path d="M5 7a4 4 0 118 0v2h2l3-2 1 1-2 3v6a3 3 0 01-3 3H9a3 3 0 01-3-3V7zM8 9h2V7a2 2 0 10-2 2z"/>
+        </svg>
+      </span>
+      <div class="w-full">
+        <h3 class="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight">DOG FOOD</h3>
+        <div class="mt-2 flex items-center gap-3">
+          <span class="inline-block text-[11px] uppercase tracking-wider text-sky-700/80 bg-sky-50 ring-1 ring-sky-200 px-2.5 py-0.5 rounded-full">For dog</span>
+          <div class="h-px w-full bg-gradient-to-r from-sky-200 via-sky-100 to-transparent"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+      <a href="pages/Great-titan.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/gtt.png" alt="Great Titan Logo" class="max-h-full max-w-full object-contain">
+      </a>
+      <a href="pages/Pluto.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/pluto.png" alt="Pluto Logo" class="max-h-full max-w-full object-contain">
+      </a>
+      <a href="pages/Dogker.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/dogker.png" alt="Doctor Dog Logo" class="max-h-full max-w-full object-contain">
+      </a>
+      <a href="pages/Ole-Dog.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/ole.png" alt="Ole Dog Logo" class="max-h-full max-w-full object-contain">
+      </a>
+
+      <a href="pages/Alphapet.html" class="flex justify-center items-center h-20 bg-white p-2 rounded-lg ring-1 ring-slate-200/70 hover:shadow-md transition">
+        <img src="/img/logo/alpha pet.png" alt="Alpha Pet Logo" class="max-h-full max-w-full object-contain">
+      </a> 
+    </div>
+  </section>
+
+</div>
+
+
+            <div id="dry-cat-cards" class="hidden-no-transition grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
+                <div class="product-card rounded-lg bg-orange-100 border border-orange-200">
+                    <div class="p-5 bg-orange-200"><h3 class="text-xl font-bold text-orange-800 text-center">Puppy Food</h3></div>
+                    <div class="p-5">
+                       <span class="text-xs font-semibold text-gray-500">For Dogs</span>
+                       <h4 class="text-md font-bold text-gray-800 mt-1">Puppy Food</h4>
+                       <p class="mt-2 text-sm text-gray-600">Supports healthy growth and development for your new best friend.</p>
+                    </div>
+                </div>
+                <div class="product-card rounded-lg bg-orange-100 border border-orange-200">
+                     <div class="p-5 bg-orange-200"><h3 class="text-xl font-bold text-orange-800 text-center">Premium Dog Food</h3></div>
+                    <div class="p-5">
+                       <span class="text-xs font-semibold text-gray-500">For Dogs</span>
+                       <h4 class="text-md font-bold text-gray-800 mt-1">Dog Food - Premium</h4>
+                       <p class="mt-2 text-sm text-gray-600">Single color, single shape kibble with premium, targeted ingredients.</p>
+                    </div>
+                </div>
+                <div class="product-card rounded-lg bg-orange-100 border border-orange-200">
+                    <div class="p-5 bg-orange-200"><h3 class="text-xl font-bold text-orange-800 text-center">Kitten Food</h3></div>
+                    <div class="p-5">
+                       <span class="text-xs font-semibold text-gray-500">For Cats</span>
+                       <h4 class="text-md font-bold text-gray-800 mt-1">Kitten Food</h4>
+                       <p class="mt-2 text-sm text-gray-600">Tiny, easy-to-eat kibble packed with nutrients for a great start in life.</p>
+                    </div>
+                </div>
+                <div class="product-card rounded-lg bg-orange-100 border border-orange-200">
+                    <div class="p-5 bg-orange-200"><h3 class="text-xl font-bold text-orange-800 text-center">Cat Food Shapes</h3></div>
+                    <div class="p-5">
+                       <span class="text-xs font-semibold text-gray-500">For Cats</span>
+                       <h4 class="text-md font-bold text-gray-800 mt-1">Cat Food - 3 Shapes</h4>
+                       <p class="mt-2 text-sm text-gray-600">A variety of fun shapes and colors to keep your cat engaged and happy.</p>
+                    </div>
+                </div>
+            </div>
+
+<div class="category-content hidden-no-transition" data-category="dry-cat">
+  <section class="py-8">
+    <div class="flex items-start gap-x-8">
+      <h2 class="text-2xl font-bold text-red-500 pt-10">CAT DRY</h2>
+      <div class="w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <!-- Lincoln -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/lincole/Picture3.png" alt="Lincoln" class="cursor-pointer rounded-lg transition-transform hover:scale-105" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Lincoln holistic cat food made from high-quality, human-grade ingredients.  
+              Available in formulas for kittens & nursing cats, and for indoor adult cats.
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">PREMIUM GRADE</span>
+          </div>
+
+          <!-- Silver -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+            <img src="/img/Silver/Picture2.png" alt="Silver" class="h-40 object-contain cursor-pointer rounded-lg transition-transform hover:scale-105" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Silver cat food designed to help reduce urinary stone formation.  
+              Suitable for all breeds and active lifestyles.
+            </p>
+            <span class="mt-5 inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-full">STANDARD GRADE</span>
+          </div>
+
+          <!-- Ole Kat -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+            <img src="/img/ourproduct/Picture4.png" alt="Ole Kat" class="h-40 object-contain cursor-pointer rounded-lg transition-transform hover:scale-105" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Ole Kat dry food includes <b>Hairball Control</b> in every recipe.  
+              Tasty and affordable for everyday feeding.
+            </p>
+            <span class="mt-5 inline-block bg-green-500 text-white font-semibold px-6 py-2 rounded-full">HIGH ECO</span>
+          </div>
+
+          <!-- Winstar -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+            <img src="/img/ourproduct/Picture5.png" alt="Winstar" class="h-40 object-contain cursor-pointer rounded-lg transition-transform hover:scale-105" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Winstar dry food provides complete and balanced nutrition  
+              for all cat breeds with great taste and value.
+            </p>
+            <span class="mt-5 inline-block bg-gray-500 text-white font-semibold px-6 py-2 rounded-full">ECO</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+            
+<div class="category-content hidden-no-transition" data-category="wet-cat">
+  <section class="py-8">
+    <div class="flex items-start gap-x-8">
+      <h2 class="text-2xl font-bold text-red-500 pt-10">WET CAT</h2>
+      <div class="w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Silver Gravy -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/Silver/Picture1.png" alt="Silver Wet" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Silver wet cat food with gravy, formulated as Complete & Balanced.  
+              Made with premium white fish chunks in broth.  
+              Available in 3 recipes suitable for all life stages.
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">GRAVY</span>
+          </div>
+
+          <!-- Cherman Jelly -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/ourproduct/Picture7.png" alt="Cherman Jelly" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Jelly-type wet cat food made from high-quality tuna  
+              with tender meat chunks.  
+              Helps increase hydration — no salt added.
+            </p>
+            <span class="mt-5 inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-full">JELLY</span>
+          </div>
+
+          <!-- Cherman Mousse -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/ourproduct/Picture8.png" alt="Cherman Mousse" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Soft mousse wet cat food with a smooth texture  
+              for easy consumption and great palatability.  
+              Enriched with green tea extract and salmon oil  
+              to support healthy skin and a shiny coat.
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">MOUSSE</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<div class="category-content hidden-no-transition" data-category="dry-dog">
+  <section class="py-8">
+    <div class="flex items-start gap-x-8">
+      <h2 class="text-2xl font-bold text-red-500 pt-10">DOG DRY</h2>
+      <div class="w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <!-- Great Titan -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/ourproduct/gtt.png" alt="Great Titan" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Great Titan holistic dog food made from premium, human-grade ingredients.  
+              Suitable for both small and large dog breeds.
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">PREMIUM GRADE</span>
+          </div>
+
+          <!-- Pluto -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/ourproduct/pluto-all.png" alt="Pluto" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Pluto dog food features a special kibble shape  
+              to help reduce tartar buildup, promote a shiny coat,  
+              and support firm stool formation with added yucca extract.
+            </p>
+            <span class="mt-5 inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-full">STANDARD GRADE</span>
+          </div>
+
+          <!-- Ole Dog -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/ourproduct/oleall.png" alt="Ole Dog" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Ole Dog dry food includes Hairball Control in every formula.  
+              Enhanced with yucca extract for efficient digestive system support.
+            </p>
+            <span class="mt-5 inline-block bg-green-500 text-white font-semibold px-6 py-2 rounded-full">HIGH ECO</span>
+          </div>
+
+          <!-- Dogker -->
+          <div class="bg-sky-50 equal-card rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/ourproduct/dogkerall.png" alt="Doctor Dog" class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain" onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Dogker provides complete and balanced nutrition  
+              with great taste and value, suitable for all dog breeds.
+            </p>
+            <span class="mt-5 inline-block bg-gray-500 text-white font-semibold px-6 py-2 rounded-full">ECO</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+<div class="category-content hidden-no-transition" data-category="snack-dog">
+  <section class="py-8">
+    <div class="flex items-start gap-x-8">
+      <h2 class="text-2xl font-bold text-red-500 pt-10">DOG SNACK</h2>
+      <div class="w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+          <!-- Titan Snacks -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/ourproduct/gttsnack.png" alt="Titan Snacks"
+                 class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain"
+                 onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Great Titan protein-rich dog snack sticks made with real meat  
+              to help support strong muscle development.  
+              Available in 3 delicious flavors.
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">
+              SNACKS DOG
+            </span>
+          </div>
+
+          <!-- Dental Treats -->
+          <div class="bg-sky-50 rounded-3xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center equal-card">
+            <img src="/img/ourproduct/dental.png" alt="Dental Treats"
+                 class="cursor-pointer rounded-lg transition-transform hover:scale-105 h-40 object-contain"
+                 onclick="openImageModal(this.src)">
+            <p class="mt-4 text-gray-700 text-sm leading-relaxed">
+              Starry dental treats with a special shape  
+              designed to help clean teeth and support oral hygiene  
+              for fresh breath.
+            </p>
+            <span class="mt-5 inline-block bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full">
+              DENTAL TREATS
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+            <div id="dry-dog-cards" class="hidden-no-transition grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
+                <div class="product-card rounded-lg bg-blue-100 border border-blue-200">
+                    <div class="p-5 bg-blue-200"><h3 class="text-xl font-bold text-blue-800 text-center">Dog Food Puppy</h3></div>
+                    <div class="p-5">
+                       <span class="text-xs font-semibold text-gray-500">For Dogs</span>
+                       <h4 class="text-md font-bold text-gray-800 mt-1">Special Formula</h4>
+                       <p class="mt-2 text-sm text-gray-600">High-quality ingredients for growing puppies.</p>
+                    </div>
+                </div>
+                <div class="product-card rounded-lg bg-blue-100 border border-blue-200">
+                    <div class="p-5 bg-blue-200"><h3 class="text-xl font-bold text-blue-800 text-center">Dog Food Adult</h3></div>
+                    <div class="p-5">
+                       <span class="text-xs font-semibold text-gray-500">For Dogs</span>
+                       <h4 class="text-md font-bold text-gray-800 mt-1">Complete & Balanced</h4>
+                       <p class="mt-2 text-sm text-gray-600">Essential nutrients for adult dogs.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="footer-placeholder">
+        </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterContainer = document.querySelector('#filters');
+            const allProductsBrands = document.getElementById('all-products-brands');
+            const categorySpecificContents = {
+                'dry-cat': document.querySelector('[data-category="dry-cat"]'),
+                'wet-cat': document.querySelector('[data-category="wet-cat"]'),
+                'dry-dog': document.querySelector('[data-category="dry-dog"]'),
+                'snack-dog': document.querySelector('[data-category="snack-dog"]'),
+                'dry-cat-cards': document.getElementById('dry-cat-cards') // Assuming these cards are for dry cat for now, adjust as needed
+                // Add more mappings if you have other product card sections
+            };
+            const productCardSections = document.querySelectorAll('#dry-cat-cards'); // Select all product card sections
+
+
+            if (filterContainer) {
+                filterContainer.addEventListener('click', (event) => {
+                    const clickedButton = event.target.closest('.filter-btn');
+                    if (!clickedButton) return;
+
+                    // Update active button state
+                    filterContainer.querySelector('.active').classList.remove('active');
+                    clickedButton.classList.add('active');
+
+                    const filterValue = clickedButton.getAttribute('data-filter');
+
+                    // Hide all sections first
+                    allProductsBrands.classList.add('hidden-no-transition');
+                    for (const key in categorySpecificContents) {
+                        if (categorySpecificContents[key]) {
+                            categorySpecificContents[key].classList.add('hidden-no-transition');
+                        }
+                    }
+                    productCardSections.forEach(section => section.classList.add('hidden-no-transition'));
+
+
+                    // Show the relevant section
+                    if (filterValue === 'all') {
+                        allProductsBrands.classList.remove('hidden-no-transition');
+                    } else if (categorySpecificContents[filterValue]) {
+                        categorySpecificContents[filterValue].classList.remove('hidden-no-transition');
+                    } else if (filterValue === 'dry-cat' || filterValue === 'dry-dog') { // Example: show product cards for dry food
+                        // You might need to refine this logic based on which cards belong to which category
+                        // For simplicity, showing 'dry-cat-cards' for dry-cat filter
+                        if (filterValue === 'dry-cat') {
+                             document.getElementById('dry-cat-cards').classList.remove('hidden-no-transition');
+                             document.querySelector('[data-category="dry-cat"]').classList.remove('hidden-no-transition'); // Also show the table for dry cat
+                        } else if (filterValue === 'dry-dog') {
+                             document.querySelector('[data-category="dry-dog"]').classList.remove('hidden-no-transition'); // Show dog dry table
+                        }
+                    }
+                });
+            }
+
+            // Initial state: show "All Products" when loaded
+            allProductsBrands.classList.remove('hidden-no-transition');
+        });
+    </script>
+
+</body>
+</html>
