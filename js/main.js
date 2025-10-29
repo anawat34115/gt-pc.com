@@ -172,7 +172,7 @@ if (langButtons.length) {
       const lang = btn.dataset.lang;
       let target = '/index.html';
       if (lang === 'en') target = '/en/index.html';
-      if (lang === 'zh') target = '/zh/index.html';
+      if (lang === 'zh') target = '/cn/index.html';
 
       // ปิดเมนูแล้วค่อยนำทาง
       const mobileMenu = navbarPlaceholder.querySelector('#mobile-menu');
