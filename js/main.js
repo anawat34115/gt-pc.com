@@ -1,155 +1,184 @@
+const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
 
-/*
-  main.js — i18n-aware component loader (Drop-in Fix v2, final)
-  - Default footer/navbar: /components/footer.html, /components/navbar.html (Thai)
-  - If /components/<lang>/footer.html exists (e.g., en), it loads that instead.
-  - Works under subfolders via document.baseURI.
-  - Includes a small shim to avoid legacy `navbarPlaceholder` reference errors.
-*/
-
-/* ---------- compatibility shim: กันโค้ดเก่าอ้าง navbarPlaceholder นอกสโคป ---------- */
-if (typeof window.navbarPlaceholder === 'undefined') {
-  window.navbarPlaceholder = document.getElementById('navbar-placeholder');
-}
-
-/* ------------------------------ */
-/* Language detection              */
-/* ------------------------------ */
-const SUPPORTED_LANGS = ['th', 'en', 'zh'];
-
-const detectLang = () => {
-  const seg = window.location.pathname.split('/').filter(Boolean);
-  const cand = seg.length ? seg[0].toLowerCase() : '';
-  if (SUPPORTED_LANGS.includes(cand)) return cand;
-  return 'th'; // default
-};
-
-const LANG = detectLang();
-
-/* ------------------------------ */
-/* Helpers                         */
-/* ------------------------------ */
-const buildUrl = (relativePath) =>
-  new URL(relativePath.replace(/^\//, ''), document.baseURI).toString();
-
-const byId = (id) => document.getElementById(id);
-
-const safeFetchText = async (url) => {
-  const withBuster = url + (url.includes('?') ? '&' : '?') + 'v=' + Date.now();
-  const res = await fetch(withBuster, { cache: 'no-cache' });
-  if (!res.ok) throw new Error(`${url} -> ${res.status}`);
-  return res.text();
-};
-
-const injectHTML = (el, html, fallbackMsg) => {
-  if (!el) return;
-  el.innerHTML =
-    html ||
-    `<p style="color:red; text-align:center;">${
-      fallbackMsg || 'Failed to load content.'
-    }</p>`;
-};
-
-/* ------------------------------ */
-/* Component loader                */
-/* ------------------------------ */
-const loadComponent = async (placeholderId, candidates, onLoaded) => {
-  const host = byId(placeholderId);
-  if (!host) return;
-
-  let lastErr = null;
-  for (const rel of candidates) {
-    const url = buildUrl(rel);
-    try {
-      console.log('[components] Trying:', rel);
-      const html = await safeFetchText(url);
-      injectHTML(host, html);
-      console.log('[components] Loaded:', rel);
-      if (typeof onLoaded === 'function') onLoaded(host);
-      return;
-    } catch (e) {
-      console.warn('[components] Failed:', rel, e);
-      lastErr = e;
+// ---------- Lazy load รูปทั้งหมดอัตโนมัติ ----------
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
     }
-  }
-  console.error(`[components] All candidates failed for #${placeholderId}`, lastErr);
-  injectHTML(host, '', `Failed to load component for ${placeholderId}.`);
-};
+  });
+});
 
-/* ------------------------------ */
-/* Navbar behaviors (edit selectorsให้ตรง markup คุณ) */
-/* ------------------------------ */
-const enhanceNavbar = (navbarRoot) => {
-  if (!navbarRoot) return;
+// ---------- Load Navbar ----------
+fetch(pathPrefix + 'components/navbar.html')
+  .then(response => {
+    if (!response.ok) throw new Error('Navbar not found: ' + response.status);
+    return response.text();
+  })
+  .then(data => {
+    const navbarPlaceholder = document.getElementById('navbar-placeholder');
+    if (!navbarPlaceholder) throw new Error('#navbar-placeholder not found on page');
 
-  // Mobile menu toggle
-  const menuBtn = navbarRoot.querySelector('[data-toggle="mobile-menu"]');
-  const mobileMenu = navbarRoot.querySelector('#mobile-menu');
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-    // ปิดเมนูเมื่อคลิกลิงก์
-    mobileMenu.querySelectorAll('a').forEach((a) => {
-      a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-    });
-  }
+    navbarPlaceholder.innerHTML = data;
 
-  // Language switchers (.lang-btn[data-lang])
-  navbarRoot.querySelectorAll('.lang-btn').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const toLang = (btn.dataset.lang || '').toLowerCase();
-      routeToLanguage(toLang);
+    // --- Desktop dropdown ---
+    const dropdownContainer = navbarPlaceholder.querySelector('#brand-dropdown-container');
+    const dropdownPanel = navbarPlaceholder.querySelector('#brand-dropdown-panel');
+    const brandToggle = navbarPlaceholder.querySelector('#brand-dropdown-toggle');
+
+    if (dropdownContainer && dropdownPanel) {
+      let showTimer, hideTimer;
+      dropdownContainer.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimer);
+        showTimer = setTimeout(() => dropdownPanel.classList.remove('hidden'), 150);
+      });
+      dropdownContainer.addEventListener('mouseleave', () => {
+        clearTimeout(showTimer);
+        hideTimer = setTimeout(() => dropdownPanel.classList.add('hidden'), 200);
+      });
+    }
+
+    if (brandToggle && dropdownPanel) {
+      brandToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdownPanel.classList.toggle('hidden');
+      });
+      dropdownPanel.addEventListener('click', e => e.stopPropagation());
+    }
+
+    document.addEventListener('click', () => {
+      if (dropdownPanel) dropdownPanel.classList.add('hidden');
     });
+
+    // --- Mobile menu toggle ---
+    const mobileToggle = navbarPlaceholder.querySelector('#mobile-menu-toggle');
+    const mobileMenu = navbarPlaceholder.querySelector('#mobile-menu');
+
+    if (mobileToggle && mobileMenu) {
+      const svg = mobileToggle.querySelector("svg");
+      const hamburgerIcon = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      hamburgerIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
+      hamburgerIcon.setAttribute("stroke-linecap", "round");
+      hamburgerIcon.setAttribute("stroke-linejoin", "round");
+      hamburgerIcon.setAttribute("stroke-width", "2");
+
+      const closeIcon = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      closeIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
+      closeIcon.setAttribute("stroke-linecap", "round");
+      closeIcon.setAttribute("stroke-linejoin", "round");
+      closeIcon.setAttribute("stroke-width", "2");
+      closeIcon.style.display = "none";
+
+      svg.innerHTML = "";
+      svg.appendChild(hamburgerIcon);
+      svg.appendChild(closeIcon);
+
+      const toggleHandler = (e) => {
+        e.preventDefault();
+        mobileMenu.classList.toggle('hidden');
+
+        if (hamburgerIcon.style.display === "none") {
+          hamburgerIcon.style.display = "block";
+          closeIcon.style.display = "none";
+        } else {
+          hamburgerIcon.style.display = "none";
+          closeIcon.style.display = "block";
+        }
+      };
+
+      mobileToggle.addEventListener('click', toggleHandler);
+      mobileToggle.addEventListener('touchend', toggleHandler);
+
+      // ปิด menu เมื่อกด link
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.style.display = "block";
+          closeIcon.style.display = "none";
+        });
+      });
+
+      document.addEventListener('click', (ev) => {
+        if (!mobileMenu.classList.contains('hidden') && !navbarPlaceholder.contains(ev.target)) {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.style.display = "block";
+          closeIcon.style.display = "none";
+        }
+      });
+    }
+
+    // --- Mobile "Our Brand" sub-menu ---
+    const mobileBrandToggle = navbarPlaceholder.querySelector('#mobile-brand-toggle');
+    const mobileBrandPanel = navbarPlaceholder.querySelector('#mobile-brand-panel');
+    const mobileBrandIcon = mobileBrandToggle ? mobileBrandToggle.querySelector('svg') : null;
+
+    if (mobileBrandToggle && mobileBrandPanel) {
+      mobileBrandToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileBrandPanel.classList.toggle('hidden');
+        if (mobileBrandIcon) mobileBrandIcon.classList.toggle('rotate-180');
+      });
+    }
+
+    // --- Scroll effect ---
+    const header = navbarPlaceholder.querySelector('#main-header');
+    if (header) {
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    }
+  })
+  .catch(err => {
+    console.error('Error loading navbar:', err);
+    const navbarPlaceholder = document.getElementById('navbar-placeholder');
+    if (navbarPlaceholder) {
+      navbarPlaceholder.innerHTML = '<p style="color:red; text-align:center;">Failed to load navigation bar.</p>';
+    }
   });
 
-  // Active state
-  const activeBtn = navbarRoot.querySelector(`.lang-btn[data-lang="${LANG}"]`);
-  if (activeBtn) activeBtn.setAttribute('aria-current', 'true');
-};
+// ---------- Load Footer ----------
+fetch(pathPrefix + 'components/footer.html')
+  .then(response => {
+    if (!response.ok) throw new Error('Footer not found: ' + response.status);
+    return response.text();
+  })
+  .then(data => {
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (!footerPlaceholder) throw new Error('#footer-placeholder not found on page');
+    footerPlaceholder.innerHTML = data;
+  })
+  .catch(err => {
+    console.error('Error loading footer:', err);
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (footerPlaceholder) {
+      footerPlaceholder.innerHTML = '<p style="color:red; text-align:center;">Failed to load footer.</p>';
+    }
+  });
 
-/* ------------------------------ */
-/* Language routing                */
-/* ------------------------------ */
-const routeToLanguage = (toLang) => {
-  if (!SUPPORTED_LANGS.includes(toLang)) toLang = 'th';
+// --- Mobile language switcher (moved inside navbar load scope) ---
+const langButtons = navbarPlaceholder.querySelectorAll('.lang-btn');
+if (langButtons.length) {
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault(); // กัน event แปลกๆ บนมือถือ
+      const lang = btn.dataset.lang;
+      let target = '/index.html';
+      if (lang === 'en') target = '/en/index.html';
+      if (lang === 'zh') target = '/zh/index.html';
 
-  const parts = window.location.pathname.split('/').filter(Boolean);
+      // ปิดเมนูแล้วค่อยนำทาง
+      const mobileMenu = navbarPlaceholder.querySelector('#mobile-menu');
+      if (mobileMenu) mobileMenu.classList.add('hidden');
+      window.location.href = target;
+    });
+  });
+}
 
-  // แทนที่ prefix ภาษาเดิม หรือ prepend ใหม่ถ้าไม่มี
-  if (parts.length && SUPPORTED_LANGS.includes(parts[0])) {
-    parts[0] = toLang;
-  } else if (toLang !== 'th') {
-    parts.unshift(toLang);
-  }
-
-  const newPath = '/' + parts.join('/');
-  window.location.href = newPath + window.location.search + window.location.hash;
-};
-
-/* ------------------------------ */
-/* Boot                            */
-/* ------------------------------ */
-(async () => {
-  console.log('[i18n] LANG =', LANG, 'pathname =', window.location.pathname);
-
-  // NAVBAR: ลองโหลดตามภาษา → ถ้าไม่เจอ fallback เป็น default
-  await loadComponent(
-    'navbar-placeholder',
-    [
-      `components/${LANG}/navbar.html`,
-      `components/navbar.html`,
-    ],
-    enhanceNavbar
-  );
-
-  // FOOTER: ลองโหลดตามภาษา → ถ้าไม่เจอ fallback เป็น default
-  await loadComponent(
-    'footer-placeholder',
-    [
-      `components/${LANG}/footer.html`,
-      `components/footer.html`,
-    ]
-  );
-})();
