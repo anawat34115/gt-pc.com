@@ -155,22 +155,55 @@
       }
     });
 
-  // ---------- Load Footer ----------
-  fetch(compBase + 'footer.html', { cache: 'no-cache' })
-    .then(response => {
-      if (!response.ok) throw new Error('Footer not found: ' + response.status);
-      return response.text();
+  // // ---------- Load Footer ----------
+  // fetch(compBase + 'footer.html', { cache: 'no-cache' })
+  //   .then(response => {
+  //     if (!response.ok) throw new Error('Footer not found: ' + response.status);
+  //     return response.text();
+  //   })
+  //   .then(html => {
+  //     const footerPlaceholder = document.getElementById('footer-placeholder');
+  //     if (!footerPlaceholder) throw new Error('#footer-placeholder not found on page');
+  //     footerPlaceholder.innerHTML = html;
+  //   })
+  //   .catch(err => {
+  //     console.error('Error loading footer:', err);
+  //     const footerPlaceholder = document.getElementById('footer-placeholder');
+  //     if (footerPlaceholder) {
+  //       footerPlaceholder.innerHTML = '<p style="color:red; text-align:center;">Failed to load footer.</p>';
+  //     }
+  //   });
+
+
+  // ---------- Load Footer (multi-language, single-run) ----------
+(() => {
+  const slot = document.getElementById('footer-placeholder');
+  if (!slot) return;
+
+  // กันโหลดซ้ำจากสคริปต์อื่น
+  if (slot.dataset.loaded === '1') return;
+
+  const p = window.location.pathname;
+  const lang = p.startsWith('/en/') ? 'en'
+            : p.startsWith('/zh/') ? 'zh'
+            : 'th'; // default ไทย
+
+  // ใช้พาธสัมบูรณ์ตามภาษา + cache buster กัน CDN เสิร์ฟไฟล์ผิด
+  const footerUrl = (lang === 'th')
+    ? `/components/footer.html?v=${lang}`
+    : `/${lang}/components/footer.html?v=${lang}`;
+
+  fetch(footerUrl, { cache: 'no-cache' })
+    .then(res => {
+      if (!res.ok) throw new Error('Footer not found: ' + res.status);
+      return res.text();
     })
     .then(html => {
-      const footerPlaceholder = document.getElementById('footer-placeholder');
-      if (!footerPlaceholder) throw new Error('#footer-placeholder not found on page');
-      footerPlaceholder.innerHTML = html;
+      slot.innerHTML = html;
+      slot.dataset.loaded = '1';
     })
     .catch(err => {
       console.error('Error loading footer:', err);
-      const footerPlaceholder = document.getElementById('footer-placeholder');
-      if (footerPlaceholder) {
-        footerPlaceholder.innerHTML = '<p style="color:red; text-align:center;">Failed to load footer.</p>';
-      }
+      slot.innerHTML = '<p style="color:red; text-align:center;">Failed to load footer.</p>';
     });
-
+})();
