@@ -1,9 +1,10 @@
+
 /*
-  main.js — i18n-aware component loader (Drop-in Fix v2)
-  - ไม่ต้องย้าย /components/footer.html (ไทยเดิม) ก็ได้
-  - ถ้ามี /components/<lang>/footer.html จะโหลดตามภาษาอัตโนมัติ
-  - รองรับเว็บอยู่ใต้ซับโฟลเดอร์ ใช้ document.baseURI
-  - ใส่ console logs ไว้ดีบักง่าย
+  main.js — i18n-aware component loader (Drop-in Fix v2, final)
+  - Default footer/navbar: /components/footer.html, /components/navbar.html (Thai)
+  - If /components/<lang>/footer.html exists (e.g., en), it loads that instead.
+  - Works under subfolders via document.baseURI.
+  - Includes a small shim to avoid legacy `navbarPlaceholder` reference errors.
 */
 
 /* ---------- compatibility shim: กันโค้ดเก่าอ้าง navbarPlaceholder นอกสโคป ---------- */
