@@ -1,184 +1,140 @@
-const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
+/*
+  main.js — i18n-aware component loader
+  - Detects language from URL prefix (/en/, /zh/, etc.)
+  - Loads navbar.html and footer.html from /components/<lang>/
+  - Keeps logic self-contained and robust across nested pages
+*/
 
-// ---------- Lazy load รูปทั้งหมดอัตโนมัติ ----------
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('img').forEach(img => {
-    if (!img.hasAttribute('loading')) {
-      img.setAttribute('loading', 'lazy');
-    }
-  });
-});
+// ------------------------------
+// Language detection
+// ------------------------------
+const detectLang = () => {
+  const seg = window.location.pathname
+    .split('/')
+    .filter(Boolean); // remove empty
+  const cand = seg.length ? seg[0].toLowerCase() : '';
+  // Add supported languages here
+  const supported = ['en', 'zh', 'th'];
+  if (supported.includes(cand)) return cand;
+  // Default language
+  return 'th';
+};
 
-// ---------- Load Navbar ----------
-fetch(pathPrefix + 'components/navbar.html')
-  .then(response => {
-    if (!response.ok) throw new Error('Navbar not found: ' + response.status);
-    return response.text();
-  })
-  .then(data => {
-    const navbarPlaceholder = document.getElementById('navbar-placeholder');
-    if (!navbarPlaceholder) throw new Error('#navbar-placeholder not found on page');
+const LANG = detectLang();
+const COMPONENT_BASE = `/components/${LANG}/`;
 
-    navbarPlaceholder.innerHTML = data;
+// ------------------------------
+// Utils
+// ------------------------------
+const byId = (id) => document.getElementById(id);
 
-    // --- Desktop dropdown ---
-    const dropdownContainer = navbarPlaceholder.querySelector('#brand-dropdown-container');
-    const dropdownPanel = navbarPlaceholder.querySelector('#brand-dropdown-panel');
-    const brandToggle = navbarPlaceholder.querySelector('#brand-dropdown-toggle');
+const safeFetchText = async (url) => {
+  const res = await fetch(url, { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`${url} -> ${res.status}`);
+  return res.text();
+};
 
-    if (dropdownContainer && dropdownPanel) {
-      let showTimer, hideTimer;
-      dropdownContainer.addEventListener('mouseenter', () => {
-        clearTimeout(hideTimer);
-        showTimer = setTimeout(() => dropdownPanel.classList.remove('hidden'), 150);
-      });
-      dropdownContainer.addEventListener('mouseleave', () => {
-        clearTimeout(showTimer);
-        hideTimer = setTimeout(() => dropdownPanel.classList.add('hidden'), 200);
-      });
-    }
+const injectHTML = (el, html, fallbackMsg) => {
+  if (!el) return;
+  el.innerHTML = html || `<p style="color:red; text-align:center;">${fallbackMsg || 'Failed to load content.'}</p>`;
+};
 
-    if (brandToggle && dropdownPanel) {
-      brandToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        dropdownPanel.classList.toggle('hidden');
-      });
-      dropdownPanel.addEventListener('click', e => e.stopPropagation());
-    }
+// ------------------------------
+// Component loader
+// ------------------------------
+const loadComponent = async (placeholderId, fileName, onLoaded) => {
+  const host = byId(placeholderId);
+  if (!host) return; // page may not have this placeholder
+  try {
+    const html = await safeFetchText(`${COMPONENT_BASE}${fileName}`);
+    injectHTML(host, html);
+    if (typeof onLoaded === 'function') onLoaded(host);
+  } catch (err) {
+    console.error(`Error loading ${fileName}:`, err);
+    injectHTML(host, '', `Failed to load ${fileName}.`);
+  }
+};
 
-    document.addEventListener('click', () => {
-      if (dropdownPanel) dropdownPanel.classList.add('hidden');
+// ------------------------------
+// Navbar behaviors (optional; adapt to your markup)
+// ------------------------------
+const enhanceNavbar = (navbarRoot) => {
+  if (!navbarRoot) return;
+
+  // Example: mobile menu toggle
+  const menuBtn = navbarRoot.querySelector('[data-toggle="mobile-menu"]');
+  const mobileMenu = navbarRoot.querySelector('#mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
+  }
 
-    // --- Mobile menu toggle ---
-    const mobileToggle = navbarPlaceholder.querySelector('#mobile-menu-toggle');
-    const mobileMenu = navbarPlaceholder.querySelector('#mobile-menu');
-
-    if (mobileToggle && mobileMenu) {
-      const svg = mobileToggle.querySelector("svg");
-      const hamburgerIcon = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      hamburgerIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
-      hamburgerIcon.setAttribute("stroke-linecap", "round");
-      hamburgerIcon.setAttribute("stroke-linejoin", "round");
-      hamburgerIcon.setAttribute("stroke-width", "2");
-
-      const closeIcon = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      closeIcon.setAttribute("d", "M6 18L18 6M6 6l12 12");
-      closeIcon.setAttribute("stroke-linecap", "round");
-      closeIcon.setAttribute("stroke-linejoin", "round");
-      closeIcon.setAttribute("stroke-width", "2");
-      closeIcon.style.display = "none";
-
-      svg.innerHTML = "";
-      svg.appendChild(hamburgerIcon);
-      svg.appendChild(closeIcon);
-
-      const toggleHandler = (e) => {
-        e.preventDefault();
-        mobileMenu.classList.toggle('hidden');
-
-        if (hamburgerIcon.style.display === "none") {
-          hamburgerIcon.style.display = "block";
-          closeIcon.style.display = "none";
-        } else {
-          hamburgerIcon.style.display = "none";
-          closeIcon.style.display = "block";
-        }
-      };
-
-      mobileToggle.addEventListener('click', toggleHandler);
-      mobileToggle.addEventListener('touchend', toggleHandler);
-
-      // ปิด menu เมื่อกด link
-      mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          hamburgerIcon.style.display = "block";
-          closeIcon.style.display = "none";
-        });
+  // Example: close mobile menu on link click
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
       });
+    });
+  }
 
-      document.addEventListener('click', (ev) => {
-        if (!mobileMenu.classList.contains('hidden') && !navbarPlaceholder.contains(ev.target)) {
-          mobileMenu.classList.add('hidden');
-          hamburgerIcon.style.display = "block";
-          closeIcon.style.display = "none";
-        }
-      });
-    }
-
-    // --- Mobile "Our Brand" sub-menu ---
-    const mobileBrandToggle = navbarPlaceholder.querySelector('#mobile-brand-toggle');
-    const mobileBrandPanel = navbarPlaceholder.querySelector('#mobile-brand-panel');
-    const mobileBrandIcon = mobileBrandToggle ? mobileBrandToggle.querySelector('svg') : null;
-
-    if (mobileBrandToggle && mobileBrandPanel) {
-      mobileBrandToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        mobileBrandPanel.classList.toggle('hidden');
-        if (mobileBrandIcon) mobileBrandIcon.classList.toggle('rotate-180');
-      });
-    }
-
-    // --- Scroll effect ---
-    const header = navbarPlaceholder.querySelector('#main-header');
-    if (header) {
-      let ticking = false;
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-            ticking = false;
-          });
-          ticking = true;
-        }
-      });
-    }
-  })
-  .catch(err => {
-    console.error('Error loading navbar:', err);
-    const navbarPlaceholder = document.getElementById('navbar-placeholder');
-    if (navbarPlaceholder) {
-      navbarPlaceholder.innerHTML = '<p style="color:red; text-align:center;">Failed to load navigation bar.</p>';
-    }
-  });
-
-// ---------- Load Footer ----------
-fetch(pathPrefix + 'components/footer.html')
-  .then(response => {
-    if (!response.ok) throw new Error('Footer not found: ' + response.status);
-    return response.text();
-  })
-  .then(data => {
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (!footerPlaceholder) throw new Error('#footer-placeholder not found on page');
-    footerPlaceholder.innerHTML = data;
-  })
-  .catch(err => {
-    console.error('Error loading footer:', err);
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (footerPlaceholder) {
-      footerPlaceholder.innerHTML = '<p style="color:red; text-align:center;">Failed to load footer.</p>';
-    }
-  });
-
-// --- Mobile language switcher (moved inside navbar load scope) ---
-const langButtons = navbarPlaceholder.querySelectorAll('.lang-btn');
-if (langButtons.length) {
-  langButtons.forEach(btn => {
+  // Language switchers (buttons/links with .lang-btn and data-lang="en|th|zh")
+  navbarRoot.querySelectorAll('.lang-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault(); // กัน event แปลกๆ บนมือถือ
-      const lang = btn.dataset.lang;
-      let target = '/index.html';
-      if (lang === 'en') target = '/en/index.html';
-      if (lang === 'zh') target = '/zh/index.html';
-
-      // ปิดเมนูแล้วค่อยนำทาง
-      const mobileMenu = navbarPlaceholder.querySelector('#mobile-menu');
-      if (mobileMenu) mobileMenu.classList.add('hidden');
-      window.location.href = target;
+      e.preventDefault();
+      const toLang = (btn.dataset.lang || '').toLowerCase();
+      routeToLanguage(toLang);
     });
   });
-}
 
+  // Optional: set active state for current language switcher
+  const activeBtn = navbarRoot.querySelector(`.lang-btn[data-lang="${LANG}"]`);
+  if (activeBtn) {
+    activeBtn.setAttribute('aria-current', 'true');
+  }
+};
+
+// ------------------------------
+// Language routing
+// ------------------------------
+const routeToLanguage = (toLang) => {
+  const supported = ['en', 'zh', 'th'];
+  if (!supported.includes(toLang)) toLang = 'th';
+
+  const path = window.location.pathname;
+  const parts = path.split('/').filter(Boolean);
+
+  // If current path already has a lang prefix, replace it
+  if (parts.length && supported.includes(parts[0])) {
+    parts[0] = toLang;
+  } else {
+    // Otherwise, prepend for non-default (th) or leave root for th
+    if (toLang === 'th') {
+      // Keep as-is for Thai (default root)
+    } else {
+      parts.unshift(toLang);
+    }
+  }
+
+  // Preserve current filename; if empty, assume index.html
+  let last = parts[parts.length - 1] || '';
+  if (!last || last.endsWith('/')) last += 'index.html';
+
+  // Build new path
+  const newPath = '/' + parts.join('/');
+  window.location.href = newPath;
+};
+
+// ------------------------------
+// Boot
+// ------------------------------
+(async () => {
+  // Load Navbar, then enhance behaviors
+  await loadComponent('navbar-placeholder', 'navbar.html', enhanceNavbar);
+
+  // Load Footer
+  await loadComponent('footer-placeholder', 'footer.html');
+
+  // You may add more shared components here (e.g., cookie banner, modals)
+})();
