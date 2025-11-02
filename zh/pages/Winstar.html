@@ -88,45 +88,105 @@
 <body class="bg-gray-50">
   <header id="navbar-placeholder"></header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-bg pt-20 ">
-      <img src="/img/ปรับขนาดป้าย/ปรับขนาด-AW-1920x800-px-_-วินสตาร์.jpg" alt="WinStar hero banner">
-    </section>
+<main>
+  <!-- Hero Section -->
+  <section class="hero-bg pt-20" aria-label="WinStar 品牌主视觉">
+    <img
+      src="/img/ปรับขนาดป้าย/ปรับขนาด-AW-1920x800-px-_-วินสตาร์.jpg"
+      alt="WinStar——高品质猫粮，猫咪一吃就爱"
+      class="w-full h-auto"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </section>
 
-    <!-- Products Section -->
-    <section class="py-20" data-aos="fade-up">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold text-gray-800">Which recipe is right for your cat?</h2>
-          <p class="text-gray-500 mt-2">Choose the tastiest and most nutritious option for your furry friend.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
-          <div class="product-card-v2 bg-pastel-blue" data-aos="zoom-in-up" data-aos-delay="100">
-            <img src="/img/Winstar/Winstar1.png" alt="WinStar cat food - Seafood flavor" class="product-image-v2">
-            <h3 class="text-2xl font-bold text-gray-800 mt-8">WinStar – Seafood Flavor</h3>
-            <p class="text-gray-600 mt-2 mb-6 h-12">Aromatic from the sea and rich in protein.</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-
-          <div class="product-card-v2 bg-pastel-pink" data-aos="zoom-in-up" data-aos-delay="200">
-            <img src="/img/Winstar/Winstar2.png" alt="WinStar cat food - Tuna flavor" class="product-image-v2">
-            <h3 class="text-2xl font-bold text-gray-800 mt-8">WinStar – Tuna Flavor</h3>
-            <p class="text-gray-600 mt-2 mb-6 h-12">Packed with tuna for robust health.</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-
-          <div class="product-card-v2 bg-pastel-peach" data-aos="zoom-in-up" data-aos-delay="300">
-            <img src="/img/Winstar/ws-salmon-01-300x300.png" alt="WinStar cat food - Salmon flavor" class="product-image-v2">
-            <h3 class="text-2xl font-bold text-gray-800 mt-8">WinStar – Salmon Flavor</h3>
-            <p class="text-gray-600 mt-2 mb-6 h-12">High in Omega‑3 to support a shiny coat.</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
+  <!-- Products Section -->
+  <section class="py-20" data-aos="fade-up" aria-labelledby="winstar-title">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 id="winstar-title" class="text-4xl font-bold text-gray-800">
+          哪款配方最适合你的猫？
+        </h2>
+        <p class="text-gray-500 mt-2">
+          为你的毛孩子挑一款好吃又营养的配方。
+        </p>
       </div>
-    </section>
-  </main>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-24 mt-16">
+        <!-- Card 1: Seafood -->
+        <article class="product-card-v2 bg-pastel-blue" data-aos="zoom-in-up" data-aos-delay="100" itemscope itemtype="https://schema.org/Product">
+          <meta itemprop="brand" content="WinStar" />
+          <img
+            src="/img/Winstar/Winstar1.png"
+            alt="WinStar 猫粮 — 海鲜口味"
+            class="product-image-v2 aspect-square object-contain"
+            loading="lazy"
+            decoding="async"
+            width="600" height="600"
+            itemprop="image"
+          />
+          <h3 class="text-2xl font-bold text-gray-800 mt-8" itemprop="name">
+            WinStar – 海鲜口味
+          </h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12" itemprop="description">
+            海味香醇，富含蛋白质。
+          </p>
+          <a href="/product/winstar-seafood" class="add-to-cart-btn" aria-label="将 WinStar 海鲜口味加入购物车" itemprop="url">
+            加入购物车
+          </a>
+        </article>
+
+        <!-- Card 2: Tuna -->
+        <article class="product-card-v2 bg-pastel-pink" data-aos="zoom-in-up" data-aos-delay="200" itemscope itemtype="https://schema.org/Product">
+          <meta itemprop="brand" content="WinStar" />
+          <img
+            src="/img/Winstar/Winstar2.png"
+            alt="WinStar 猫粮 — 金枪鱼口味"
+            class="product-image-v2 aspect-square object-contain"
+            loading="lazy"
+            decoding="async"
+            width="600" height="600"
+            itemprop="image"
+          />
+          <h3 class="text-2xl font-bold text-gray-800 mt-8" itemprop="name">
+            WinStar – 金枪鱼口味
+          </h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12" itemprop="description">
+            富含金枪鱼，助力强健体魄。
+          </p>
+          <a href="/product/winstar-tuna" class="add-to-cart-btn" aria-label="将 WinStar 金枪鱼口味加入购物车" itemprop="url">
+            加入购物车
+          </a>
+        </article>
+
+        <!-- Card 3: Salmon -->
+        <article class="product-card-v2 bg-pastel-peach" data-aos="zoom-in-up" data-aos-delay="300" itemscope itemtype="https://schema.org/Product">
+          <meta itemprop="brand" content="WinStar" />
+          <img
+            src="/img/Winstar/ws-salmon-01-300x300.png"
+            alt="WinStar 猫粮 — 三文鱼口味"
+            class="product-image-v2 aspect-square object-contain"
+            loading="lazy"
+            decoding="async"
+            width="600" height="600"
+            itemprop="image"
+          />
+          <h3 class="text-2xl font-bold text-gray-800 mt-8" itemprop="name">
+            WinStar – 三文鱼口味
+          </h3>
+          <p class="text-gray-600 mt-2 mb-6 h-12" itemprop="description">
+            富含 Omega-3，帮助毛发亮泽。
+          </p>
+          <a href="/product/winstar-salmon" class="add-to-cart-btn" aria-label="将 WinStar 三文鱼口味加入购物车" itemprop="url">
+            加入购物车
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
 
   <div id="footer-placeholder"></div>
 
